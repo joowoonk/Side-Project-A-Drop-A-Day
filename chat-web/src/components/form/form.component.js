@@ -6,27 +6,32 @@ const Form = () => {
     <div className="sign-in-form">
       <h1>Let's Chill</h1>
       <form className="sign-in">
-        <label id="userName" htmlFor="userName">
-          Your Unsername/Emaill <br />
-          <input
-            type="text"
-            name="userName"
-            // value={}
-            // onChange={handleChange}
-          />
+        <div className="userName">
+          <label htmlFor="userName">
+            <h3>Username/Emaill</h3>
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              // value={}
+              // onChange={handleChange}
+            />
+          </label>
+        </div>
+
+        <label htmlFor="password">
+          <div className="password">
+            <h3>password</h3>
+          </div>
+          <div className="password">
+            <input id="password" type="password" name="password" />
+          </div>
         </label>
-        <label id="password" htmlFor="password">
-          <br />
-          Your Password <br />
-          <input
-            type="password"
-            name="password"
-            // value={}
-            // onChange={}
-          />
-        </label>
-        <p>Need an account?</p>
-        <p>Sign Up</p>
+
+        <div className="account">
+          <p>Doesn't have an account?</p>
+          <p>Sign Up</p>
+        </div>
       </form>
     </div>
   );
