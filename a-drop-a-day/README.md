@@ -3,9 +3,20 @@
 MVP:
 
 <ul>
+    <li>navbar</li> 
     <li>log in/out page</li>
-    <!-- <li>friend list that you can chat</li> -->
-    <li>navbar</li>
+    <li>Quotes to fetch a random quote that is inspiraing</li>
+    <li>Inputs:</li>
+        <ul>
+            <li>For adding a subject or project name</li>
+            <li>Adding numbers of block that determines how many pomoodoro you want to make</li>
+        </ul>
+    <li>Outputs:</li>
+        <ul>
+            <li>TIMERS WILL DISPLAY</li>
+            <li>subjects/project names will be displayed</li>
+            <li>Blocks that user can click or button will be there says start focusing!</li>
+        </ul>
 </ul>
 
 Stretch:

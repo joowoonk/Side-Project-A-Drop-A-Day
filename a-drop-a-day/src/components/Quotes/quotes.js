@@ -1,7 +1,7 @@
 import React from "react";
 
 const quotes = () => {
-  return <div>QUOTES HERE</div>;
+  return <div></div>;
 };
 
 export default quotes;

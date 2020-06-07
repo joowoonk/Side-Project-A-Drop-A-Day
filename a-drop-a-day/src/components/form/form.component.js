@@ -7,7 +7,7 @@ const Form = () => {
       <form className="sign-in">
         <div className="userName">
           <label htmlFor="userName">
-            <h3>Username/Emaill</h3>
+            <h3>Username</h3>
             <input
               type="text"
               name="userName"
@@ -20,7 +20,7 @@ const Form = () => {
 
         <label htmlFor="password">
           <div className="password">
-            <h3>password</h3>
+            <h3>Password</h3>
           </div>
           <div className="password">
             <input id="password" type="password" name="password" />
