@@ -22,6 +22,8 @@ MVP:
         </ul>
 </ul>
 
+2020 06 06 Tomorrow Try to finish login and sign up for frontend and backend
+
 Stretch:
 
 <ul>

@@ -2,6 +2,20 @@ import React, { useState } from "react";
 import "./form.styles.scss";
 
 const Form = () => {
+  const [userName, setUserName] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+
+  const onInputUserName = (e) => {
+    setUserName(e.target.value);
+  };
+
+  const onInputPassword = (e) => {
+    setUserPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    //dipatch for posting username goes here
+  };
   return (
     <div className="sign-in-form">
       <form className="sign-in">
@@ -12,8 +26,8 @@ const Form = () => {
               type="text"
               name="userName"
               id="userName"
-              // value={}
-              // onChange={handleChange}
+              value={userName}
+              onChange={onInputUserName}
             />
           </label>
         </div>
@@ -23,15 +37,21 @@ const Form = () => {
             <h3>Password</h3>
           </div>
           <div className="password">
-            <input id="password" type="password" name="password" />
+            <input
+              id="password"
+              value={userPassword}
+              type="password"
+              onChange={onInputPassword}
+              name="password"
+            />
           </div>
         </label>
-
-        <div className="account">
-          <p>Doesn't have an account?</p>
-          <p>Sign Up</p>
-        </div>
+        <button onClick={handleSubmit}>Log In</button>
       </form>
+      <div className="account">
+        <p>Doesn't have an account?</p>
+        <button>Sign Up</button>
+      </div>
     </div>
   );
 };
