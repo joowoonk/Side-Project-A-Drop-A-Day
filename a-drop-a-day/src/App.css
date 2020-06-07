@@ -1,0 +1,13 @@
+.top-container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.side-menu {
+  width: 50%;
+}
+.form {
+  width: 50%;
+}

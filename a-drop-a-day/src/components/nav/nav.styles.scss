@@ -1,0 +1,38 @@
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  //   align-content: ;
+  width: 100%;
+  background-color: skyblue;
+  //   padding: 1% 0;
+
+  .menuNav {
+    // display: flex;
+    // justify-content: space-evenly;
+    // color: white;
+    font-size: 1.6rem;
+    width: 80%;
+    a {
+      text-decoration: none;
+      margin: 0 0 0 0;
+      color: white;
+    }
+
+    // .logo {
+    //   display: flex;
+    // }
+  }
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    width: 50%;
+    color: white;
+  }
+  .menuNav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    // margin: 0 auto;
+  }
+}
