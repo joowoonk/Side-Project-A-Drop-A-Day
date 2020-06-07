@@ -1,13 +1,15 @@
 import React from "react";
 import "./nav.styles.scss";
 import { Link } from "react-router-dom";
+
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 // import { useHistory } from "react-router";
 const Nav = () => {
   // const history = useHistory();
   // console.log(history);
   return (
     <nav className="topNav">
-      <h1 className="logo">Logo</h1>
+      <Logo className="logo" />
       <div className="menuNav">
         <Link to="Home">Home</Link>
         <Link to="About">About</Link>

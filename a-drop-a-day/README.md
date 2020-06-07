@@ -16,6 +16,9 @@ MVP:
             <li>TIMERS WILL DISPLAY</li>
             <li>subjects/project names will be displayed</li>
             <li>Blocks that user can click or button will be there says start focusing!</li>
+                <ul>
+                    <li>Once they start and finishes count by the timer, then one block from left will be colored</li>
+                </ul>
         </ul>
 </ul>
 
