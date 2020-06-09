@@ -14,7 +14,15 @@ const Nav = () => {
         <Link to="Home">Home</Link>
         <Link to="About">About</Link>
         <Link to="Contact">Contact</Link>
-        <Link to="Sign-in">Sign In/Out</Link>
+        {!localStorage.token ? (
+          <>
+            <Link to="Signin">Sign In</Link>
+          </>
+        ) : (
+          <>
+            <Link to="Home">Sign Out</Link>
+          </>
+        )}
       </div>
       {/* <button type="button" onClick={() => history.goBack()} /> */}
     </nav>

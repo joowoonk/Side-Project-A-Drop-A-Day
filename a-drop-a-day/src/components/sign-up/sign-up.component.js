@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./form.styles.scss";
+import "./sign-up.styles.scss";
 import { useDispatch } from "react-redux";
-import { loginUserAction } from "../../redux/actions/userActions";
+import { registerUserAction } from "../../redux/actions/userActions";
 import { useHistory } from "react-router-dom";
 
-const Form = () => {
+const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { push } = useHistory();
@@ -21,15 +21,19 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUserAction(userName, userPassword));
-    if (localStorage.token) {
-      push("/login");
-    }
+    dispatch(registerUserAction(userName, userPassword))
+      .then((res) => {
+        console.log("sign up succeed");
+        push("login");
+      })
+      .catch((err) => {
+        console.log("error");
+      });
     //dipatch for posting username goes here
   };
   return (
-    <div className="sign-in-form">
-      <form className="sign-in">
+    <div className="sign-up-form">
+      <form className="sign-up">
         <div className="userName">
           <label htmlFor="userName">
             <h3>Username</h3>
@@ -63,4 +67,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default SignUp;

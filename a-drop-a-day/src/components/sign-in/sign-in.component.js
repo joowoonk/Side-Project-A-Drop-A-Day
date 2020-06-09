@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./form.styles.scss";
+import "./sign-in.styles.scss";
 import { useDispatch } from "react-redux";
 import { loginUserAction } from "../../redux/actions/userActions";
 import { useHistory } from "react-router-dom";
 
-const Form = () => {
+const SignIn = () => {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { push } = useHistory();
@@ -67,4 +67,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default SignIn;
