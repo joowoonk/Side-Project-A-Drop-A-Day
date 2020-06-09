@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import "./form.styles.scss";
+import { useDispatch } from "react-redux";
+import { loginUserAction } from "../../redux/actions/userActions";
+import { useHistory } from "react-router-dom";
 
 const Form = () => {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const { push } = useHistory();
+
+  const dispatch = useDispatch();
 
   const onInputUserName = (e) => {
     setUserName(e.target.value);
@@ -14,6 +20,11 @@ const Form = () => {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(loginUserAction(userName, userPassword));
+    if (localStorage.token) {
+      push("/login");
+    }
     //dipatch for posting username goes here
   };
   return (
@@ -48,10 +59,6 @@ const Form = () => {
         </label>
         <button onClick={handleSubmit}>Log In</button>
       </form>
-      <div className="account">
-        <p>Doesn't have an account?</p>
-        <button>Sign Up</button>
-      </div>
     </div>
   );
 };

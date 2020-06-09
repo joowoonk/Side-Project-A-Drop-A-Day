@@ -5,6 +5,6 @@ export const axiosWithAuth = () => {
     headers: {
       authorization: token,
     },
-    baseURL: "https://redditpost.herokuapp.com/api",
+    baseURL: "http://localhost:3300/api",
   });
 };

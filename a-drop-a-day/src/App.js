@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import "./App.css";
 import Nav from "./components/nav/nav.component";
-import Form from "./components/form/form.component";
+import SignIn from "./components/sign-in/sign-in.component";
 import Quotes from "./components/Quotes/quotes";
 
 import SideNav from "./components/side-nav/side-nav.component";
@@ -14,7 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Quotes />
-          <Form />
+          <SignIn />
         </Route>
       </Switch>
     </div>
