@@ -20,11 +20,14 @@ const SignIn = () => {
     setUserPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(loginUserAction(userName, userPassword));
-    push("/tomatoes");
-    //dipatch for posting username goes here
+    await dispatch(loginUserAction(userName, userPassword));
+    if (await localStorage.token) {
+      push("/tomatoes");
+      //dipatch for posting username goes here
+    }
+    console.log(localStorage);
   };
   return (
     <div className="sign-in-form">

@@ -6,6 +6,7 @@ import SignIn from "./components/sign-in/sign-in.component";
 import Quotes from "./components/Quotes/quotes";
 import SignUp from "./components/sign-up/sign-up.component";
 import SideNav from "./components/side-nav/side-nav.component";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <Route exact path="/SignUp">
           <SignUp />
         </Route>
+        <PrivateRoute exact path="/tomatoes">
+          <Quotes />
+        </PrivateRoute>
       </Switch>
     </div>
   );

@@ -5,6 +5,7 @@ MVP:
 <ul>
     <li>navbar</li> 
     <li>log in/out page</li>
+    <li>sign up page </li>
     <li>Quotes to fetch a random quote that is inspiraing</li>
     <li>Inputs:</li>
         <ul>
@@ -23,6 +24,7 @@ MVP:
 </ul>
 
 2020 06 06 Tomorrow Try to finish login and sign up for frontend and backend
+2020 06 09 Tomorrow implement sign up page and try to get tomatoes get ready to use.
 
 Stretch:
 
