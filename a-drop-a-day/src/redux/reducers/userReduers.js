@@ -13,6 +13,7 @@ const initialState = {
   error: "",
   chosen: false,
   loading: false,
+  login: false,
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -32,30 +33,34 @@ export const userReducer = (state = initialState, action) => {
         err: action.payload,
       };
     case LOGIN_USER_SUCCESS:
-      localStorage.setItem("token", res.data.token);
       return {
         ...state,
-        user: action.payload,
+        user: action.payload.message,
+        login: true,
       };
     case LOGIN_USER_FAILURE:
       return {
         ...state,
         error: action.payload,
+        login: false,
       };
     case REGISTER_USER_SUCCESS:
       return {
         ...state,
         user: action.payload,
+        login: false,
       };
     case REGISTER_USER_FAILURE:
       return {
         error: action.payload,
+        login: false,
       };
     case LOGOUT:
       localStorage.clear();
       window.location.href = "/";
       return {
         loading: false,
+        login: false,
       };
     default:
       return state;

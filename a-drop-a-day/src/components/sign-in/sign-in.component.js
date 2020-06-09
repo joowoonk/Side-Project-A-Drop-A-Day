@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./sign-in.styles.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUserAction } from "../../redux/actions/userActions";
 import { useHistory } from "react-router-dom";
 
@@ -10,6 +10,7 @@ const SignIn = () => {
   const { push } = useHistory();
 
   const dispatch = useDispatch();
+  const loginState = useSelector((state) => state.userReducer.user);
 
   const onInputUserName = (e) => {
     setUserName(e.target.value);
@@ -22,9 +23,7 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUserAction(userName, userPassword));
-    if (localStorage.token) {
-      push("/tomatoes");
-    }
+    push("/tomatoes");
     //dipatch for posting username goes here
   };
   return (

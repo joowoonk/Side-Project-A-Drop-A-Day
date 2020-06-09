@@ -17,12 +17,11 @@ export const loginUserAction = (username, password) => {
     axiosWithAuth()
       .post(`/auth/login`, { username, password })
       .then((res) => {
-        console.log(username, password);
+        localStorage.setItem("token", res.data.token);
         dispatch({
           type: LOGIN_USER_SUCCESS,
           payload: res.data,
         });
-        console.log(res.data);
       })
       .catch((err) => {
         dispatch({
