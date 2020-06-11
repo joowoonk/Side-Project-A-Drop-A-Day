@@ -1,15 +1,22 @@
 import React from "react";
 import "./nav.styles.scss";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { logOut } from "../../redux/actions/userActions";
 
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 // import { useHistory } from "react-router";
 const Nav = () => {
   const loginState = useSelector((state) => state.userReducer.login);
+  const dispatch = useDispatch();
   console.log({ loginState });
   // const history = useHistory();
   // console.log(history);
+
+  const handleLogOut = () => {
+    dispatch(logOut());
+  };
 
   return (
     <nav className="topNav">
@@ -24,7 +31,14 @@ const Nav = () => {
           </>
         ) : (
           <>
-            <Link to="SignIn">Sign Out</Link>
+            <Link
+              to="SignIn"
+              onClick={() => {
+                handleLogOut();
+              }}
+            >
+              Sign Out
+            </Link>
           </>
         )}
       </div>
