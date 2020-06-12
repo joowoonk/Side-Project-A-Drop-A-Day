@@ -23,10 +23,7 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await dispatch(loginUserAction(userName, userPassword));
-    if (await localStorage.token) {
-      push("/tomatoes");
-      //dipatch for posting username goes here
-    }
+    push("/tomatoes");
     console.log(localStorage);
   };
   return (

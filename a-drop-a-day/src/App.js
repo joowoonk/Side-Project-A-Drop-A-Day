@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/SignUp">
           <SignUp />
         </Route>
-        <PrivateRoute path="/secret" component={Quotes} />
+        <PrivateRoute path="/tomatoes" component={Quotes} />
       </Switch>
     </div>
   );

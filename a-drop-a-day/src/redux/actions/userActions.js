@@ -18,6 +18,8 @@ export const loginUserAction = (username, password) => {
       .post(`/auth/login`, { username, password })
       .then((res) => {
         localStorage.setItem("token", res.data.token);
+        // pass down userId to localstorage when loginAction works.
+        localStorage.setItem("userId", res.data.id);
         dispatch({
           type: LOGIN_USER_SUCCESS,
           payload: res.data,

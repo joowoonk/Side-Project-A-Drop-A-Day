@@ -4,6 +4,12 @@ const initialState = {
   error: "",
 };
 
+import {
+  FETCH_TOMATOES_START,
+  FETCH_TOMATOES_SUCCESS,
+  FETCH_TOMATOES_FAILURE,
+} from "../actions/tomatoesActions";
+
 export const quoteReducers = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_TOMATOES_START":
