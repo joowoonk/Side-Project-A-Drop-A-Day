@@ -17,6 +17,7 @@ export const loginUserAction = (username, password) => {
     axiosWithAuth()
       .post(`/auth/login`, { username, password })
       .then((res) => {
+        console.log(res);
         localStorage.setItem("token", res.data.token);
         // pass down userId to localstorage when loginAction works.
         localStorage.setItem("userId", res.data.id);

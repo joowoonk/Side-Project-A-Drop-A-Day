@@ -60,7 +60,7 @@ const SignIn = () => {
       </form>
       <div className="account">
         <p>Doesn't have an account?</p>
-        <button>Sign Up</button>
+        <button onClick={() => push("/signup")}>Sign Up</button>
       </div>
     </div>
   );

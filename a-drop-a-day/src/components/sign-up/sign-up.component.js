@@ -21,14 +21,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(registerUserAction(userName, userPassword))
-      .then((res) => {
-        console.log("sign up succeed");
-        push("login");
-      })
-      .catch((err) => {
-        console.log("error");
-      });
+    dispatch(registerUserAction(userName, userPassword));
     //dipatch for posting username goes here
   };
   return (

@@ -31,8 +31,8 @@ const Nav = () => {
           </>
         ) : (
           <>
+            <Link to="tomatoes">Tomatoes</Link>
             <Link
-              to="SignIn"
               onClick={() => {
                 handleLogOut();
               }}
