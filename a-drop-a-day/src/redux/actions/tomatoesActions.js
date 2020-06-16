@@ -6,6 +6,7 @@ export const FETCH_TOMATOES_FAILURE = "FETCH_TOMATOES_FAILURE";
 export const ADD_SUBJECT_START = "ADD_SUBJECT_START";
 export const ADD_SUBJECT_SUCCESS = "ADD_SUBJECT_SUCCESS";
 export const ADD_SUBJECT_FAILURE = "ADD_SUBJECT_FAILURE";
+export const FINISHED_ONE_TOMATOES = "FINISHED_ONE_TOMATOES";
 
 const user_id = localStorage.getItem("user_Id");
 const finished = 0;
@@ -56,5 +57,12 @@ export const addSubject = (subject, tomatoes) => {
           payload: err,
         })
       );
+  };
+};
+
+//probably going to need make an endpoint of put or patch to increment the finished
+export const finishedOneTomatoes = (id) => {
+  return (dispatch) => {
+    dispatch({ type: FINISHED_ONE_TOMATOES, payload: id });
   };
 };

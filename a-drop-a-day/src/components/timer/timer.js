@@ -126,7 +126,7 @@ export default function Timer() {
           <i className="fa fa-fast-forward fa-2x" />
         </button>
       </div>
-      <Subject setIsRunning={(isRunning, setIsRunning)} />
+      <Subject setIsRunning={setIsRunning} isRunning={isRunning} />
     </div>
   );
 }

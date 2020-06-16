@@ -5,6 +5,7 @@ import {
   ADD_SUBJECT_START,
   ADD_SUBJECT_SUCCESS,
   ADD_SUBJECT_FAILURE,
+  FINISHED_ONE_TOMATOES,
 } from "../actions/tomatoesActions";
 
 const initialState = {
@@ -47,6 +48,27 @@ export const tomatoesReducers = (state = initialState, action) => {
         ...state,
         tomatoes: [...action.payload],
         isAdding: true,
+      };
+    case FINISHED_ONE_TOMATOES:
+      // console.log(action.payload);
+      // console.log("action.payload", action.payload);
+      // console.log({ state });
+      let finishing = state.tomatoes.map((subject) => {
+        console.log({ subject });
+        if (action.payload == subject.id) {
+          console.log(subject.finished);
+          subject.finished += 1;
+          // return subject;
+        } else {
+          // return;
+        }
+      });
+      return {
+        ...state,
+
+        // action.payload == subject.id
+        //   ? [(state.tomatoes.finished += 1)]
+        //   : [],
       };
     case ADD_SUBJECT_FAILURE:
       return {
