@@ -2,35 +2,37 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { addSubject } from "../../redux/actions/tomatoesActions";
+import { fetchTomatoes } from "../../redux/actions/tomatoesActions";
 
-const subjectForm = () => {
-  const [title, setTitle] = (useState = useState(""));
+const SubjectForm = () => {
+  const [subject, setSubject] = useState("");
   const [tomatoesNumber, setTomatoesNumber] = useState(0);
   const dispatch = useDispatch();
 
-  const onInputTitle = (e) => {
-    setTitle(e.target.value);
+  const onInputSubject = (e) => {
+    setSubject(e.target.value);
   };
   const onInputTomatoes = (e) => {
     setTomatoesNumber(e.target.value);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(addSubject(title, tomatoesNumber));
+    dispatch(addSubject(subject, tomatoesNumber));
+    // await dispatch(fetchTomatoes());
   };
 
   return (
     <div>
       <form className="tomatoesForm">
-        <div className="title">
-          <label htmlFor="title">
-            <h3>Title of Your Project:</h3>
+        <div className="subject">
+          <label htmlFor="subject">
+            <h3>Subject of Your Project:</h3>
             <input
               type="text"
-              name="title"
-              id="title"
-              value={title}
-              onChange={onInputTitle}
+              name="subject"
+              id="subject"
+              value={subject}
+              onChange={onInputSubject}
             />
           </label>
         </div>
@@ -53,4 +55,4 @@ const subjectForm = () => {
   );
 };
 
-export default subjectForm;
+export default SubjectForm;

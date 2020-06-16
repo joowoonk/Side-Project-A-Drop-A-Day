@@ -1,0 +1,19 @@
+$test: 3;
+.project {
+  //   display: flex;
+  //   justify-content: center;
+  //   background-color: red;
+
+  margin: 4%;
+  .subjectbox {
+    background-color: skyblue;
+    padding: 0.5%;
+    @if $test < 5 {
+      background-color: blue;
+      border: 2px groove black;
+    }
+  }
+}
+
+p {
+}

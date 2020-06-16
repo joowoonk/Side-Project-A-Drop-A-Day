@@ -7,7 +7,8 @@ export const ADD_SUBJECT_START = "ADD_SUBJECT_START";
 export const ADD_SUBJECT_SUCCESS = "ADD_SUBJECT_SUCCESS";
 export const ADD_SUBJECT_FAILURE = "ADD_SUBJECT_FAILURE";
 
-const userId = localStorage.getItem("userId");
+const user_id = localStorage.getItem("user_Id");
+const finished = 0;
 
 //function to grab all the users data
 export const fetchTomatoes = () => {
@@ -16,9 +17,9 @@ export const fetchTomatoes = () => {
 
     //michael - fetch the users todo list might need the user id or just use token
     axiosWithAuth()
-      .get(`/api/tomatoes/${userId}/subject`)
+      .get(`/tomatoes`)
       .then((res) => {
-        console.log("Grabbed the todos", res);
+        // console.log("Grabbed the todos", res);
         //payload might change after the backend calls
         dispatch({ type: FETCH_TOMATOES_SUCCESS, payload: res.data });
       })
@@ -31,15 +32,21 @@ export const fetchTomatoes = () => {
   };
 };
 
-export const addSubject = (todo) => {
+export const addSubject = (subject, tomatoes) => {
+  console.log({ subject }, { tomatoes }, { user_id });
   return (dispatch) => {
     dispatch({ type: ADD_SUBJECT_START });
 
     axiosWithAuth()
-      .post(`/api/tomatoes/${userId}/subject`, todo)
+      .post(`/tomatoes/${user_id}/subject`, {
+        subject,
+        tomatoes,
+        user_id,
+        finished,
+      })
       .then((res) => {
         dispatch({ type: ADD_SUBJECT_SUCCESS, payload: res.data });
-
+        console.log("yes you got here");
         //call the fetchtodos to rerender the list instead of manually refreshing
         // fetchTodos();
       })

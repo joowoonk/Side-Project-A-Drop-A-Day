@@ -11,8 +11,6 @@ const Nav = () => {
   const loginState = useSelector((state) => state.userReducer.login);
   const dispatch = useDispatch();
   console.log({ loginState });
-  // const history = useHistory();
-  // console.log(history);
 
   const handleLogOut = () => {
     dispatch(logOut());
@@ -25,13 +23,14 @@ const Nav = () => {
         <Link to="Home">Home</Link>
         <Link to="About">About</Link>
         <Link to="Contact">Contact</Link>
+        <Link to="form">Add</Link>
+        <Link to="tomatoes">Tomatoes</Link>
         {!loginState ? (
           <>
             <Link to="Signin">Sign In</Link>
           </>
         ) : (
           <>
-            <Link to="tomatoes">Tomatoes</Link>
             <Link
               onClick={() => {
                 handleLogOut();

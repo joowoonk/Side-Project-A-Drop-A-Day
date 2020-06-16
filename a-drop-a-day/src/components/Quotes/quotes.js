@@ -12,7 +12,7 @@ const Quotes = () => {
   const dispatch = useDispatch();
   const quoteState = useSelector((state) => state.quoteReducers.quotes);
 
-  console.log(quoteState);
+  // console.log(quoteState);
   useEffect(() => {
     dispatch(fetchQuote());
   }, []);

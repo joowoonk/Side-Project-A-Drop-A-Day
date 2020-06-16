@@ -1,5 +1,7 @@
 import React from "react";
 import Timer from "../../components/timer/timer";
+import SubjectForm from "../../components/subject-form/subject-form.component";
+import Subject from "../../components/subject/subject.component";
 const JourneyPage = () => {
   //make sure to create a form where a user can add their subject with a tomato
 

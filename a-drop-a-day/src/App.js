@@ -8,6 +8,7 @@ import SignUp from "./components/sign-up/sign-up.component";
 import SideNav from "./components/side-nav/side-nav.component";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import JourneyPage from "./pages/journey-page/Journey-Page.component";
+import SubjectForm from "./components/subject-form/subject-form.component";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <SignUp />
         </Route>
         <PrivateRoute path="/tomatoes" component={JourneyPage} />
+        <PrivateRoute path="/form" component={SubjectForm} />
       </Switch>
     </div>
   );

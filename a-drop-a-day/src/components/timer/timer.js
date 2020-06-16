@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import Subject from "../subject/subject.component";
 
 import "./timer.styles.scss";
 
@@ -125,6 +126,7 @@ export default function Timer() {
           <i className="fa fa-fast-forward fa-2x" />
         </button>
       </div>
+      <Subject setIsRunning={(isRunning, setIsRunning)} />
     </div>
   );
 }
