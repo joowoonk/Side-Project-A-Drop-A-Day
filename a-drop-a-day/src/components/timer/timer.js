@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import Subject from "../subject/subject.component";
+import { useSelector } from "react-redux";
 
 import "./timer.styles.scss";
 
 export default function Timer() {
   const [Minutes, setMinutes] = useState(25);
-  const [isRunning, setIsRunning] = useState(false);
+  const [isStopping, setIsStopping] = useState(true);
+  const [breakTime, setBreakTime] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
   // const [maximum, setMaximum] = useState(false)
-
   useEffect(() => {
-    if (isRunning) {
+    if (!isStopping) {
       const id = window.setInterval(() => {
         setMinutes((min) => min - 1);
       }, 1000);
@@ -19,8 +20,8 @@ export default function Timer() {
       return () => window.clearInterval(id);
     } else {
     }
-  }, [isRunning]);
-  console.log({ Minutes });
+  }, [isStopping]);
+  // console.log({ Minutes });
 
   // let someColor = "Blue";
   var formattedNumber = ("0" + Minutes).slice(-2);
@@ -29,6 +30,12 @@ export default function Timer() {
     // backgroundColor: backgroundColor,
     // fontSize: someSize,
     color: "#009999",
+    // padding: paddings,
+  };
+  const coffee = {
+    // backgroundColor: backgroundColor,
+    // fontSize: someSize,
+    color: "brown",
     // padding: paddings,
   };
   //  ...
@@ -70,63 +77,94 @@ export default function Timer() {
   if (Minutes < 1) {
     styles.color = "#ff0000";
   }
-  if (Minutes == 0) {
-    setMinutes(25);
-    setIsRunning(false);
-    //add dipatch here to add a block with color
+  if (Minutes <= -1) {
+    setMinutes(99);
+    window.open("http://localhost:3000/tomatoes");
+    window.close();
   }
+
   let warning = "Are you about that?";
   return (
     <div className="container">
-      <i style={styles} className="fas fa-apple-alt fa-10x" />
+      <button
+        onClick={() => {
+          setBreakTime(true);
+          setMinutes(5);
+          setIsStopping(false);
+        }}
+      >
+        Short Rest
+      </button>
+      <button
+        onClick={() => {
+          setBreakTime(true);
+          setMinutes(15);
+          setIsStopping(false);
+        }}
+      >
+        Long Rest Rest
+      </button>
+      <button
+        onClick={() => {
+          setBreakTime(false);
+          setIsStopping(true);
+          setMinutes(25);
+        }}
+      >
+        Focus Time
+      </button>
+      {breakTime ? (
+        <>
+          <i style={coffee} className="fas fa-coffee fa-10x" />
+          {!isStopping ? <>Coffee Time Is On...</> : <>Paused</>}
+        </>
+      ) : (
+        <>
+          <i style={styles} className="fas fa-apple-alt fa-10x" />
+          {!isStopping ? <>It's ripening</> : <>Paused</>}
+        </>
+      )}
 
       <br />
-      {isRunning ? <>It's ripening</> : <>Paused</>}
+
       <div className="timer-circle">
         <div className="time">{formattedNumber} Minutes</div>
       </div>
-      <div className="button">
-        <button
-          disabled={isRunning}
-          className="play-pause"
-          onClick={() => {
-            setIsRunning(true);
-          }}
-        >
-          <i className="fa fa-play fa-2x" />
-        </button>
-        <button
-          className="play-pause"
-          onClick={() => {
-            setIsRunning(false);
-          }}
-        >
-          <i className="fa fa-pause fa-2x" />
-        </button>
-        <button onClick={() => setMinutes(Minutes + 1)}>
-          <i className="fa fa-plus fa-2x" />
-        </button>
-        <button
-          onClick={() => {
-            setIsRunning(false);
-            setMinutes(25);
-          }}
-          className="reset"
-        >
-          <i className="fa fa-fast-backward fa-2x" />
-        </button>
-        <button
-          onClick={() => {
-            alert(
-              "No Pain No Gain, my friend, I believe you can do it!, click okay to resume"
-            );
-          }}
-          className="reset"
-        >
-          <i className="fa fa-fast-forward fa-2x" />
-        </button>
-      </div>
-      <Subject setIsRunning={setIsRunning} isRunning={isRunning} />
+      {!breakTime ? (
+        <>
+          {!isStopping ? (
+            <>
+              {" "}
+              <div className="button">
+                <button
+                  className="play-pause"
+                  onClick={() => {
+                    setIsStopping(!isStopping);
+                  }}
+                >
+                  <i className="fa fa-pause fa-2x" />
+                </button>
+                <button onClick={() => setMinutes(Minutes + 1)}>
+                  <i className="fa fa-plus fa-2x" />
+                </button>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+
+          <Subject
+            minutes={Minutes}
+            setBreakTime={setBreakTime}
+            setMinutes={setMinutes}
+            setIsStopping={setIsStopping}
+            isStopping={isStopping}
+            // user_id={userState}
+          />
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

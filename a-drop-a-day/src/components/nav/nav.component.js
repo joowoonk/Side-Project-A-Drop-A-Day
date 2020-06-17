@@ -23,14 +23,15 @@ const Nav = () => {
         <Link to="Home">Home</Link>
         <Link to="About">About</Link>
         <Link to="Contact">Contact</Link>
-        <Link to="form">Add</Link>
-        <Link to="tomatoes">Tomatoes</Link>
-        {!loginState ? (
+
+        {!localStorage.token ? (
           <>
             <Link to="Signin">Sign In</Link>
           </>
         ) : (
           <>
+            <Link to="form">Add</Link>
+            <Link to="tomatoes">Tomatoes</Link>
             <Link
               onClick={() => {
                 handleLogOut();

@@ -20,7 +20,7 @@ export const loginUserAction = (username, password) => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
         // pass down userId to localstorage when loginAction works.
-        localStorage.setItem("user_Id", res.data.id);
+        localStorage.setItem("user_id", res.data.id);
         dispatch({
           type: LOGIN_USER_SUCCESS,
           payload: res.data,
@@ -34,6 +34,29 @@ export const loginUserAction = (username, password) => {
       });
   };
 };
+
+export const userInformation = () => {
+  return (dispatch) => {
+    dispatch({ type: FETCH_USER_START });
+
+    //michael - fetch the users todo list might need the user id or just use token
+    axiosWithAuth()
+      .get(`/auth/user`)
+      .then((res) => {
+        console.log("Grabbed the user", res);
+        //payload might change after the backend calls
+        dispatch({ type: FETCH_USER_SUCCESS, payload: res.data });
+      })
+      .catch((err) => {
+        console.log("failed");
+        dispatch({
+          type: FETCH_USER_FAILURE,
+          payload: err,
+        });
+      });
+  };
+};
+
 export const registerUserAction = (username, password) => {
   console.log(username, password);
   return (dispatch) => {

@@ -6,8 +6,9 @@ import {
 } from "../../redux/actions/tomatoesActions";
 const SubjectDetail = (props) => {
   // const [finished, setFinshed] = useState(0);
-  console.log({ props });
   const dispatch = useDispatch();
+  console.log({ props });
+
   return (
     <div>
       <h1>Project Name: {props.sub.project}</h1>
@@ -17,10 +18,7 @@ const SubjectDetail = (props) => {
       <button
         // disabled={props.isRunning}
         onClick={() => {
-          // dispatch(finishedOneTomatoes(props.sub.id));
-          // dispatch(fetchTomatoes());
           dispatch(finishingOneTomatoes(props.sub.id));
-          // dispatch(fetchTomatoes());
         }}
       >
         <i className="fa fa-play fa-2x" />

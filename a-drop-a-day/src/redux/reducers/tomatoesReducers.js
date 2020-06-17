@@ -8,6 +8,7 @@ import {
   FINISHED_TOMATOES_START,
   FINISHED_TOMATOES_SUCESS,
   FINISHED_TOMATOES_FAILURE,
+  RESET_TOMATOES_SUCESS,
 } from "../actions/tomatoesActions";
 
 const initialState = {
@@ -67,6 +68,10 @@ export const tomatoesReducers = (state = initialState, action) => {
         ...state,
         isAdding: false,
         error: action.type,
+      };
+    case RESET_TOMATOES_SUCESS:
+      return {
+        ...state,
       };
     default:
       return state;

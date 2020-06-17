@@ -1,18 +1,19 @@
 import {
   FETCH_USER_START,
   FETCH_USER_SUCCESS,
-  LOGOUT,
   FETCH_USER_FAILURE,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAILURE,
   REGISTER_USER_SUCCESS,
   REGISTER_USER_FAILURE,
+  LOGOUT,
 } from "../actions/userActions";
 const initialState = {
   user: [],
   error: "",
   chosen: false,
   loading: false,
+  isFetching: false,
   login: false,
 };
 
@@ -21,11 +22,13 @@ export const userReducer = (state = initialState, action) => {
     case FETCH_USER_START:
       return {
         ...state,
+        isFetching: false,
       };
     case FETCH_USER_SUCCESS:
       return {
         ...state,
-        error: "",
+        user: action.payload,
+        isFetching: true,
       };
     case FETCH_USER_FAILURE:
       return {
@@ -35,7 +38,7 @@ export const userReducer = (state = initialState, action) => {
     case LOGIN_USER_SUCCESS:
       return {
         ...state,
-        user: action.payload.message,
+        user: action.payload,
         login: true,
       };
     case LOGIN_USER_FAILURE:
@@ -47,7 +50,7 @@ export const userReducer = (state = initialState, action) => {
     case REGISTER_USER_SUCCESS:
       return {
         ...state,
-        user: action.payload,
+        // user: action.payload,
         login: false,
       };
     case REGISTER_USER_FAILURE:

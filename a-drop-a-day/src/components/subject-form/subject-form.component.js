@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { userInformation } from "../../redux/actions/userActions";
 import { addProject } from "../../redux/actions/tomatoesActions";
 import { fetchTomatoes } from "../../redux/actions/tomatoesActions";
 
@@ -8,7 +8,7 @@ const SubjectForm = () => {
   const [subject, setSubject] = useState("");
   const [tomatoesNumber, setTomatoesNumber] = useState(0);
   const dispatch = useDispatch();
-
+  const useinfo = useSelector((state) => state.userReducer.user[0]);
   const onInputSubject = (e) => {
     setSubject(e.target.value);
   };
@@ -17,9 +17,15 @@ const SubjectForm = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(addProject(subject, tomatoesNumber));
+    dispatch(addProject(subject, tomatoesNumber, useinfo.id));
     // await dispatch(fetchTomatoes());
   };
+
+  useEffect(() => {
+    dispatch(userInformation());
+  }, []);
+
+  // console.log({ useinfo });
 
   return (
     <div>
