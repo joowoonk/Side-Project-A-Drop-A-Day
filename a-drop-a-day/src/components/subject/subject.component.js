@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTomatoes, addSubject } from "../../redux/actions/tomatoesActions";
+import { fetchTomatoes, addProject } from "../../redux/actions/tomatoesActions";
 import "./subject.styles.scss";
 import { finishedOneTomatoes } from "../../redux/actions/tomatoesActions";
 import SubjectDetail from "../SubjectDetail/SubjectDetail";
 
 const Subject = (props) => {
   const dispatch = useDispatch();
-  const tomatoes = useSelector((state) => state.tomatoesReducers.tomatoes);
+  const projects = useSelector((state) => state.tomatoesReducers.projects);
 
   const [color, setColor] = useState("white");
   const [textColor, setTextColor] = useState("black");
@@ -41,7 +41,7 @@ const Subject = (props) => {
     <div>
       {isFetching ? (
         <>
-          {tomatoes.map((sub) => {
+          {projects.map((sub) => {
             return (
               <div className="project" key={sub.id}>
                 <SubjectDetail sub={sub} />

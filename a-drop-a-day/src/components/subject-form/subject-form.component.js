@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addSubject } from "../../redux/actions/tomatoesActions";
+import { addProject } from "../../redux/actions/tomatoesActions";
 import { fetchTomatoes } from "../../redux/actions/tomatoesActions";
 
 const SubjectForm = () => {
@@ -17,7 +17,7 @@ const SubjectForm = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(addSubject(subject, tomatoesNumber));
+    dispatch(addProject(subject, tomatoesNumber));
     // await dispatch(fetchTomatoes());
   };
 

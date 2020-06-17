@@ -2,15 +2,16 @@ import {
   FETCH_TOMATOES_START,
   FETCH_TOMATOES_SUCCESS,
   FETCH_TOMATOES_FAILURE,
-  ADD_SUBJECT_START,
-  ADD_SUBJECT_SUCCESS,
-  ADD_SUBJECT_FAILURE,
-  FINISHED_ONE_TOMATOES,
+  ADD_PROJECT_START,
+  ADD_PROJECT_SUCCESS,
+  ADD_PROJECT_FAILURE,
+  FINISHED_TOMATOES_START,
+  FINISHED_TOMATOES_SUCESS,
+  FINISHED_TOMATOES_FAILURE,
 } from "../actions/tomatoesActions";
 
 const initialState = {
-  subjects: "",
-  tomatoes: "",
+  projects: "",
   isFetching: false,
   isAdding: false,
   error: "",
@@ -29,7 +30,7 @@ export const tomatoesReducers = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        tomatoes: [...action.payload],
+        projects: [...action.payload],
       };
     case FETCH_TOMATOES_FAILURE:
       return {
@@ -37,40 +38,31 @@ export const tomatoesReducers = (state = initialState, action) => {
         isFetching: false,
         error: action.type,
       };
-    case ADD_SUBJECT_START:
+    case ADD_PROJECT_START:
       return {
         ...state,
         isAdding: false,
       };
-    case ADD_SUBJECT_SUCCESS:
+    case ADD_PROJECT_SUCCESS:
       console.log(action.payload);
       return {
         ...state,
-        tomatoes: [...action.payload],
+        projects: [...action.payload],
         isAdding: true,
       };
-    case FINISHED_ONE_TOMATOES:
-      // console.log(action.payload);
-      // console.log("action.payload", action.payload);
-      // console.log({ state });
-      let finishing = state.tomatoes.map((subject) => {
-        console.log({ subject });
-        if (action.payload == subject.id) {
-          console.log(subject.finished);
-          subject.finished += 1;
-          // return subject;
-        } else {
-          // return;
-        }
-      });
+    case FINISHED_TOMATOES_START:
       return {
         ...state,
-
-        // action.payload == subject.id
-        //   ? [(state.tomatoes.finished += 1)]
-        //   : [],
       };
-    case ADD_SUBJECT_FAILURE:
+    case FINISHED_TOMATOES_SUCESS:
+      return {
+        ...state,
+      };
+    case FINISHED_TOMATOES_FAILURE:
+      return {
+        ...state,
+      };
+    case ADD_PROJECT_FAILURE:
       return {
         ...state,
         isAdding: false,
