@@ -85,55 +85,58 @@ export default function Timer() {
 
   let warning = "Are you about that?";
   return (
-    <div className="container">
-      <button
-        onClick={() => {
-          setBreakTime(true);
-          setMinutes(5);
-          setIsStopping(false);
-        }}
-      >
-        Short Rest
-      </button>
-      <button
-        onClick={() => {
-          setBreakTime(true);
-          setMinutes(15);
-          setIsStopping(false);
-        }}
-      >
-        Long Rest Rest
-      </button>
-      <button
-        onClick={() => {
-          setBreakTime(false);
-          setIsStopping(true);
-          setMinutes(25);
-        }}
-      >
-        Focus Time
-      </button>
+    <div>
+      <div className="container">
+        <button
+          onClick={() => {
+            setBreakTime(true);
+            setMinutes(5);
+            setIsStopping(false);
+          }}
+        >
+          Short Rest
+        </button>
+        <button
+          onClick={() => {
+            setBreakTime(true);
+            setMinutes(15);
+            setIsStopping(false);
+          }}
+        >
+          Long Rest Rest
+        </button>
+        <button
+          onClick={() => {
+            setBreakTime(false);
+            setIsStopping(true);
+            setMinutes(25);
+          }}
+        >
+          Focus Time
+        </button>
+      </div>
+
       {breakTime ? (
-        <>
+        <div className="container">
           <i style={coffee} className="fas fa-coffee fa-10x" />
           {!isStopping ? <>Coffee Time Is On...</> : <>Paused</>}
-        </>
+        </div>
       ) : (
-        <>
+        <div className="container">
           <i style={styles} className="fas fa-apple-alt fa-10x" />
           {!isStopping ? <>It's ripening</> : <>Paused</>}
-        </>
+        </div>
       )}
 
       <br />
 
-      <div className="timer-circle">
+      <div className="container">
         <div className="time">{formattedNumber} Minutes</div>
       </div>
       {!breakTime ? (
         <>
           {!isStopping ? (
-            <>
+            <div className="container">
               {" "}
               <div className="button">
                 <button
@@ -148,7 +151,7 @@ export default function Timer() {
                   <i className="fa fa-plus fa-2x" />
                 </button>
               </div>
-            </>
+            </div>
           ) : (
             <></>
           )}

@@ -38,36 +38,41 @@ const Subject = (props) => {
   }
   console.log({ userId });
   return (
-    <div>
+    <div className="projects">
       {isFetching ? (
         <>
           {projects.map((sub) => {
             return (
               <div className="project" key={sub.id}>
                 {/* <SubjectDetail sub={sub} /> */}
-                <h1>Project Name: {sub.project}</h1>
+                <p>Project Name: </p>
+                <h1>{sub.project}</h1>
+                <p>You finished</p>
                 <h2>
-                  Finished {sub.finished}/{sub.tomatoes}
+                  {sub.finished}/{sub.tomatoes}
                 </h2>
                 {props.isStopping ? (
                   <>
-                    {" "}
-                    <button
-                      onClick={() => {
-                        setUserId(sub.id);
-                        return finishedOneTask();
-                      }}
-                    >
-                      <i className="fa fa-play fa-2x" />
-                    </button>
-                    <button
-                      onClick={() => {
-                        props.setMinutes(25);
-                        dispatch(resetFinishingTomatoes(sub.id));
-                      }}
-                    >
-                      START OVER?
-                    </button>
+                    <div className="buttons">
+                      <div
+                        onClick={() => {
+                          setUserId(sub.id);
+                          return finishedOneTask();
+                        }}
+                      >
+                        <i className="fa fa-play fa-2x" />
+                      </div>
+                    </div>
+                    <div className="buttons">
+                      <div
+                        onClick={() => {
+                          props.setMinutes(25);
+                          dispatch(resetFinishingTomatoes(sub.id));
+                        }}
+                      >
+                        START OVER?
+                      </div>
+                    </div>
                   </>
                 ) : (
                   <></>

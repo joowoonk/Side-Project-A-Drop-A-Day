@@ -1,19 +1,24 @@
-$test: 3;
-.project {
-  //   display: flex;
-  //   justify-content: center;
-  //   background-color: red;
+.projects {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 
-  margin: 4%;
-  .subjectbox {
-    background-color: skyblue;
-    padding: 0.5%;
-    @if $test < 5 {
-      background-color: blue;
-      border: 2px groove black;
+  .project {
+    // display: flex;
+    width: 25%;
+    // flex-direction: column;
+    // justify-content: space-between;
+    margin: 3%;
+    text-align: center;
+    border: 2px solid blue;
+    border-radius: 10px;
+
+    .buttons {
+      margin: 3%;
+      border: 2px solid blue;
+      padding: 2%;
+      border-radius: 10px;
+      cursor: pointer;
     }
   }
-}
-
-p {
 }
