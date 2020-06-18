@@ -7,7 +7,7 @@ export const fetchQuote = () => {
     axios
       .get("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
       .then((res) => {
-        console.log("FETCH SUCESS");
+        // console.log("FETCH SUCESS");
         dispatch({ type: "FETCH_QUOTE_SUCCESS", payload: res });
       })
       .catch((error) => {

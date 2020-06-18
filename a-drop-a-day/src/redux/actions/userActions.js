@@ -27,6 +27,7 @@ export const loginUserAction = (username, password) => {
         });
       })
       .catch((err) => {
+        alert("Wrong username/password!");
         dispatch({
           type: LOGIN_USER_FAILURE,
           payload: err,
@@ -64,14 +65,14 @@ export const registerUserAction = (username, password) => {
     axiosWithAuth()
       .post(`/auth/register`, { username, password })
       .then((res) => {
-        console.log(username, password);
+        // console.log(username, password);
         dispatch({
           type: REGISTER_USER_SUCCESS,
           payload: res.data,
         });
-        console.log(res.data);
       })
       .catch((err) => {
+        alert("This username is unavailable!");
         dispatch({
           type: REGISTER_USER_FAILURE,
           payload: err,

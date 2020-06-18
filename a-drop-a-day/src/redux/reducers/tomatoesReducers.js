@@ -9,6 +9,9 @@ import {
   FINISHED_TOMATOES_SUCESS,
   FINISHED_TOMATOES_FAILURE,
   RESET_TOMATOES_SUCESS,
+  DELETE_PROJECT_START,
+  DELETE_PROJECT_SUCCESS,
+  DELETE_PROJECT_FAILURE,
 } from "../actions/tomatoesActions";
 
 const initialState = {
@@ -63,11 +66,28 @@ export const tomatoesReducers = (state = initialState, action) => {
       return {
         ...state,
       };
+    case DELETE_PROJECT_START:
+      return {
+        ...state,
+        // error: action.payload
+      };
+    case DELETE_PROJECT_SUCCESS:
+      return {
+        ...state,
+      };
+    case DELETE_PROJECT_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
+    // DELETE_PROJECT_START,
+    // DELETE_PROJECT_SUCCESS,
+    // DELETE_PROJECT_FAILURE,
     case ADD_PROJECT_FAILURE:
       return {
         ...state,
         isAdding: false,
-        error: action.type,
+        error: action.payload,
       };
     case RESET_TOMATOES_SUCESS:
       return {

@@ -7,10 +7,10 @@ import { logOut } from "../../redux/actions/userActions";
 
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 // import { useHistory } from "react-router";
-const Nav = () => {
+const Nav = (props) => {
   const loginState = useSelector((state) => state.userReducer.login);
   const dispatch = useDispatch();
-  console.log({ loginState });
+  // console.log({ loginState });
 
   const handleLogOut = () => {
     dispatch(logOut());
@@ -18,7 +18,12 @@ const Nav = () => {
 
   return (
     <nav className="topNav">
-      <Logo className="logo" />
+      <Logo
+        onClick={() => {
+          props.themeToggler();
+        }}
+        className="logo"
+      />
       <div className="menuNav">
         <Link to="Home">Home</Link>
         <Link to="About">About</Link>

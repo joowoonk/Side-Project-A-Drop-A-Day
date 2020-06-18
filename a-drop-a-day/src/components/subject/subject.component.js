@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTomatoes, addProject } from "../../redux/actions/tomatoesActions";
+import {
+  fetchTomatoes,
+  addProject,
+  deleteProject,
+} from "../../redux/actions/tomatoesActions";
 
 import "./subject.styles.scss";
 import {
@@ -67,10 +71,21 @@ const Subject = (props) => {
                       <div
                         onClick={() => {
                           props.setMinutes(25);
+                          setUserId(sub.id);
                           dispatch(resetFinishingTomatoes(sub.id));
                         }}
                       >
                         START OVER?
+                      </div>
+                    </div>
+                    <div className="buttons">
+                      <div
+                        onClick={() => {
+                          // setUserId(sub.id);
+                          dispatch(deleteProject(sub.id));
+                        }}
+                      >
+                        Delete This Project?
                       </div>
                     </div>
                   </>

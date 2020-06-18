@@ -2,23 +2,25 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 
   .project {
     // display: flex;
     width: 25%;
     // flex-direction: column;
-    // justify-content: space-between;
-    margin: 3%;
+
+    margin: 2%;
     text-align: center;
     border: 2px solid blue;
     border-radius: 10px;
-
+    background-color: floralwhite;
     .buttons {
       margin: 3%;
       border: 2px solid blue;
       padding: 2%;
       border-radius: 10px;
       cursor: pointer;
+      background-color: red;
     }
   }
 }

@@ -8,8 +8,9 @@ export const QuoteBox = styled.div`
   width: 80%;
   padding: 3%;
   margin: 4% auto;
-  border: 2px solid blue;
-  border-radius: 3px;
+  background-color: floralwhite;
+  border: 2px solid black;
+  border-radius: 20px;
 
   p {
     margin: 0 -80% 0 0;

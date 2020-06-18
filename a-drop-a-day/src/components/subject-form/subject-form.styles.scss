@@ -1,0 +1,33 @@
+.formContainer {
+  display: flex;
+  // justify-content: center;
+  // align-content: center;
+  margin: 0 auto;
+  // width: 100%;
+  //
+  .tomatoesForm {
+    margin: 3% auto;
+    border: 2px solid skyblue;
+    padding: 10%;
+    border-radius: 10px;
+    background-color: floralwhite;
+
+    .input {
+      width: 30%;
+    }
+    .submit {
+      margin: 15% auto auto auto;
+    }
+  }
+}
+
+.formTitle {
+  text-align: center;
+  width: 40%;
+  background-color: floralwhite;
+  margin: 0 auto;
+  padding: 3%;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-top: 5%;
+}

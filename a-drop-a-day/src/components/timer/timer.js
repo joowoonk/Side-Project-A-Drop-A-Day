@@ -2,8 +2,18 @@ import React, { useState, useEffect } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import Subject from "../subject/subject.component";
 import { useSelector } from "react-redux";
-
+import { makeStyles } from "@material-ui/core/styles";
 import "./timer.styles.scss";
+import Button from "@material-ui/core/Button";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+  },
+}));
 
 export default function Timer() {
   const [Minutes, setMinutes] = useState(25);
@@ -87,7 +97,9 @@ export default function Timer() {
   return (
     <div>
       <div className="container">
-        <button
+        <Button
+          variant="contained"
+          color="primary"
           onClick={() => {
             setBreakTime(true);
             setMinutes(5);
@@ -95,8 +107,10 @@ export default function Timer() {
           }}
         >
           Short Rest
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
           onClick={() => {
             setBreakTime(true);
             setMinutes(15);
@@ -104,8 +118,10 @@ export default function Timer() {
           }}
         >
           Long Rest Rest
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
           onClick={() => {
             setBreakTime(false);
             setIsStopping(true);
@@ -113,32 +129,50 @@ export default function Timer() {
           }}
         >
           Focus Time
-        </button>
-      </div>
+        </Button>
 
-      {breakTime ? (
-        <div className="container">
-          <i style={coffee} className="fas fa-coffee fa-10x" />
-          {!isStopping ? <>Coffee Time Is On...</> : <>Paused</>}
-        </div>
-      ) : (
-        <div className="container">
-          <i style={styles} className="fas fa-apple-alt fa-10x" />
-          {!isStopping ? <>It's ripening</> : <>Paused</>}
-        </div>
-      )}
+        {breakTime ? (
+          <div>
+            <i style={coffee} className="fas fa-coffee fa-10x" />
+            {!isStopping ? (
+              <>
+                <br />
+                Coffee Time Is On...
+              </>
+            ) : (
+              <>
+                <br />
+                Paused
+              </>
+            )}
+          </div>
+        ) : (
+          <div>
+            <i style={styles} className="fas fa-apple-alt fa-10x" />
+            {!isStopping ? (
+              <>
+                <br />
+                It's ripening
+              </>
+            ) : (
+              <>
+                <br />
+                Paused
+              </>
+            )}
+          </div>
+        )}
 
-      <br />
+        <br />
 
-      <div className="container">
         <div className="time">{formattedNumber} Minutes</div>
       </div>
       {!breakTime ? (
         <>
           {!isStopping ? (
-            <div className="container">
+            <div className="pause-and-plus">
               {" "}
-              <div className="button">
+              <div>
                 <button
                   className="play-pause"
                   onClick={() => {

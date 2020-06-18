@@ -1,6 +1,11 @@
 .sign-up-form {
   text-align: center;
-  width: 100%;
+  width: 40%;
+  background-color: floralwhite;
+  margin: 5% auto;
+  padding: 3%;
+  border: 2px solid black;
+  border-radius: 20px;
   h1 {
     margin: 7% 0;
     font-size: 7rem;
@@ -18,6 +23,9 @@
       h3 {
         margin: 0.5% 0;
       }
+    }
+    Button {
+      margin: 10%;
     }
     .account {
       text-align: right;
