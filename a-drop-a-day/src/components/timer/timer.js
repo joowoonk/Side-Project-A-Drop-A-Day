@@ -39,7 +39,7 @@ export default function Timer() {
   const styles = {
     // backgroundColor: backgroundColor,
     // fontSize: someSize,
-    color: "#009999",
+    color: "tomato",
     // padding: paddings,
   };
   const coffee = {
@@ -50,43 +50,7 @@ export default function Timer() {
   };
   //  ...
   //  <div style={styles}>
-  if (Minutes < 23) {
-    styles.color = "#00cc99";
-  }
-  // if (Minutes < 21) {
-  //   styles.color = "#00ff99";
-  // }
-  if (Minutes < 19) {
-    styles.color = "#bfff00";
-  }
-  if (Minutes < 17) {
-    styles.color = "#ffff00";
-  }
-  if (Minutes < 15) {
-    styles.color = "#ccff99";
-  }
-  if (Minutes < 13) {
-    styles.color = "#ffff99";
-  }
-  if (Minutes < 11) {
-    styles.color = "#ffcccc";
-  }
-  if (Minutes < 9) {
-    styles.color = "#ffcc66";
-  }
-  if (Minutes < 7) {
-    styles.color = "#ff9966";
-  }
-  if (Minutes < 5) {
-    styles.color = "#ff9933";
-  }
-  if (Minutes < 3) {
-    styles.color = "#ff6600";
-  }
 
-  if (Minutes < 1) {
-    styles.color = "#ff0000";
-  }
   if (Minutes <= -1) {
     setMinutes(99);
     window.open("http://localhost:3000/tomatoes");
@@ -132,7 +96,7 @@ export default function Timer() {
         </Button>
 
         {breakTime ? (
-          <div>
+          <div className="icon">
             <i style={coffee} className="fas fa-coffee fa-10x" />
             {!isStopping ? (
               <>

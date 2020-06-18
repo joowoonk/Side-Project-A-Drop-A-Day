@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { logOut } from "../../redux/actions/userActions";
 
-import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { ReactComponent as Logo } from "../../assets/logo2.svg";
 // import { useHistory } from "react-router";
 const Nav = (props) => {
   const loginState = useSelector((state) => state.userReducer.login);

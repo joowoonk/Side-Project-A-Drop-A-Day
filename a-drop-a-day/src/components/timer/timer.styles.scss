@@ -15,6 +15,9 @@
     margin: 0.5% auto;
     width: 70%;
   }
+  .icon {
+    margin: 3% auto;
+  }
 }
 
 .pause-and-plus {
@@ -29,4 +32,8 @@
   border: 2px solid blue;
   width: 20%;
   border-radius: 10px;
+}
+
+.time {
+  font-size: 6vh;
 }

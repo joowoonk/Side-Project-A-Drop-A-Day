@@ -6,13 +6,14 @@ import { fetchTomatoes } from "../../redux/actions/tomatoesActions";
 import "./subject-form.styles.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
       margin: theme.spacing(1),
-      width: "250ch",
+      width: 200,
     },
   },
 }));
@@ -62,15 +63,21 @@ const SubjectForm = () => {
         <form noValidate autoComplete="off" className="tomatoesForm">
           <div className="project">
             <label htmlFor="subject">
-              {/* <h3>Your project name:</h3> */}
-              <TextField
+              <h3>Your project name:</h3>
+              <TextareaAutosize
                 id="standard-basic"
                 label="Your Project Name.."
                 type="text"
                 name="subject"
                 id="subject"
+                rowsMax={2}
+                aria-label="maximum height"
+                placeholder="Example: Work on my side project.."
+                defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua."
                 value={subject}
                 onChange={onInputSubject}
+                style={{ width: 250, height: 50 }}
               />
             </label>
           </div>
@@ -89,6 +96,7 @@ const SubjectForm = () => {
                 max="24"
                 value={tomatoesNumber}
                 onChange={onInputTomatoes}
+                style={{ width: 250 }}
               />
             </div>
           </label>
