@@ -57,6 +57,7 @@ const SignUp = () => {
                   id="userName"
                   value={userName}
                   onChange={onInputUserName}
+                  style={{ width: 225 }}
                 />
               </label>
             </div>
@@ -71,6 +72,7 @@ const SignUp = () => {
                   value={userPassword}
                   type="password"
                   onChange={onInputPassword}
+                  style={{ width: 225 }}
                   name="password"
                 />
               </div>

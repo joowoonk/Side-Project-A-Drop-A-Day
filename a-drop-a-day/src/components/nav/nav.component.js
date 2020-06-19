@@ -2,6 +2,7 @@ import React from "react";
 import "./nav.styles.scss";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import useDarkMode from "../../hooks/useDarkMode";
 
 import { logOut } from "../../redux/actions/userActions";
 
@@ -9,6 +10,11 @@ import { ReactComponent as Logo } from "../../assets/logo2.svg";
 // import { useHistory } from "react-router";
 const Nav = (props) => {
   const loginState = useSelector((state) => state.userReducer.login);
+  const [darkMode, setDarkMode] = useDarkMode(false);
+  const toggleMode = (e) => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
   const dispatch = useDispatch();
   // console.log({ loginState });
 
@@ -19,30 +25,30 @@ const Nav = (props) => {
   return (
     <nav className="topNav">
       <Logo
-        onClick={() => {
-          props.themeToggler();
+        onClick={(e) => {
+          toggleMode(e);
         }}
-        className="logo"
+        className={darkMode ? " logo toggle toggled" : "toggle logo"}
+        // className="logo"
       />
       <div className="menuNav">
-        <Link to="Home">Home</Link>
-        <Link to="About">About</Link>
-        <Link to="Contact">Contact</Link>
+        <Link to="Home">HOME</Link>
+        <Link to="Contact">ABOUT</Link>
 
         {!localStorage.token ? (
           <>
-            <Link to="Signin">Sign In</Link>
+            <Link to="Signin">SIGN IN</Link>
           </>
         ) : (
           <>
-            <Link to="form">Add</Link>
-            <Link to="tomatoes">Tomatoes</Link>
+            <Link to="form">ADD</Link>
+            <Link to="tomatoes">TOMATOES</Link>
             <Link
               onClick={() => {
                 handleLogOut();
               }}
             >
-              Sign Out
+              SIGN OUT
             </Link>
           </>
         )}

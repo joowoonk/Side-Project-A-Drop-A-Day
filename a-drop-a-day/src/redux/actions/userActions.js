@@ -27,7 +27,7 @@ export const loginUserAction = (username, password) => {
         });
       })
       .catch((err) => {
-        alert("Wrong username/password!");
+        alert("Incorrect username/password!");
         dispatch({
           type: LOGIN_USER_FAILURE,
           payload: err,

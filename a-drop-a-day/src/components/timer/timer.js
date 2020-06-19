@@ -5,167 +5,139 @@ import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import "./timer.styles.scss";
 import Button from "@material-ui/core/Button";
+import Helmet from "react-helmet";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
+    // flexGrow: 1,
+    margin: theme.spacing(3),
+    // width: "50ch",
+    // margin: "4% auto",
+  },
+  paper: {
+    padding: 150,
+    textAlign: "center",
+    // marginLeft: ,
+    // marginRight: -250,
+    // color: theme.palette.text.secondary,
   },
 }));
 
-export default function Timer() {
-  const [Minutes, setMinutes] = useState(25);
-  const [isStopping, setIsStopping] = useState(true);
-  const [breakTime, setBreakTime] = useState(false);
-  const [intervalId, setIntervalId] = useState(null);
-  // const [maximum, setMaximum] = useState(false)
-  useEffect(() => {
-    if (!isStopping) {
-      const id = window.setInterval(() => {
-        setMinutes((min) => min - 1);
-      }, 1000);
-
-      return () => window.clearInterval(id);
-    } else {
-    }
-  }, [isStopping]);
-  // console.log({ Minutes });
-
-  // let someColor = "Blue";
-  var formattedNumber = ("0" + Minutes).slice(-2);
-
-  const styles = {
-    // backgroundColor: backgroundColor,
-    // fontSize: someSize,
-    color: "tomato",
-    // padding: paddings,
-  };
-  const coffee = {
-    // backgroundColor: backgroundColor,
-    // fontSize: someSize,
-    color: "brown",
-    // padding: paddings,
-  };
-  //  ...
-  //  <div style={styles}>
-
-  if (Minutes <= -1) {
-    setMinutes(99);
-    window.open("http://localhost:3000/tomatoes");
-    window.close();
-  }
+export default function Timer({
+  setBreakTime,
+  setMinutes,
+  setIsStopping,
+  Minutes,
+  isStopping,
+  breakTime,
+  coffee,
+  styles,
+  formattedNumber,
+  setUserId,
+}) {
+  const classes = useStyles();
 
   let warning = "Are you about that?";
   return (
     <div>
-      <div className="container">
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => {
-            setBreakTime(true);
-            setMinutes(5);
-            setIsStopping(false);
-          }}
-        >
-          Short Rest
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => {
-            setBreakTime(true);
-            setMinutes(15);
-            setIsStopping(false);
-          }}
-        >
-          Long Rest Rest
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => {
-            setBreakTime(false);
-            setIsStopping(true);
-            setMinutes(25);
-          }}
-        >
-          Focus Time
-        </Button>
-
-        {breakTime ? (
-          <div className="icon">
-            <i style={coffee} className="fas fa-coffee fa-10x" />
-            {!isStopping ? (
-              <>
-                <br />
-                Coffee Time Is On...
-              </>
-            ) : (
-              <>
-                <br />
-                Paused
-              </>
-            )}
-          </div>
-        ) : (
-          <div>
-            <i style={styles} className="fas fa-apple-alt fa-10x" />
-            {!isStopping ? (
-              <>
-                <br />
-                It's ripening
-              </>
-            ) : (
-              <>
-                <br />
-                Paused
-              </>
-            )}
-          </div>
-        )}
-
-        <br />
-
-        <div className="time">{formattedNumber} Minutes</div>
-      </div>
-      {!breakTime ? (
-        <>
-          {!isStopping ? (
-            <div className="pause-and-plus">
+      <div className={classes.root}>
+        <Grid container spacing={1}>
+          <Grid item xs={12} sm={12} className="container">
+            <Paper className={classes.paper}>
               {" "}
-              <div>
-                <button
-                  className="play-pause"
-                  onClick={() => {
-                    setIsStopping(!isStopping);
-                  }}
-                >
-                  <i className="fa fa-pause fa-2x" />
-                </button>
-                <button onClick={() => setMinutes(Minutes + 1)}>
-                  <i className="fa fa-plus fa-2x" />
-                </button>
-              </div>
-            </div>
-          ) : (
-            <></>
-          )}
-
-          <Subject
-            minutes={Minutes}
-            setBreakTime={setBreakTime}
-            setMinutes={setMinutes}
-            setIsStopping={setIsStopping}
-            isStopping={isStopping}
-            // user_id={userState}
-          />
-        </>
-      ) : (
-        <></>
-      )}
+              {breakTime ? (
+                <div className="icon">
+                  <i style={coffee} className="fas fa-coffee fa-10x" />
+                  {breakTime ? (
+                    <>
+                      <br />
+                      Coffee Time Is On...
+                    </>
+                  ) : (
+                    <>
+                      <br />
+                      PAUSED
+                    </>
+                  )}
+                </div>
+              ) : (
+                <div>
+                  <i style={styles} className="fas fa-apple-alt fa-10x" />
+                  {!isStopping ? (
+                    <>
+                      <br />
+                      <p> FOCUSING TIME...</p>
+                      {!isStopping ? (
+                        <div>
+                          <button
+                            className="play-pause"
+                            onClick={() => {
+                              setIsStopping(!isStopping);
+                            }}
+                          >
+                            <i className="fa fa-pause fa-2x" />
+                          </button>
+                          <button onClick={() => setMinutes(Minutes + 1)}>
+                            <i className="fa fa-plus fa-2x" />
+                          </button>
+                        </div>
+                      ) : (
+                        <></>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <br />
+                      <p>PAUSED</p>
+                    </>
+                  )}
+                </div>
+              )}
+              <div className="time">{formattedNumber} Minutes</div>
+              <Button
+                variant="contained"
+                color="primary"
+                className="controller"
+                onClick={() => {
+                  setBreakTime(true);
+                  setMinutes(5);
+                  setIsStopping(false);
+                  setUserId();
+                }}
+              >
+                Short Break
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                className="controller"
+                onClick={() => {
+                  setBreakTime(true);
+                  setMinutes(15);
+                  setIsStopping(false);
+                  setUserId();
+                }}
+              >
+                Long Break
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                className="controller lastButton"
+                onClick={() => {
+                  setBreakTime(false);
+                  setIsStopping(true);
+                  setMinutes(25);
+                }}
+              >
+                Focus Time
+              </Button>
+            </Paper>
+          </Grid>
+        </Grid>
+      </div>
     </div>
   );
 }

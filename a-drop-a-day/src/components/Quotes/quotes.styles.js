@@ -9,7 +9,7 @@ export const QuoteBox = styled.div`
   padding: 3%;
   margin: 4% auto;
   background-color: floralwhite;
-  border: 2px solid black;
+  border: 2px solid green;
   border-radius: 20px;
 
   p {

@@ -1,39 +1,13 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 3% auto 0 auto;
-  background-color: floralwhite;
-  border: 2px solid blue;
-  padding-top: 3%;
-  width: 40%;
-  border-radius: 10px;
-
-  button {
-    margin: 0.5% auto;
-    width: 70%;
-  }
+  // text-align: center;
+  // margin: au
   .icon {
-    margin: 3% auto;
+    // background-color: red;
   }
-}
-
-.pause-and-plus {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0.5% auto 0 auto;
-  padding: 1%;
-  background-color: floralwhite;
-  border: 2px solid blue;
-  width: 20%;
-  border-radius: 10px;
-}
-
-.time {
-  font-size: 6vh;
+  .controller {
+    // display: flex;
+    // flex-direction: column;
+    // margin: 30%;
+    margin: 3%;
+  }
 }
