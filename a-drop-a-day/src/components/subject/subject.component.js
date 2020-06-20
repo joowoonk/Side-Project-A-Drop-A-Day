@@ -24,10 +24,13 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    // borderRadius: 10,
   },
   paper: {
     padding: theme.spacing(2),
     // textAlign: "center",
+    background: "floralwhite",
+    boxShadow: "0 1px 3px 1px black",
     color: theme.palette.text.secondary,
   },
 }));
@@ -43,10 +46,11 @@ const styles = {
       props.color === "red"
         ? "0 3px 5px 2px rgba(255, 105, 135, .3)"
         : "0 3px 5px 2px rgba(33, 203, 243, .3)",
-    // color: "white",
+    // color: "red",
     height: 48,
     // padding: "0 30px",
-    margin: 8,
+    marginRight: 30,
+    marginBottom: 10,
   },
 };
 
@@ -64,10 +68,26 @@ MyButtonRaw.propTypes = {
 
 const MyButton = withStyles(styles)(MyButtonRaw);
 
+const example = [
+  {
+    id: "c",
+    project: "Eg. Solving code problems on leetcode",
+    finished: 5,
+    tomatoes: 8,
+  },
+  {
+    id: "d",
+    project: "Eg. Practing ukulele for a day",
+    finished: 1,
+    tomatoes: 4,
+  },
+];
+
 const Subject = (props) => {
   const dispatch = useDispatch();
   const projects = useSelector((state) => state.tomatoesReducers.projects);
 
+  console.log(projects);
   const classes = useStyles();
   // const [color, setColor] = useState("white");
   // const [textColor, setTextColor] = useState("black");
@@ -88,77 +108,267 @@ const Subject = (props) => {
     dispatch(finishingOneTomatoes(props.userId));
     props.setMinutes(25);
     props.setBreakTime(false);
+    props.setFocusTime(false);
     props.setIsStopping(true);
     window.open("http://localhost:3000/tomatoes");
     window.close();
     //add dipatch here to add a block with color
   }
-  // console.log({ userId });
+  console.log(props.userId);
   return (
     <>
       <div className="projects">
         {isFetching ? (
           <>
-            <div className={classes.root}>
-              <Grid container spacing={2} className="projects">
-                {projects.map((sub) => {
-                  return (
-                    <Grid item xs={12} sm={6}>
-                      <Paper className={classes.paper}>
-                        {" "}
-                        {/* <div className="project" key={sub.id}></div> */}
-                        {/* <SubjectDetail sub={sub} /> */}
-                        <p>Project Name: </p>
-                        <h1>{sub.project.toUpperCase()}</h1>
-                        <p>You finished</p>
-                        <h1>
-                          {sub.finished}/{sub.tomatoes}
-                        </h1>
-                        <div className="buttons">
-                          <MyButton
-                            disabled={!props.isStopping}
-                            color="red"
-                            onClick={() => {
-                              props.setUserId(sub.id);
+            {projects.length === 0 ? (
+              <>
+                <div className={classes.root}>
+                  <Grid container spacing={2} className="projects">
+                    {example.map((sub) => {
+                      return (
+                        <Grid item xs={12}>
+                          <Paper className={classes.paper}>
+                            <p>Project Name: </p>
+                            <h1>{sub.project.toUpperCase()}</h1>
+                            <p>You finished</p>
+                            <h1>
+                              {sub.finished}/{sub.tomatoes}
+                            </h1>
+                            <div className="buttons">
+                              <MyButton
+                                disabled={true}
+                                color="red"
+                                onClick={() => {
+                                  props.setUserId(sub.id);
 
-                              return finishedOneTask();
-                            }}
-                          >
-                            <i className="fa fa-play fa-2x" />
-                          </MyButton>
-                          <MyButton
-                            disabled={!props.isStopping}
-                            color="red"
-                            onClick={() => {
-                              props.setMinutes(25);
-                              props.setUserId(sub.id);
-                              dispatch(resetFinishingTomatoes(sub.id));
-                            }}
-                          >
-                            RESET
-                          </MyButton>
+                                  return finishedOneTask();
+                                }}
+                              >
+                                <i className="fa fa-play fa-2x" />
+                              </MyButton>
+                              <MyButton
+                                disabled={true}
+                                color="red"
+                                onClick={() => {
+                                  props.setMinutes(25);
+                                  props.setUserId(sub.id);
+                                  dispatch(resetFinishingTomatoes(sub.id));
+                                }}
+                              >
+                                RESET PROGRESS
+                              </MyButton>
 
-                          <MyButton
-                            disabled={!props.isStopping}
-                            color="red"
-                            onClick={() => {
-                              // setUserId(sub.id);
-                              dispatch(deleteProject(sub.id));
-                            }}
-                          >
-                            <i className="fa               fa-trash  fa-2x" />
-                          </MyButton>
-                        </div>
-                      </Paper>
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            </div>
+                              <MyButton
+                                disabled={true}
+                                color="red"
+                                onClick={() => {
+                                  // setUserId(sub.id);
+                                  dispatch(deleteProject(sub.id));
+                                }}
+                              >
+                                <i className="fa               fa-trash  fa-2x" />
+                              </MyButton>
+                            </div>
+                          </Paper>
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className={classes.root}>
+                  <Grid container spacing={2} className="projects">
+                    {projects.length <= 1 && (
+                      <>
+                        {projects.map((sub) => {
+                          console.log(sub.id);
+                          return (
+                            <Grid item xs={12}>
+                              <Paper
+                                className={classes.paper}
+                                style={{ marginTop: "50%" }}
+                              >
+                                <p>Project Name: </p>
+                                <h4>{sub.project.toUpperCase()}</h4>
+                                You finished
+                                <h1>
+                                  {sub.finished}/{sub.tomatoes}
+                                </h1>
+                                <div className="buttons">
+                                  <MyButton
+                                    disabled={!props.isStopping}
+                                    color="red"
+                                    onClick={() => {
+                                      props.setUserId(sub.id);
+                                      props.setFocusTime(true);
+
+                                      return finishedOneTask();
+                                    }}
+                                  >
+                                    <i className="fa fa-play fa-2x" />
+                                  </MyButton>
+                                  <MyButton
+                                    disabled={!props.isStopping}
+                                    color="red"
+                                    onClick={() => {
+                                      props.setMinutes(25);
+                                      props.setUserId(sub.id);
+                                      dispatch(resetFinishingTomatoes(sub.id));
+                                    }}
+                                  >
+                                    RESET PROGRESS
+                                  </MyButton>
+
+                                  <MyButton
+                                    disabled={!props.isStopping}
+                                    color="red"
+                                    onClick={() => {
+                                      // setUserId(sub.id);
+                                      dispatch(deleteProject(sub.id));
+                                    }}
+                                  >
+                                    <i className="fa               fa-trash  fa-2x" />
+                                  </MyButton>
+                                </div>
+                              </Paper>
+                            </Grid>
+                          );
+                        })}
+                      </>
+                    )}
+                    {projects.length === 2 && (
+                      <>
+                        {projects.map((sub) => {
+                          return (
+                            <Grid item xs={12}>
+                              <Paper className={classes.paper}>
+                                {" "}
+                                {/* <div className="project" key={sub.id}></div> */}
+                                {/* <SubjectDetail sub={sub} /> */}
+                                <p>Project Name: </p>
+                                <h1>{sub.project.toUpperCase()}</h1>
+                                <p>You finished</p>
+                                <h1>
+                                  {sub.finished}/{sub.tomatoes}
+                                </h1>
+                                <div className="buttons">
+                                  <MyButton
+                                    disabled={!props.isStopping}
+                                    color="red"
+                                    onClick={() => {
+                                      props.setUserId(sub.id);
+                                      props.setFocusTime(true);
+                                      return finishedOneTask();
+                                    }}
+                                  >
+                                    <i className="fa fa-play fa-2x" />
+                                  </MyButton>
+                                  <MyButton
+                                    disabled={!props.isStopping}
+                                    color="red"
+                                    onClick={() => {
+                                      props.setMinutes(25);
+                                      props.setUserId(sub.id);
+                                      dispatch(resetFinishingTomatoes(sub.id));
+                                    }}
+                                  >
+                                    RESET MY FINISHED
+                                  </MyButton>
+
+                                  <MyButton
+                                    disabled={!props.isStopping}
+                                    color="red"
+                                    onClick={() => {
+                                      // setUserId(sub.id);
+                                      dispatch(deleteProject(sub.id));
+                                    }}
+                                  >
+                                    <i className="fa               fa-trash  fa-2x" />
+                                  </MyButton>
+                                </div>
+                              </Paper>
+                            </Grid>
+                          );
+                        })}
+                      </>
+                    )}{" "}
+                    {projects.length > 2 && (
+                      <>
+                        {projects.map((sub) => {
+                          return (
+                            <Grid item xs={12} sm={6}>
+                              <Paper className={classes.paper}>
+                                {" "}
+                                {/* <div className="project" key={sub.id}></div> */}
+                                {/* <SubjectDetail sub={sub} /> */}
+                                <p>Project Name: </p>
+                                <h1>{sub.project.toUpperCase()}</h1>
+                                <p>You finished</p>
+                                <h1>
+                                  {sub.finished}/{sub.tomatoes}
+                                </h1>
+                                <div className="buttons">
+                                  <MyButton
+                                    disabled={!props.isStopping}
+                                    color="red"
+                                    onClick={() => {
+                                      props.setUserId(sub.id);
+                                      props.setFocusTime(true);
+                                      return finishedOneTask();
+                                    }}
+                                  >
+                                    <i className="fa fa-play fa-2x" />
+                                  </MyButton>
+                                  <MyButton
+                                    disabled={!props.isStopping}
+                                    color="red"
+                                    onClick={() => {
+                                      props.setMinutes(25);
+                                      props.setUserId(sub.id);
+                                      dispatch(resetFinishingTomatoes(sub.id));
+                                    }}
+                                  >
+                                    RESET MY FINISHED
+                                  </MyButton>
+
+                                  <MyButton
+                                    disabled={!props.isStopping}
+                                    color="red"
+                                    onClick={() => {
+                                      // setUserId(sub.id);
+                                      dispatch(deleteProject(sub.id));
+                                    }}
+                                  >
+                                    <i className="fa               fa-trash  fa-2x" />
+                                  </MyButton>
+                                </div>
+                              </Paper>
+                            </Grid>
+                          );
+                        })}
+                      </>
+                    )}
+                  </Grid>
+                </div>
+              </>
+            )}
           </>
         ) : (
           <>
-            <h1>Fetching...</h1>
+            <div className={classes.root}>
+              <Grid container spacing={1} className="server-down">
+                <Grid item xs={12}>
+                  <Paper className={classes.paper}>
+                    <h4>Something went wrong with the server</h4>
+                    <a href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/">
+                      Contact the developer if this issue keeps occurs
+                    </a>
+                  </Paper>
+                </Grid>
+              </Grid>
+            </div>
           </>
         )}
       </div>

@@ -5,9 +5,16 @@
     // background-color: red;
   }
   .controller {
-    // display: flex;
-    // flex-direction: column;
+    display: flex;
+    flex-direction: column;
     // margin: 30%;
-    margin: 3%;
+    // margin: 3%;
+    margin: 3% auto;
+  }
+  .time {
+    font-size: 5vh;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
   }
 }

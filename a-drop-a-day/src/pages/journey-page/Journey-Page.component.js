@@ -20,8 +20,10 @@ const JourneyPage = () => {
   const [breakTime, setBreakTime] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
   const [timeOn, setTimeOn] = useState(false);
-  const [userId, setUserId] = useState();
+  const [userId, setUserId] = useState(0);
+  const [focusTime, setFocusTime] = useState(false);
   // const [maximum, setMaximum] = useState(false)
+
   useEffect(() => {
     if (!isStopping) {
       const id = window.setInterval(() => {
@@ -60,9 +62,8 @@ const JourneyPage = () => {
   console.log(breakTime);
   return (
     <div className="proejctboard">
-      {breakTime && <Helmet title={`break..`}></Helmet>}
-      {!isStopping && <Helmet title={`focus..`}></Helmet>}
-
+      {focusTime && <Helmet title={`ripenning..`}></Helmet>}
+      {!focusTime && <Helmet title={`A Drop A Day`}></Helmet>}
       <Timer
         setBreakTime={setBreakTime}
         setMinutes={setMinutes}
@@ -74,6 +75,8 @@ const JourneyPage = () => {
         formattedNumber={formattedNumber}
         setUserId={setUserId}
         breakTime={breakTime}
+        focusTime={focusTime}
+        setFocusTime={setFocusTime}
       />
       <Subject
         minutes={Minutes}
@@ -86,6 +89,9 @@ const JourneyPage = () => {
         setTimeOn={setTimeOn}
         timeOn={timeOn}
         setUserId={setUserId}
+        userId={userId}
+        focusTime={focusTime}
+        setFocusTime={setFocusTime}
         // user_id={userState}
       />
     </div>

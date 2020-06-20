@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: 150,
     textAlign: "center",
+    boxShadow: "0 1px 3px 1px black",
+    background: "floralwhite",
     // marginLeft: ,
     // marginRight: -250,
     // color: theme.palette.text.secondary,
@@ -36,15 +38,18 @@ export default function Timer({
   styles,
   formattedNumber,
   setUserId,
+  focusTime,
+  setFocusTime,
 }) {
   const classes = useStyles();
 
   let warning = "Are you about that?";
   return (
     <div>
+      {!focusTime && <Helmet title={`A Drop A Day`}></Helmet>}
       <div className={classes.root}>
-        <Grid container spacing={1}>
-          <Grid item xs={12} sm={12} className="container">
+        <Grid container spacing={2}>
+          <Grid item xs={12} className="container">
             <Paper className={classes.paper}>
               {" "}
               {breakTime ? (
@@ -53,12 +58,13 @@ export default function Timer({
                   {breakTime ? (
                     <>
                       <br />
-                      Coffee Time Is On...
+                      <h5>Coffee Time Is On...</h5>
+                      {breakTime && <Helmet title={`break..`}></Helmet>}
                     </>
                   ) : (
                     <>
                       <br />
-                      PAUSED
+                      <h5>PAUSED</h5>
                     </>
                   )}
                 </div>
@@ -68,20 +74,29 @@ export default function Timer({
                   {!isStopping ? (
                     <>
                       <br />
-                      <p> FOCUSING TIME...</p>
+                      <h5> FOCUSING TIME...</h5>
                       {!isStopping ? (
                         <div>
-                          <button
-                            className="play-pause"
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            // className="controller"
+                            // className="play-pause"
                             onClick={() => {
                               setIsStopping(!isStopping);
+                              setFocusTime(false);
                             }}
                           >
                             <i className="fa fa-pause fa-2x" />
-                          </button>
-                          <button onClick={() => setMinutes(Minutes + 1)}>
+                          </Button>
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            // className="controller"
+                            onClick={() => setMinutes(Minutes + 1)}
+                          >
                             <i className="fa fa-plus fa-2x" />
-                          </button>
+                          </Button>
                         </div>
                       ) : (
                         <></>
@@ -90,12 +105,12 @@ export default function Timer({
                   ) : (
                     <>
                       <br />
-                      <p>PAUSED</p>
+                      <h5>PAUSED</h5>
                     </>
                   )}
                 </div>
               )}
-              <div className="time">{formattedNumber} Minutes</div>
+              <h5 className="time">{formattedNumber} Minutes</h5>
               <Button
                 variant="contained"
                 color="primary"
@@ -128,6 +143,7 @@ export default function Timer({
                 className="controller lastButton"
                 onClick={() => {
                   setBreakTime(false);
+                  setFocusTime(false);
                   setIsStopping(true);
                   setMinutes(25);
                 }}

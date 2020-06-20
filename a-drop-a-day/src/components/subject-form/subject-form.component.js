@@ -22,7 +22,7 @@ const SubjectForm = () => {
   const [subject, setSubject] = useState("");
   const [tomatoesNumber, setTomatoesNumber] = useState(0);
   const dispatch = useDispatch();
-  const useinfo = useSelector((state) => state.userReducer.user[0]);
+  const useinfo = useSelector((state) => state.userReducer.user);
   const classes = useStyles();
   const onInputSubject = (e) => {
     setSubject(e.target.value);
@@ -30,10 +30,12 @@ const SubjectForm = () => {
   const onInputTomatoes = (e) => {
     setTomatoesNumber(e.target.value);
   };
+  console.log(subject, tomatoesNumber);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (subject.length > 4 && tomatoesNumber > 0 && tomatoesNumber < 20) {
       e.preventDefault();
+
       dispatch(addProject(subject, tomatoesNumber, useinfo.id));
     } else if (subject.length < 4) {
       alert(
@@ -46,8 +48,6 @@ const SubjectForm = () => {
         "That's way to many tomatoes to eat a day! Max is 20 tomatoes per project!"
       );
     }
-
-    // await dispatch(fetchTomatoes());
   };
 
   useEffect(() => {
@@ -101,7 +101,11 @@ const SubjectForm = () => {
             </div>
           </label>
           <div className="submit">
-            <Button variant="contained" color="primary" onClick={handleSubmit}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={(e) => handleSubmit(e)}
+            >
               Add To My Project
             </Button>
           </div>
