@@ -97,7 +97,7 @@ export const finishingOneTomatoes = (id) => {
 };
 
 export const deleteProject = (id) => {
-  console.log({ id });
+  console.log(id);
   return (dispatch) => {
     dispatch({ type: DELETE_PROJECT_START });
     axiosWithAuth()

@@ -30,7 +30,7 @@ const SubjectForm = () => {
   const onInputTomatoes = (e) => {
     setTomatoesNumber(e.target.value);
   };
-  console.log(subject, tomatoesNumber);
+  console.log(subject, tomatoesNumber, useinfo);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (subject.length > 4 && tomatoesNumber > 0 && tomatoesNumber < 20) {
@@ -41,7 +41,7 @@ const SubjectForm = () => {
       alert(
         "Please provide project name that has more than at least four characters"
       );
-    } else if (tomatoesNumber === 0) {
+    } else if (tomatoesNumber <= 0) {
       alert("Number of tomatoes should be at least one or more");
     } else if (tomatoesNumber > 20) {
       alert(
@@ -58,21 +58,20 @@ const SubjectForm = () => {
 
   return (
     <>
-      <h4 className="formTitle"> ADD YOUR NEW PROJECT!</h4>
       <div className="formContainer">
         <form noValidate autoComplete="off" className="tomatoesForm">
           <div className="project">
             <label htmlFor="subject">
-              <h3>Your project name:</h3>
+              <h3>Your project is,</h3>
               <TextareaAutosize
                 id="standard-basic"
-                label="Your Project Name.."
+                label="form"
                 type="text"
                 name="subject"
                 id="subject"
                 rowsMax={2}
                 aria-label="maximum height"
-                placeholder="Example: Work on my side project.."
+                placeholder="Example: Working on my side project.."
                 defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua."
                 value={subject}
@@ -86,14 +85,14 @@ const SubjectForm = () => {
             <div className="project">
               {/* <h3>How many tomatoes a day:</h3> */}
               <TextField
-                // id="standard-basic"
-
-                label="How many tomatoes a day?"
+                id="filled-number"
+                label="Number"
                 type="number"
-                id="tomatoes"
-                name="tomatoes"
-                min="1"
-                max="24"
+                InputLabelProps={{
+                  shrink: true,
+                  min: 0,
+                }}
+                variant="filled"
                 value={tomatoesNumber}
                 onChange={onInputTomatoes}
                 style={{ width: 250 }}

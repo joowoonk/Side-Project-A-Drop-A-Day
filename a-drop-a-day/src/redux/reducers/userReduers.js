@@ -60,7 +60,7 @@ export const userReducer = (state = initialState, action) => {
       };
     case LOGOUT:
       localStorage.clear();
-      // window.location.href = "/signin";
+      window.location.href = "/signin";
       return {
         loading: false,
         login: false,

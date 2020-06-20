@@ -89,9 +89,6 @@ const Subject = (props) => {
 
   console.log(projects);
   const classes = useStyles();
-  // const [color, setColor] = useState("white");
-  // const [textColor, setTextColor] = useState("black");
-  // const [userId, setUserId] = useState(0);
 
   const isFetching = useSelector((state) => state.tomatoesReducers.isFetching);
 
@@ -100,18 +97,18 @@ const Subject = (props) => {
   }, []);
 
   const finishedOneTask = () => {
-    console.log(props.isStopping);
+    // console.log(props.isStopping);
     props.setIsStopping(false);
   };
   if (props.minutes <= 0) {
-    console.log("Yes?");
+    // console.log("Yes?");
     dispatch(finishingOneTomatoes(props.userId));
     props.setMinutes(25);
     props.setBreakTime(false);
     props.setFocusTime(false);
     props.setIsStopping(true);
-    window.open("http://localhost:3000/tomatoes");
-    window.close();
+    // window.open("http://localhost:3000/tomatoes");
+    // window.close();
     //add dipatch here to add a block with color
   }
   console.log(props.userId);
@@ -162,7 +159,6 @@ const Subject = (props) => {
                                 disabled={true}
                                 color="red"
                                 onClick={() => {
-                                  // setUserId(sub.id);
                                   dispatch(deleteProject(sub.id));
                                 }}
                               >
@@ -244,9 +240,6 @@ const Subject = (props) => {
                           return (
                             <Grid item xs={12}>
                               <Paper className={classes.paper}>
-                                {" "}
-                                {/* <div className="project" key={sub.id}></div> */}
-                                {/* <SubjectDetail sub={sub} /> */}
                                 <p>Project Name: </p>
                                 <h1>{sub.project.toUpperCase()}</h1>
                                 <p>You finished</p>
@@ -281,7 +274,6 @@ const Subject = (props) => {
                                     disabled={!props.isStopping}
                                     color="red"
                                     onClick={() => {
-                                      // setUserId(sub.id);
                                       dispatch(deleteProject(sub.id));
                                     }}
                                   >
@@ -300,9 +292,6 @@ const Subject = (props) => {
                           return (
                             <Grid item xs={12} sm={6}>
                               <Paper className={classes.paper}>
-                                {" "}
-                                {/* <div className="project" key={sub.id}></div> */}
-                                {/* <SubjectDetail sub={sub} /> */}
                                 <p>Project Name: </p>
                                 <h1>{sub.project.toUpperCase()}</h1>
                                 <p>You finished</p>
@@ -337,7 +326,6 @@ const Subject = (props) => {
                                     disabled={!props.isStopping}
                                     color="red"
                                     onClick={() => {
-                                      // setUserId(sub.id);
                                       dispatch(deleteProject(sub.id));
                                     }}
                                   >
@@ -377,20 +365,3 @@ const Subject = (props) => {
 };
 
 export default Subject;
-
-// {tomatoes.map((tom) => {
-//   {
-//     /* <button style={{background:color,color:textColor}} className='btn btn-primary' onClick={()=>{setColor("black");setTextColor('red')}}>Click here</button> */
-//   }
-//   return (
-//     <button
-//       style={{ backgroundColor: color, color: textColor }}
-//       className="subjectbox"
-//       onClick={() => {
-//         changeColor();
-//       }}
-//     >
-//       x
-//     </button>
-//   );
-// })}
