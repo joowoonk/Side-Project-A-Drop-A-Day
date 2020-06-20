@@ -53,6 +53,7 @@ export const addProject = (project, tomatoes, user_id) => {
       })
       .then((res) => {
         console.log("yes you got here");
+        alert("Your project's added!");
         dispatch({ type: ADD_PROJECT_SUCCESS, payload: res.data });
 
         //call the fetchtodos to rerender the list instead of manually refreshing

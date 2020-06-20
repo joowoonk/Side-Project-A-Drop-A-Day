@@ -21,6 +21,7 @@ export const loginUserAction = (username, password) => {
         localStorage.setItem("token", res.data.token);
         // pass down userId to localstorage when loginAction works.
         localStorage.setItem("user_id", res.data.id);
+        alert(`Welcome ${username}`);
         dispatch({
           type: LOGIN_USER_SUCCESS,
           payload: res.data,
@@ -66,6 +67,7 @@ export const registerUserAction = (username, password) => {
       .post(`/auth/register`, { username, password })
       .then((res) => {
         // console.log(username, password);
+        alert(`Dear ${username}, your account's just got created`);
         dispatch({
           type: REGISTER_USER_SUCCESS,
           payload: res.data,
