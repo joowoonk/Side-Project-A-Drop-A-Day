@@ -22,6 +22,7 @@ const JourneyPage = () => {
   const [timeOn, setTimeOn] = useState(false);
   const [userId, setUserId] = useState(0);
   const [focusTime, setFocusTime] = useState(false);
+  const [limit, setLimit] = useState(false);
   // const [maximum, setMaximum] = useState(false)
 
   useEffect(() => {
@@ -34,25 +35,20 @@ const JourneyPage = () => {
     } else {
     }
   }, [isStopping]);
-  // console.log({ Minutes });
 
-  // let someColor = "Blue";
   var formattedNumber = ("0" + Minutes).slice(-2);
+  // if (Minutes < 24) {
+  //   setLimit(true);
+  // } else {
+  //   setLimit(false);
+  // }
 
   const styles = {
-    // backgroundColor: backgroundColor,
-    // fontSize: someSize,
     color: "tomato",
-    // padding: paddings,
   };
   const coffee = {
-    // backgroundColor: backgroundColor,
-    // fontSize: someSize,
     color: "brown",
-    // padding: paddings,
   };
-  //  ...
-  //  <div style={styles}>
 
   if (Minutes <= -1) {
     setMinutes(99);
@@ -72,6 +68,7 @@ const JourneyPage = () => {
         coffee={coffee}
         isStopping={isStopping}
         styles={styles}
+        limit={limit}
         formattedNumber={formattedNumber}
         setUserId={setUserId}
         breakTime={breakTime}

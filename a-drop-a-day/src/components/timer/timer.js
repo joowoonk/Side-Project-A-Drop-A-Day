@@ -40,6 +40,7 @@ export default function Timer({
   setUserId,
   focusTime,
   setFocusTime,
+  limit,
 }) {
   const classes = useStyles();
 
@@ -89,14 +90,17 @@ export default function Timer({
                           >
                             <i className="fa fa-pause fa-2x" />
                           </Button>
-                          <Button
-                            variant="contained"
-                            color="primary"
-                            // className="controller"
-                            onClick={() => setMinutes(Minutes + 1)}
-                          >
-                            <i className="fa fa-plus fa-2x" />
-                          </Button>
+                          {30 > Minutes && (
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              // disabled={limit}
+                              // className="controller"
+                              onClick={() => setMinutes(Minutes + 1)}
+                            >
+                              <i className="fa fa-plus fa-2x" />
+                            </Button>
+                          )}
                         </div>
                       ) : (
                         <></>
