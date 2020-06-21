@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import Subject from "../subject/subject.component";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import "./timer.styles.scss";
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     // margin: "4% auto",
   },
   paper: {
-    padding: 150,
+    padding: 110,
     textAlign: "center",
     boxShadow: "0 1px 3px 1px black",
     background: "floralwhite",
@@ -43,8 +42,27 @@ export default function Timer({
   limit,
 }) {
   const classes = useStyles();
+  const projects = useSelector((state) => state.tomatoesReducers.projects);
 
-  let warning = "Are you about that?";
+  // console.log(projects);
+  // let finishedCounts;
+  let accumulatedFinished = projects.map((res) => res.finished);
+  let finishedCounts = accumulatedFinished.reduce(
+    (total, acc) => total + acc,
+    0
+  );
+  console.log({ finishedCounts });
+  const isFetching = useSelector((state) => state.tomatoesReducers.isFetching);
+
+  function timeConvert(n) {
+    var num = n;
+    var hours = num / 60;
+    var rhours = Math.floor(hours);
+    var minutes = (hours - rhours) * 60;
+    var rminutes = Math.round(minutes);
+    return rhours + " hour(s) " + rminutes + " minutes";
+  }
+
   return (
     <div>
       {!focusTime && <Helmet title={`A Drop A Day`}></Helmet>}
@@ -71,7 +89,7 @@ export default function Timer({
                 </div>
               ) : (
                 <div>
-                  <i style={styles} className="fas fa-apple-alt fa-10x" />
+                  <i style={styles} className="fas fa-book fa-10x" />
                   {!isStopping ? (
                     <>
                       <br />
@@ -154,6 +172,12 @@ export default function Timer({
               >
                 Focus Time
               </Button>
+              {isFetching && (
+                <p>
+                  You focused about&nbsp;
+                  {timeConvert(finishedCounts * 25)} so far today
+                </p>
+              )}
             </Paper>
           </Grid>
         </Grid>

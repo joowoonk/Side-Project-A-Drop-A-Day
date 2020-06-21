@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./sign-up.styles.scss";
 import { useDispatch } from "react-redux";
 import { registerUserAction } from "../../redux/actions/userActions";
-import { useHistory } from "react-router-dom";
+
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const { push } = useHistory();
+
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -40,12 +40,7 @@ const SignUp = () => {
     <>
       {!localStorage.token ? (
         <div className="sign-up-form">
-          <form
-            className={classes.root}
-            noValidate
-            autoComplete="off"
-            className="sign-up"
-          >
+          <form className={classes.root} noValidate autoComplete="off">
             <div className="userName">
               <label htmlFor="userName">
                 {/* <h3>Username</h3> */}
@@ -54,7 +49,6 @@ const SignUp = () => {
                   label="Username"
                   type="text"
                   name="userName"
-                  id="userName"
                   value={userName}
                   onChange={onInputUserName}
                   style={{ width: 225 }}
@@ -68,7 +62,6 @@ const SignUp = () => {
                 <TextField
                   id="standard-basic"
                   label="Password"
-                  id="password"
                   value={userPassword}
                   type="password"
                   onChange={onInputPassword}

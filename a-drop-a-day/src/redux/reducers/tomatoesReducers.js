@@ -15,7 +15,7 @@ import {
 } from "../actions/tomatoesActions";
 
 const initialState = {
-  projects: "",
+  projects: [],
   isFetching: false,
   isAdding: false,
   error: "",

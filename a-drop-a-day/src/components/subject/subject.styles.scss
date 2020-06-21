@@ -2,7 +2,11 @@
   // display: flex;
   // justify-content: space-evenly;
   // margin: 1% 2% auto 2%;
+  .smaller {
+    // padding-right: 200%;
+  }
 }
+
 .server-down {
   color: red;
 }
@@ -26,4 +30,5 @@ a {
   display: flex;
   flex-direction: row;
   // font-size: 3vh;
+  margin: 3% auto;
 }

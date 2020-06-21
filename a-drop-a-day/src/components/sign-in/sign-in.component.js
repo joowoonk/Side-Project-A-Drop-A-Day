@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./sign-in.styles.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { loginUserAction } from "../../redux/actions/userActions";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,7 +20,7 @@ const SignIn = () => {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { push } = useHistory();
-  const loginState = useSelector((state) => state.userReducer.login);
+
   const dispatch = useDispatch();
 
   const classes = useStyles();
@@ -51,7 +51,6 @@ const SignIn = () => {
                   label="Username"
                   type="text"
                   name="userName"
-                  id="userName"
                   value={userName}
                   onChange={onInputUserName}
                   style={{ width: 225 }}
@@ -60,12 +59,11 @@ const SignIn = () => {
             </div>
 
             <label htmlFor="password">
-              <div className="password">{/* <h3>Password</h3> */}</div>
+              <div className="password"></div>
               <div className="password">
                 <TextField
                   id="standard-basic"
                   label="Password"
-                  id="password"
                   value={userPassword}
                   type="password"
                   onChange={onInputPassword}

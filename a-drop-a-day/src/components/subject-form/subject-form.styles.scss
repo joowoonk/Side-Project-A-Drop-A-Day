@@ -8,12 +8,18 @@
   .tomatoesForm {
     margin: 3% auto;
     border: 2px solid green;
-    padding: 5%;
+    padding: 10%;
     border-radius: 10px;
     background-color: floralwhite;
-
+    p {
+      text-align: right;
+    }
+    #filled-number {
+      width: 100%;
+    }
     .submit {
       margin: 15% auto auto auto;
+      text-align: right;
     }
   }
 }

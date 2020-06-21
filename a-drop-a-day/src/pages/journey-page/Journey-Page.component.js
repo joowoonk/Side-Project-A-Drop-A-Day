@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Timer from "../../components/timer/timer";
-import SubjectForm from "../../components/subject-form/subject-form.component";
+
 import Subject from "../../components/subject/subject.component";
 import "./journey-page.styles.scss";
 import Helmet from "react-helmet";
@@ -18,18 +18,16 @@ const JourneyPage = () => {
   const [Minutes, setMinutes] = useState(25);
   const [isStopping, setIsStopping] = useState(true);
   const [breakTime, setBreakTime] = useState(false);
-  const [intervalId, setIntervalId] = useState(null);
+
   const [timeOn, setTimeOn] = useState(false);
   const [userId, setUserId] = useState(0);
   const [focusTime, setFocusTime] = useState(false);
-  const [limit, setLimit] = useState(false);
-  // const [maximum, setMaximum] = useState(false)
 
   useEffect(() => {
     if (!isStopping) {
       const id = window.setInterval(() => {
         setMinutes((min) => min - 1);
-      }, 60000);
+      }, 1000);
 
       return () => window.clearInterval(id);
     } else {
@@ -37,11 +35,6 @@ const JourneyPage = () => {
   }, [isStopping]);
 
   var formattedNumber = ("0" + Minutes).slice(-2);
-  // if (Minutes < 24) {
-  //   setLimit(true);
-  // } else {
-  //   setLimit(false);
-  // }
 
   const styles = {
     color: "tomato",
@@ -50,11 +43,6 @@ const JourneyPage = () => {
     color: "brown",
   };
 
-  if (Minutes <= -1) {
-    setMinutes(99);
-    window.open("http://localhost:3000/tomatoes");
-    window.close();
-  }
   console.log(breakTime);
   return (
     <div className="proejctboard">
@@ -68,7 +56,6 @@ const JourneyPage = () => {
         coffee={coffee}
         isStopping={isStopping}
         styles={styles}
-        limit={limit}
         formattedNumber={formattedNumber}
         setUserId={setUserId}
         breakTime={breakTime}
@@ -79,7 +66,6 @@ const JourneyPage = () => {
         minutes={Minutes}
         setBreakTime={setBreakTime}
         breakTime={breakTime}
-        setBreakTime={setBreakTime}
         setMinutes={setMinutes}
         setIsStopping={setIsStopping}
         isStopping={isStopping}

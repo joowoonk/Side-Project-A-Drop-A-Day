@@ -1,7 +1,7 @@
 import React from "react";
 import "./nav.styles.scss";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import useDarkMode from "../../hooks/useDarkMode";
 
 import { logOut } from "../../redux/actions/userActions";
@@ -9,7 +9,6 @@ import { logOut } from "../../redux/actions/userActions";
 import { ReactComponent as Logo } from "../../assets/logo2.svg";
 // import { useHistory } from "react-router";
 const Nav = (props) => {
-  const loginState = useSelector((state) => state.userReducer.login);
   const [darkMode, setDarkMode] = useDarkMode(false);
   const toggleMode = (e) => {
     e.preventDefault();
