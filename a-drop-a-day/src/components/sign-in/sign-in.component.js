@@ -4,6 +4,12 @@ import { useDispatch } from "react-redux";
 import { loginUserAction } from "../../redux/actions/userActions";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import {
+  LOGIN_USER_SUCCESS,
+  LOGIN_USER_FAILURE,
+  FETCH_USER_START,
+} from "../../redux/actions/userActions";
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
@@ -17,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SignIn = () => {
-  const [userName, setUserName] = useState("");
-  const [userPassword, setUserPassword] = useState("");
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
   const { push } = useHistory();
 
   const dispatch = useDispatch();
@@ -29,15 +35,28 @@ const SignIn = () => {
   };
 
   const onInputPassword = (e) => {
-    setUserPassword(e.target.value);
+    setPassword(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    await dispatch(loginUserAction(userName, userPassword));
-    push("/tomatoes");
-    console.log(localStorage);
+    console.log({ username }, { password });
+    axiosWithAuth()
+      .post(`/auth/login`, { username, password })
+      .then((res) => {
+        console.log(res);
+
+        localStorage.setItem("token", res.data.token);
+        alert(`Welcome ${username}, hope you have a great day!`);
+        push("/tomatoes");
+        // window.open("http://localhost:3000/tomatoes");
+        // window.close();
+      })
+      .catch((err) => {
+        alert("Incorrect username/password!");
+      });
   };
+
   return (
     <>
       {!localStorage.token ? (
@@ -51,7 +70,7 @@ const SignIn = () => {
                   label="Username"
                   type="text"
                   name="userName"
-                  value={userName}
+                  value={username}
                   onChange={onInputUserName}
                   style={{ width: 225 }}
                 />
@@ -64,7 +83,7 @@ const SignIn = () => {
                 <TextField
                   id="standard-basic"
                   label="Password"
-                  value={userPassword}
+                  value={password}
                   type="password"
                   onChange={onInputPassword}
                   style={{ width: 225 }}

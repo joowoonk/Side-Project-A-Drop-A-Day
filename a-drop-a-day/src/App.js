@@ -21,17 +21,23 @@ function App() {
       {/* <GlobalStyles /> */}
 
       <div>
-        <Nav />
         <Switch>
           <Route exact path="/SignIn">
+            <Nav />
             <Quotes />
             <SignIn />
           </Route>
           <Route exact path="/SignUp">
+            <Nav />
             <SignUp />
           </Route>
-          <PrivateRoute path="/tomatoes" component={JourneyPage} />
-          <PrivateRoute path="/form" component={SubjectForm} />
+          <PrivateRoute path="/tomatoes">
+            <Nav />
+            <JourneyPage />
+          </PrivateRoute>
+          <PrivateRoute path="/form">
+            <Nav /> <SubjectForm />
+          </PrivateRoute>{" "}
         </Switch>
       </div>
     </>

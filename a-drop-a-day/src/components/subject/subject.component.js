@@ -76,7 +76,7 @@ const Subject = (props) => {
     props.setFocusTime(false);
     props.setIsStopping(true);
     window.open("http://localhost:3000/timeisup");
-    // window.close();
+    window.close();
     //add dipatch here to add a block with color
   }
 
