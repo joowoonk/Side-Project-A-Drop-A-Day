@@ -14,6 +14,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import JourneyPage from "./pages/journey-page/Journey-Page.component";
 import SubjectForm from "./components/subject-form/subject-form.component";
 import Home from "./components/home/home.component";
+import TimeIsUp from "./components/time-is-up/time-is-up";
 function App() {
   return (
     // <ThemeProvider theme={theme === "light" ? darkTheme : lightTheme}>
@@ -25,6 +26,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/timeisup">
+            <TimeIsUp />
           </Route>
           <Route exact path="/SignIn">
             <Quotes />
