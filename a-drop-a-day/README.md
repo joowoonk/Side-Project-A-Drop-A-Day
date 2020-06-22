@@ -99,8 +99,9 @@ Stretch:
         website, you will be able to make a to-do list with numbers of tomatoes
         you wish to work on.
       </p>
-      <h2> 
+      <h2> See this image as below:</h2>
       <p>
+
         You can create your account for free anytime, click&nbsp;
         <a
           href="https://side-project-a-drop-a-day.vercel.app/signup"
@@ -130,33 +131,3 @@ Stretch:
           here.
         </a>
       </p>
-        <h1>What's The Pomodoro Technique about?</h1>
-      <p>
-        It's one of the time management methods out there that's widely used.
-        You can click&nbsp;
-        <a
-          href="https://francescocirillo.com/pages/pomodoro-technique"
-          target="_blank"
-        >
-          here
-        </a>
-        &nbsp;to see the detail or if you want to see what studies were done
-        regarding this technique, I'd recommend you to try watch this video. In
-        this video, Barbara Oakley who is a professor of Engineering at Oakland
-        University and gave a great speech at TEDx about how we can learn to
-        learn.   <a
-          href="https://www.youtube.com/embed/O96fE1E-rf8"
-          target="_blank"
-        >
-          Click here.
-        </a>
-
-        <h2>Lastly...</h2>
-        As we work on things daily basis, I beleive there is nothing we cannot
-        master. I'm a stronger believer in compound interest where doing one
-        small thing a day will grow us expentially. I hope you dont give up on
-        whatever you are passionated about! Thank you again for taking your time
-        using this website. Oh, try to click tomato logo on top menu if you want
-        dark-mode on this website.
-
-</p>
