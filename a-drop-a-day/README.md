@@ -35,7 +35,7 @@ Stretch:
 
 <h1>Why I built this website:</h1>
       <p>
-        {" "}
+    &nbsp;
         As you know there are tasks to finish in a limited amount of time and
         also we'd agree that time is gold. Most people would also agree that the
         more we stay focused on one thing, we finish stronger and faster.
@@ -153,7 +153,7 @@ Stretch:
         University and gave a great speech at TEDx about how we can learn to
         learn:
         <center>
-          {" "}
+      &nbsp;
           <iframe
             width="560"
             height="315"
