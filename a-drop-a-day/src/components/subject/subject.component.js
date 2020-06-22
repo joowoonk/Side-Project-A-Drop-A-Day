@@ -19,6 +19,7 @@ import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { styles, useStyles } from "./subject.styles";
+import SubjectDetail from "../SubjectDetail/SubjectDetail";
 
 function MyButtonRaw(props) {
   const { classes, color, ...other } = props;
@@ -75,7 +76,7 @@ const Subject = (props) => {
     props.setBreakTime(false);
     props.setFocusTime(false);
     props.setIsStopping(true);
-    window.open("http://localhost:3000/timeisup");
+    window.open("http://localhost:3000/tomatoes");
     window.close();
     //add dipatch here to add a block with color
   }
@@ -145,164 +146,30 @@ const Subject = (props) => {
               <>
                 <div className={classes.root}>
                   {projects.length === 1 && (
-                    <Grid container spacing={2} className="projects smaller">
+                    <Grid container spacing={3} className="projects smaller">
                       {projects.map((sub) => {
                         console.log(sub.id);
                         return (
                           <Grid item xs={12}>
                             {sub.project.length < 25 && (
-                              <Paper
-                                className={classes.paper}
-                                style={{
-                                  marginTop: 10,
-                                  width: 400,
-                                  // marginLeft: "5%",
-                                  marginRight: "5%",
-                                  // paddingRight: "80%",
-                                }}
-                              >
-                                <p>Project Name: </p>
-                                <h1>{sub.project.toUpperCase()}</h1>
-                                You finished
-                                <h1>
-                                  {sub.finished}/{sub.tomatoes}
-                                </h1>
-                                <div className="buttons">
-                                  <MyButton
-                                    disabled={!props.isStopping}
-                                    color="red"
-                                    onClick={() => {
-                                      props.setUserId(sub.id);
-                                      props.setFocusTime(true);
-
-                                      return finishedOneTask();
-                                    }}
-                                  >
-                                    <i className="fa fa-play fa-2x" />
-                                  </MyButton>
-                                  {!hidden && (
-                                    <MyButton
-                                      disabled={!props.isStopping}
-                                      color="red"
-                                      onClick={() => {
-                                        // props.setMinutes(25);
-                                        props.setUserId(sub.id);
-                                        setOption(true);
-                                        setHidden(true);
-                                        // dispatch(resetFinishingTomatoes(sub.id));
-                                      }}
-                                    >
-                                      <i className="fa fa-wrench fa-2x" />
-                                    </MyButton>
-                                  )}
-
-                                  {option && (
-                                    <>
-                                      <MyButton
-                                        disabled={!props.isStopping}
-                                        color="red"
-                                        onClick={() => {
-                                          props.setMinutes(25);
-                                          props.setUserId(sub.id);
-                                          dispatch(
-                                            resetFinishingTomatoes(sub.id)
-                                          );
-                                        }}
-                                      >
-                                        RESET PROGRESS
-                                      </MyButton>
-
-                                      <MyButton
-                                        disabled={!props.isStopping}
-                                        color="red"
-                                        onClick={() => {
-                                          // setUserId(sub.id);
-                                          dispatch(deleteProject(sub.id));
-                                        }}
-                                      >
-                                        <i className="fa               fa-trash  fa-2x" />
-                                      </MyButton>
-                                    </>
-                                  )}
-                                </div>
-                              </Paper>
+                              <SubjectDetail
+                                sub={sub}
+                                isStopping={props.isStopping}
+                                setUserId={props.setUserId}
+                                setFocusTime={props.setFocusTime}
+                                setIsStopping={props.setIsStopping}
+                                setMinutes={props.setMinutes}
+                              />
                             )}
                             {sub.project.length >= 25 && (
-                              <Paper
-                                className={classes.paper}
-                                style={
-                                  {
-                                    // marginTop: 200,
-                                    // width: "100%",
-                                    // paddingRight: "80%",
-                                  }
-                                }
-                              >
-                                <p>Project Name: </p>
-                                <h1>{sub.project.toUpperCase()}</h1>
-                                You finished
-                                <h1>
-                                  {sub.finished}/{sub.tomatoes}
-                                </h1>
-                                <div className="buttons">
-                                  <MyButton
-                                    disabled={!props.isStopping}
-                                    color="red"
-                                    onClick={() => {
-                                      props.setUserId(sub.id);
-                                      props.setFocusTime(true);
-
-                                      return finishedOneTask();
-                                    }}
-                                  >
-                                    <i className="fa fa-play fa-2x" />
-                                  </MyButton>
-                                  {!hidden && (
-                                    <MyButton
-                                      disabled={!props.isStopping}
-                                      color="red"
-                                      onClick={() => {
-                                        // props.setMinutes(25);
-                                        props.setUserId(sub.id);
-                                        setOption(true);
-                                        setHidden(true);
-                                        // dispatch(resetFinishingTomatoes(sub.id));
-                                      }}
-                                    >
-                                      <i className="fa fa-wrench fa-2x" />
-                                    </MyButton>
-                                  )}
-
-                                  {option && (
-                                    <>
-                                      <MyButton
-                                        disabled={!props.isStopping}
-                                        color="red"
-                                        onClick={() => {
-                                          props.setMinutes(25);
-                                          props.setUserId(sub.id);
-                                          dispatch(
-                                            resetFinishingTomatoes(sub.id)
-                                          );
-                                        }}
-                                      >
-                                        RESET PROGRESS
-                                      </MyButton>
-
-                                      <MyButton
-                                        disabled={!props.isStopping}
-                                        color="red"
-                                        onClick={() => {
-                                          // setUserId(sub.id);
-                                          dispatch(deleteProject(sub.id));
-                                        }}
-                                      >
-                                        <i className="fa               fa-trash  fa-2x" />
-                                      </MyButton>
-                                    </>
-                                  )}
-                                </div>
-                              </Paper>
+                              <SubjectDetail
+                                sub={sub}
+                                isStopping={props.isStopping}
+                                setUserId={props.setUserId}
+                                setFocusTime={props.setFocusTime}
+                                setIsStopping={props.setIsStopping}
+                                setMinutes={props.setMinutes}
+                              />
                             )}
                           </Grid>
                         );
@@ -310,82 +177,18 @@ const Subject = (props) => {
                     </Grid>
                   )}
                   {projects.length === 2 && (
-                    <Grid container spacing={1} className="projects">
+                    <Grid container spacing={3} className="projects">
                       {projects.map((sub) => {
                         return (
                           <Grid item xs={12}>
-                            <Paper
-                              className={classes.paper}
-                              style={{
-                                marginTop: "2%",
-                                width: "100%",
-                                // paddingRight: "80%",
-                              }}
-                            >
-                              <p>Project Name: </p>
-                              <h1>{sub.project.toUpperCase()}</h1>
-                              <p>You finished</p>
-                              <h1>
-                                {sub.finished}/{sub.tomatoes}
-                              </h1>
-                              <div className="buttons">
-                                <MyButton
-                                  disabled={!props.isStopping}
-                                  color="red"
-                                  onClick={() => {
-                                    props.setUserId(sub.id);
-                                    props.setFocusTime(true);
-                                    return finishedOneTask();
-                                  }}
-                                >
-                                  <i className="fa fa-play fa-2x" />
-                                </MyButton>
-                                {!hidden && (
-                                  <MyButton
-                                    disabled={!props.isStopping}
-                                    color="red"
-                                    onClick={() => {
-                                      // props.setMinutes(25);
-                                      props.setUserId(sub.id);
-                                      setOption(true);
-                                      setHidden(true);
-                                      // dispatch(resetFinishingTomatoes(sub.id));
-                                    }}
-                                  >
-                                    <i className="fa fa-wrench fa-2x" />
-                                  </MyButton>
-                                )}
-
-                                {option && (
-                                  <>
-                                    <MyButton
-                                      disabled={!props.isStopping}
-                                      color="red"
-                                      onClick={() => {
-                                        props.setMinutes(25);
-                                        props.setUserId(sub.id);
-                                        dispatch(
-                                          resetFinishingTomatoes(sub.id)
-                                        );
-                                      }}
-                                    >
-                                      RESET PROGRESS
-                                    </MyButton>
-
-                                    <MyButton
-                                      disabled={!props.isStopping}
-                                      color="red"
-                                      onClick={() => {
-                                        // setUserId(sub.id);
-                                        dispatch(deleteProject(sub.id));
-                                      }}
-                                    >
-                                      <i className="fa               fa-trash  fa-2x" />
-                                    </MyButton>
-                                  </>
-                                )}
-                              </div>
-                            </Paper>
+                            <SubjectDetail
+                              sub={sub}
+                              isStopping={props.isStopping}
+                              setUserId={props.setUserId}
+                              setFocusTime={props.setFocusTime}
+                              setIsStopping={props.setIsStopping}
+                              setMinutes={props.setMinutes}
+                            />
                           </Grid>
                         );
                       })}
@@ -396,71 +199,14 @@ const Subject = (props) => {
                       {projects.map((sub) => {
                         return (
                           <Grid item xs={12} sm={6}>
-                            <Paper className={classes.paper}>
-                              <p>Project Name: </p>
-                              <h1>{sub.project.toUpperCase()}</h1>
-                              <p>You finished</p>
-                              <h1>
-                                {sub.finished}/{sub.tomatoes}
-                              </h1>
-                              <div className="buttons">
-                                <MyButton
-                                  disabled={!props.isStopping}
-                                  color="red"
-                                  onClick={() => {
-                                    props.setUserId(sub.id);
-                                    props.setFocusTime(true);
-                                    return finishedOneTask();
-                                  }}
-                                >
-                                  <i className="fa fa-play fa-2x" />
-                                </MyButton>
-                                {!hidden && (
-                                  <MyButton
-                                    disabled={!props.isStopping}
-                                    color="red"
-                                    onClick={() => {
-                                      // props.setMinutes(25);
-                                      props.setUserId(sub.id);
-                                      setOption(true);
-                                      setHidden(true);
-                                      // dispatch(resetFinishingTomatoes(sub.id));
-                                    }}
-                                  >
-                                    <i className="fa fa-wrench fa-2x" />
-                                  </MyButton>
-                                )}
-
-                                {option && (
-                                  <>
-                                    <MyButton
-                                      disabled={!props.isStopping}
-                                      color="red"
-                                      onClick={() => {
-                                        props.setMinutes(25);
-                                        props.setUserId(sub.id);
-                                        dispatch(
-                                          resetFinishingTomatoes(sub.id)
-                                        );
-                                      }}
-                                    >
-                                      RESET PROGRESS
-                                    </MyButton>
-
-                                    <MyButton
-                                      disabled={!props.isStopping}
-                                      color="red"
-                                      onClick={() => {
-                                        // setUserId(sub.id);
-                                        dispatch(deleteProject(sub.id));
-                                      }}
-                                    >
-                                      <i className="fa               fa-trash  fa-2x" />
-                                    </MyButton>
-                                  </>
-                                )}
-                              </div>
-                            </Paper>
+                            <SubjectDetail
+                              sub={sub}
+                              isStopping={props.isStopping}
+                              setUserId={props.setUserId}
+                              setFocusTime={props.setFocusTime}
+                              setIsStopping={props.setIsStopping}
+                              setMinutes={props.setMinutes}
+                            />
                           </Grid>
                         );
                       })}

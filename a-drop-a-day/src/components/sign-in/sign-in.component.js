@@ -49,8 +49,10 @@ const SignIn = () => {
         localStorage.setItem("token", res.data.token);
         alert(`Welcome ${username}, hope you have a great day!`);
         push("/tomatoes");
-        // window.open("http://localhost:3000/tomatoes");
-        // window.close();
+        dispatch({
+          type: LOGIN_USER_SUCCESS,
+          payload: res.data,
+        });
       })
       .catch((err) => {
         alert("Incorrect username/password!");

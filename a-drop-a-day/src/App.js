@@ -21,22 +21,20 @@ function App() {
       {/* <GlobalStyles /> */}
 
       <div>
+        <Nav />
         <Switch>
           <Route exact path="/SignIn">
-            <Nav />
             <Quotes />
             <SignIn />
           </Route>
           <Route exact path="/SignUp">
-            <Nav />
             <SignUp />
           </Route>
           <PrivateRoute path="/tomatoes">
-            <Nav />
             <JourneyPage />
           </PrivateRoute>
           <PrivateRoute path="/form">
-            <Nav /> <SubjectForm />
+            <SubjectForm />
           </PrivateRoute>{" "}
         </Switch>
       </div>

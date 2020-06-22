@@ -1,12 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
 export const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
     // borderRadius: 10,
-    marginLeft: 10,
-    marginTop: 25,
-    marginRight: 20,
-    // padding: 10,
+    // marginTop: 15,
   },
   paper: {
     padding: theme.spacing(2),
@@ -14,6 +11,8 @@ export const useStyles = makeStyles((theme) => ({
     background: "floralwhite",
     boxShadow: "0 1px 3px 1px black",
     color: theme.palette.text.secondary,
+    // color: "blue",
+    // paddingRight: "120%",
   },
 }));
 export const styles = {
@@ -28,8 +27,9 @@ export const styles = {
       props.color === "red"
         ? "0 3px 5px 2px rgba(255, 105, 135, .3)"
         : "0 3px 5px 2px rgba(33, 203, 243, .3)",
-    // color: "blue",
+    // color: "red",
     // height: 48,
+    // padding: "0 30px",
 
     marginRight: 50,
     marginBottom: 10,
