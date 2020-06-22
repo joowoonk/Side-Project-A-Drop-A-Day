@@ -140,7 +140,7 @@ const Home = () => {
         As we work on things daily basis, I believe there is nothing we cannot
         master. I'm a stronger believer in compound interest where doing one
         small thing a day will grow us expentially. I hope you dont give up on
-        whatever you are passionated about! Thank you again for taking your time
+        whatever you are passionated about. Thank you again for taking your time
         using this website. Oh, try to click tomato logo on top menu if you want
         dark-mode on this website.
       </p>

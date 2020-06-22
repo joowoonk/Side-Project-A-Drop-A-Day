@@ -48,7 +48,6 @@ export const tomatoesReducers = (state = initialState, action) => {
         isAdding: false,
       };
     case ADD_PROJECT_SUCCESS:
-      console.log(action.payload);
       return {
         ...state,
         projects: [...action.payload],

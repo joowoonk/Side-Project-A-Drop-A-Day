@@ -11,14 +11,11 @@ export const REGISTER_USER_FAILURE = "REGISTER_USER_FAILURE";
 export const LOGOUT = "LOGOUT";
 
 export const loginUserAction = (username, password) => {
-  console.log(username, password);
   return (dispatch) => {
     dispatch({ type: FETCH_USER_START });
     axiosWithAuth()
       .post(`/auth/login`, { username, password })
       .then((res) => {
-        console.log(res);
-
         localStorage.setItem("token", res.data.token);
         alert(`Welcome ${username}, hope you have a great day!`);
         dispatch({
@@ -44,12 +41,9 @@ export const userInformation = () => {
     axiosWithAuth()
       .get(`/auth/user`)
       .then((res) => {
-        console.log("Grabbed the user", res);
-        //payload might change after the backend calls
         dispatch({ type: FETCH_USER_SUCCESS, payload: res.data });
       })
       .catch((err) => {
-        console.log("failed");
         dispatch({
           type: FETCH_USER_FAILURE,
           payload: err,
@@ -59,13 +53,11 @@ export const userInformation = () => {
 };
 
 export const registerUserAction = (username, password) => {
-  console.log(username, password);
   return (dispatch) => {
     dispatch({ type: FETCH_USER_START });
     axiosWithAuth()
       .post(`/auth/register`, { username, password })
       .then((res) => {
-        // console.log(username, password);
         alert(`Dear ${username}, your account's just got created`);
         dispatch({
           type: REGISTER_USER_SUCCESS,

@@ -19,13 +19,7 @@ const Nav = (props) => {
     e.preventDefault();
     setDarkMode(!darkMode);
   };
-  // const useinfo = useSelector((state) => state.userReducer.user);
-
-  // useEffect(() => {
-  //   dispatch(userInformation());
-  // }, [useinfo]);
   const dispatch = useDispatch();
-  console.log({ loggedIn });
 
   const handleLogOut = () => {
     dispatch(logOut());
