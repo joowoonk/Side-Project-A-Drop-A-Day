@@ -137,7 +137,7 @@ const Home = () => {
           ></iframe>
         </center>
         <h2>Lastly...</h2>
-        As we work on things daily basis, I beleive there is nothing we cannot
+        As we work on things daily basis, I believe there is nothing we cannot
         master. I'm a stronger believer in compound interest where doing one
         small thing a day will grow us expentially. I hope you dont give up on
         whatever you are passionated about! Thank you again for taking your time
