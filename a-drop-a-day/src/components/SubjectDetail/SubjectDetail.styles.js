@@ -31,7 +31,7 @@ export const styles = {
     // height: 48,
     // padding: "0 30px",
 
-    marginRight: 50,
+    marginRight: 25,
     marginBottom: 10,
   },
 };
