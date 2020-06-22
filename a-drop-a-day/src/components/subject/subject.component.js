@@ -76,10 +76,8 @@ const Subject = (props) => {
     props.setBreakTime(false);
     props.setFocusTime(false);
     props.setIsStopping(true);
-    window.open(
-      "https://side-project-a-drop-a-day-a4a6alagy.vercel.app/tomatoes"
-    );
-    window.close();
+    window.open("https://side-project-a-drop-a-day.vercel.app/tomatoes");
+    window.close("https://side-project-a-drop-a-day.vercel.app/tomatoes");
     //add dipatch here to add a block with color
   }
 
