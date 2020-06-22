@@ -41,8 +41,14 @@ const Nav = (props) => {
         // className="logo"
       />
       <div className="menuNav">
-        <Link to="Home">HOME</Link>
-        <Link to="Contact">CONTACT</Link>
+        <Link to="">HOME</Link>
+        <a
+          href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
+          target="_blank"
+        >
+          CONTACT
+        </a>
+
         {/* LEARN HOW TO LOG OUT SHOWS WITHOUT HAVING DRY CODE ON APP */}
         {loggedIn || localStorage.token ? (
           <>

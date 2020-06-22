@@ -13,7 +13,7 @@ import SignUp from "./components/sign-up/sign-up.component";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import JourneyPage from "./pages/journey-page/Journey-Page.component";
 import SubjectForm from "./components/subject-form/subject-form.component";
-
+import Home from "./components/home/home.component";
 function App() {
   return (
     // <ThemeProvider theme={theme === "light" ? darkTheme : lightTheme}>
@@ -23,6 +23,9 @@ function App() {
       <div>
         <Nav />
         <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route exact path="/SignIn">
             <Quotes />
             <SignIn />
