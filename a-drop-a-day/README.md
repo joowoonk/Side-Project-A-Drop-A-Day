@@ -72,7 +72,7 @@ Stretch:
         like this.
         <ul>
           <li>
-            Continue writing an essay for my Philosophy of Science class -->{" "}
+            Continue writing an essay for my Philosophy of Science class -->&nbsp;
             <span style={{ color: "tomato" }}>4 tomatoes </span>a day
           </li>
           <li>
@@ -87,13 +87,13 @@ Stretch:
         </ul>
         Wait, what's does it mean by tomatoes? Here's the answer, each tomato
         will be a time tracker. One tomato will be 25 mintues. Taking a short 5
-        minute break time after a tomato would be recommended for our brains.{" "}
+        minute break time after a tomato would be recommended for our brains.&nbsp;
         <a
           href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
           target="_blank"
         >
           Taking a break time can be helfup for us
-        </a>{" "}
+        </a>&nbsp;
         to think more creative way. After a first four tomatoes, taking a long
         15 minutes break time is also recommended. Once you logged in this
         website, you will be able to make a to-do list with numbers of tomatoes
@@ -108,20 +108,20 @@ Stretch:
           height="1000vh"
           className="image"
         ></img>
-        You can create your account for free anytime, click{" "}
+        You can create your account for free anytime, click&nbsp;
         <a
           href="https://side-project-a-drop-a-day.vercel.app/signup"
           target="_blank"
         >
           here
-        </a>{" "}
+        </a>&nbsp;
         to sign up!
       </p>
       <p>
         I hope this website would be very helplful for you to stay focused and
         keep tracking your tasks. I'll do my best to keep updating more features
         as days go whenever I have free time. If you would like to contact me
-        via LinkedIn, you can click{" "}
+        via LinkedIn, you can click&nbsp;
         <a
           href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
           target="_blank"
