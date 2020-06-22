@@ -15,7 +15,7 @@ const Home = () => {
         <a
           style={{ color: "tomato" }}
           href="https://francescocirillo.com/pages/pomodoro-technique"
-          target="_blank"
+          target="blank"
         >
           the Pomodoro Technique
         </a>
@@ -61,7 +61,7 @@ const Home = () => {
         minute break time after a tomato would be recommended for our brains.{" "}
         <a
           href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
-          target="_blank"
+          target="blank"
         >
           Taking a break time can be helfup for us
         </a>{" "}
@@ -82,7 +82,7 @@ const Home = () => {
         You can create your account for free anytime, click{" "}
         <a
           href="https://side-project-a-drop-a-day.vercel.app/signup"
-          target="_blank"
+          target="blank"
         >
           here
         </a>{" "}
@@ -95,7 +95,7 @@ const Home = () => {
         via LinkedIn, you can click{" "}
         <a
           href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
-          target="_blank"
+          target="blank"
         >
           here
         </a>
@@ -103,7 +103,7 @@ const Home = () => {
         see this side project's repo on github, you can click&nbsp;
         <a
           href="https://github.com/joowoonk/Side-Project-A-Drop-A-Day"
-          target="_blank"
+          target="blank"
         >
           here.
         </a>
@@ -115,7 +115,7 @@ const Home = () => {
         You can click&nbsp;
         <a
           href="https://francescocirillo.com/pages/pomodoro-technique"
-          target="_blank"
+          target="blank"
         >
           here
         </a>

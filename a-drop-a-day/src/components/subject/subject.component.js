@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -53,8 +53,6 @@ const example = [
 const Subject = (props) => {
   const dispatch = useDispatch();
   const projects = useSelector((state) => state.tomatoesReducers.projects);
-  const [option, setOption] = useState(false);
-  const [hidden, setHidden] = useState(false);
 
   const classes = useStyles();
 

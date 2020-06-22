@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import "./sign-in.styles.scss";
 import { useDispatch } from "react-redux";
-import { loginUserAction } from "../../redux/actions/userActions";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  LOGIN_USER_SUCCESS,
-  LOGIN_USER_FAILURE,
-  FETCH_USER_START,
-} from "../../redux/actions/userActions";
+import { LOGIN_USER_SUCCESS } from "../../redux/actions/userActions";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";

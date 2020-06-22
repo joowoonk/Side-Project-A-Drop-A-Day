@@ -35,7 +35,7 @@ Stretch:
 
 <h1>        <a
           href="https://side-project-a-drop-a-day.vercel.app/"
-          target="_blank"
+          target="blank"
         >
        Why I built this website:
         </a>&nbsp;</h1>
@@ -49,7 +49,7 @@ Stretch:
         <a
           style={{ color: "tomato" }}
           href="https://francescocirillo.com/pages/pomodoro-technique"
-          target="_blank"
+          target="blank"
         >
           the Pomodoro Technique
         </a>
@@ -95,7 +95,7 @@ Stretch:
         minute break time after a tomato would be recommended for our brains.&nbsp;
         <a
           href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
-          target="_blank"
+          target="blank"
         >
           Taking a break time can be helfup for us
         </a>&nbsp;

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import { deleteProject } from "../../redux/actions/tomatoesActions";
 
@@ -27,30 +27,13 @@ MyButtonRaw.propTypes = {
 
 const MyButton = withStyles(styles)(MyButtonRaw);
 
-const example = [
-  {
-    id: "c",
-    project: "Eg. Solving code problems on leetcode",
-    finished: 5,
-    tomatoes: 8,
-  },
-  {
-    id: "d",
-    project: "Eg. Practing ukulele for a day",
-    finished: 1,
-    tomatoes: 4,
-  },
-];
-
 const SubjectDetail = (props) => {
   const dispatch = useDispatch();
-  const projects = useSelector((state) => state.tomatoesReducers.projects);
+
   const [option, setOption] = useState(false);
   const [hidden, setHidden] = useState(false);
 
   const classes = useStyles();
-
-  const isFetching = useSelector((state) => state.tomatoesReducers.isFetching);
 
   const finishedOneTask = () => {
     props.setIsStopping(false);

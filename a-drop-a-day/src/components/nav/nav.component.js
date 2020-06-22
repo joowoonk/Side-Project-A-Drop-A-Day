@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./nav.styles.scss";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import useDarkMode from "../../hooks/useDarkMode";
-import { userInformation } from "../../redux/actions/userActions";
+
 import { logOut } from "../../redux/actions/userActions";
 
 import { ReactComponent as Logo } from "../../assets/logo2.svg";
@@ -38,7 +38,7 @@ const Nav = (props) => {
         <Link to="">HOME</Link>
         <a
           href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
-          target="_blank"
+          target="blank"
         >
           CONTACT
         </a>
