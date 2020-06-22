@@ -56,7 +56,6 @@ const Subject = (props) => {
   const [option, setOption] = useState(false);
   const [hidden, setHidden] = useState(false);
 
-  console.log(projects);
   const classes = useStyles();
 
   const isFetching = useSelector((state) => state.tomatoesReducers.isFetching);
@@ -66,11 +65,9 @@ const Subject = (props) => {
   }, []);
 
   const finishedOneTask = () => {
-    // console.log(props.isStopping);
     props.setIsStopping(false);
   };
   if (props.minutes <= 0) {
-    // console.log("Yes?");
     dispatch(finishingOneTomatoes(props.userId));
     props.setMinutes(25);
     props.setBreakTime(false);
@@ -148,7 +145,6 @@ const Subject = (props) => {
                   {projects.length === 1 && (
                     <Grid container spacing={3} className="projects smaller">
                       {projects.map((sub) => {
-                        console.log(sub.id);
                         return (
                           <Grid item xs={12}>
                             {sub.project.length < 25 && (

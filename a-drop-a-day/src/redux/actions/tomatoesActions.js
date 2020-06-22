@@ -85,7 +85,6 @@ export const finishingOneTomatoes = (id) => {
 };
 
 export const deleteProject = (id) => {
-  console.log(id);
   return (dispatch) => {
     dispatch({ type: DELETE_PROJECT_START });
     axiosWithAuth()
@@ -95,8 +94,6 @@ export const deleteProject = (id) => {
         axiosWithAuth()
           .get(`/tomatoes`)
           .then((res) => {
-            // console.log("Grabbed the todos", res);
-            //payload might change after the backend calls
             dispatch({ type: FETCH_TOMATOES_SUCCESS, payload: res.data });
           })
           .catch((err) =>
@@ -113,7 +110,6 @@ export const deleteProject = (id) => {
 };
 
 export const resetFinishingTomatoes = (id) => {
-  console.log({ id });
   return (dispatch) => {
     dispatch({ type: FINISHED_TOMATOES_START });
     axiosWithAuth()
@@ -123,8 +119,6 @@ export const resetFinishingTomatoes = (id) => {
         axiosWithAuth()
           .get(`/tomatoes`)
           .then((res) => {
-            // console.log("Grabbed the todos", res);
-            //payload might change after the backend calls
             dispatch({ type: FETCH_TOMATOES_SUCCESS, payload: res.data });
           })
           .catch((err) =>

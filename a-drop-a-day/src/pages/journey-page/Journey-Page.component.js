@@ -43,7 +43,6 @@ const JourneyPage = () => {
     color: "brown",
   };
 
-  console.log(breakTime);
   return (
     <div className="proejctboard">
       {focusTime && <Helmet title={`ripenning..`}></Helmet>}

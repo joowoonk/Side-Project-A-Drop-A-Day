@@ -40,12 +40,10 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ username }, { password });
+
     axiosWithAuth()
       .post(`/auth/login`, { username, password })
       .then((res) => {
-        console.log(res);
-
         localStorage.setItem("token", res.data.token);
         alert(`Welcome ${username}, hope you have a great day!`);
         push("/tomatoes");

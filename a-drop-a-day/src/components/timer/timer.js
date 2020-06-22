@@ -44,14 +44,12 @@ export default function Timer({
   const classes = useStyles();
   const projects = useSelector((state) => state.tomatoesReducers.projects);
 
-  // console.log(projects);
-  // let finishedCounts;
   let accumulatedFinished = projects.map((res) => res.finished);
   let finishedCounts = accumulatedFinished.reduce(
     (total, acc) => total + acc,
     0
   );
-  console.log({ finishedCounts });
+
   const isFetching = useSelector((state) => state.tomatoesReducers.isFetching);
 
   function timeConvert(n) {

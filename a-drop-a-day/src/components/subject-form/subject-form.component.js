@@ -21,7 +21,7 @@ const SubjectForm = () => {
   const onInputTomatoes = (e) => {
     setTomatoesNumber(e.target.value);
   };
-  console.log(subject, tomatoesNumber, useinfo);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
@@ -51,8 +51,6 @@ const SubjectForm = () => {
   useEffect(() => {
     dispatch(userInformation());
   }, []);
-
-  // console.log({ useinfo });
 
   return (
     <>

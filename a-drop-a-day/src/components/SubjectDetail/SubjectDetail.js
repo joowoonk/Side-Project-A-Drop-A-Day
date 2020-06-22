@@ -48,16 +48,14 @@ const SubjectDetail = (props) => {
   const [option, setOption] = useState(false);
   const [hidden, setHidden] = useState(false);
 
-  // console.log(projects);
   const classes = useStyles();
 
   const isFetching = useSelector((state) => state.tomatoesReducers.isFetching);
 
   const finishedOneTask = () => {
-    // console.log(props.isStopping);
     props.setIsStopping(false);
   };
-  console.log(props.sub);
+
   return (
     <Paper
       className={classes.paper}
