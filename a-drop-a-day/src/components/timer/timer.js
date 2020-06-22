@@ -91,7 +91,12 @@ export default function Timer({
                   {!isStopping ? (
                     <>
                       <br />
-                      <h5> FOCUSING TIME...</h5>
+                      <h5>
+                        {" "}
+                        FOCUSING TIME... <br />
+                        (Making sure to stay on this page, otherwise timer will
+                        reset)
+                      </h5>
                       {!isStopping ? (
                         <div>
                           <Button
