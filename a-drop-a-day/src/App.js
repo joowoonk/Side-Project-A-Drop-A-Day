@@ -31,7 +31,6 @@ function App() {
             <SignUp />
           </Route>
           <PrivateRoute path="/tomatoes" component={JourneyPage} />
-
           <PrivateRoute path="/form" component={SubjectForm} />
         </Switch>
       </div>

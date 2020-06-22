@@ -3,44 +3,32 @@
 MVP:
 
 <ul>
-    <li>navbar</li> 
-    <li>log in/out page</li>
-    <li>sign up page </li>
-    <li>Quotes to fetch a random quote that is inspiraing</li>
-    <li>Inputs:</li>
+    <li>navbar (checked)</li> 
+    <li>log in/out page(checked)</li>
+    <li>sign up page (checked)</li>
+    <li>Quotes to fetch a random quote that is inspiraing for programmer (checked)</li>
+    <li>Inputs: (checked)</li>
         <ul>
             <li>For adding a subject or project name</li>
             <li>Adding numbers of block that determines how many pomoodoro you want to make</li>
         </ul>
-    <li>Outputs:</li>
+    <li>Outputs: (checked)</li>
         <ul>
             <li>TIMERS WILL DISPLAY</li>
             <li>subjects/project names will be displayed</li>
-            <li>Blocks that user can click or button will be there says start focusing!</li>
-                <ul>
-                    <li>Once they start and finishes count by the timer, then one block from left will be colored</li>
-                </ul>
+            <li>numbers of tomatoes and finished will be displayed</li>
         </ul>
 </ul>
-
-2020 06 06 Tomorrow Try to finish login and sign up for frontend and backend
-2020 06 09 Tomorrow implement sign up page and try to get tomatoes get ready to use.
 
 Stretch:
 
 <ul>
     <li>admin mode</li>
-    <!-- <li>removing chats you sent</li> -->
-    <!-- <li>Search keyword</li> -->
-    <li>darkmode/color customized</li>
+    <li>darkmode/color customized (checked)</li>
     <li>forgot username/password</li>
     <li>Color chooser (theme)</li>
-    <li>Direct Reply</li>
-    <li>Block/Unblock (friend/unfriend)</li>
+    <li>Calendar to save log a day</li>
     <li>announcement (highlight/pin)</li>
-    <li>read/undread</li>
-    <li>emoji trade</li>
     <li>changing password/username</li>
-    <li>two step security log in aycan</li>
-    <li>emoji trade</li>
+    <li>two step security log</li>
 </ul>
