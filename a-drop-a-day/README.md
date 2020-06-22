@@ -99,15 +99,8 @@ Stretch:
         website, you will be able to make a to-do list with numbers of tomatoes
         you wish to work on.
       </p>
-      <h2> See this image as below:</h2>
+      <h2> 
       <p>
-        <img
-          src="todo-list-with-tomatoes.png"
-          alt="Todo-list-with-tomatoes"
-          width="90%"
-          height="1000vh"
-          className="image"
-        ></img>
         You can create your account for free anytime, click&nbsp;
         <a
           href="https://side-project-a-drop-a-day.vercel.app/signup"
@@ -151,19 +144,13 @@ Stretch:
         regarding this technique, I'd recommend you to try watch this video. In
         this video, Barbara Oakley who is a professor of Engineering at Oakland
         University and gave a great speech at TEDx about how we can learn to
-        learn:
-        <center>
-      &nbsp;
-          <iframe
-            width="560"
-            height="315"
-            className="video"
-            src="https://www.youtube.com/embed/O96fE1E-rf8"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </center>
+        learn.   <a
+          href="https://www.youtube.com/embed/O96fE1E-rf8"
+          target="_blank"
+        >
+          Click here.
+        </a>
+
         <h2>Lastly...</h2>
         As we work on things daily basis, I beleive there is nothing we cannot
         master. I'm a stronger believer in compound interest where doing one
@@ -171,4 +158,5 @@ Stretch:
         whatever you are passionated about! Thank you again for taking your time
         using this website. Oh, try to click tomato logo on top menu if you want
         dark-mode on this website.
-      </p>
+
+</p>
