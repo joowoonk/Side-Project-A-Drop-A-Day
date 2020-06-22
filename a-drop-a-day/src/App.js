@@ -30,12 +30,9 @@ function App() {
           <Route exact path="/SignUp">
             <SignUp />
           </Route>
-          <PrivateRoute path="/tomatoes">
-            <JourneyPage />
-          </PrivateRoute>
-          <PrivateRoute path="/form">
-            <SubjectForm />
-          </PrivateRoute>{" "}
+          <PrivateRoute path="/tomatoes" component={JourneyPage} />
+
+          <PrivateRoute path="/form" component={SubjectForm} />
         </Switch>
       </div>
     </>
