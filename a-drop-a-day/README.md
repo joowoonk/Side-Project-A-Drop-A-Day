@@ -33,7 +33,12 @@ Stretch:
     <li>two step security log</li>
 </ul>
 
-<h1>Why I built this website:</h1>
+<h1>        <a
+          href="https://side-project-a-drop-a-day.vercel.app/"
+          target="_blank"
+        >
+       Why I built this website:
+        </a>&nbsp;</h1>
       <p>
     &nbsp;
         As you know there are tasks to finish in a limited amount of time and
@@ -98,36 +103,4 @@ Stretch:
         15 minutes break time is also recommended. Once you logged in this
         website, you will be able to make a to-do list with numbers of tomatoes
         you wish to work on.
-      </p>
-      <h2> See this image as below:</h2>
-      <p>
-
-        You can create your account for free anytime, click&nbsp;
-        <a
-          href="https://side-project-a-drop-a-day.vercel.app/signup"
-          target="_blank"
-        >
-          here
-        </a>&nbsp;
-        to sign up!
-      </p>
-      <p>
-        I hope this website would be very helplful for you to stay focused and
-        keep tracking your tasks. I'll do my best to keep updating more features
-        as days go whenever I have free time. If you would like to contact me
-        via LinkedIn, you can click&nbsp;
-        <a
-          href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
-          target="_blank"
-        >
-          here
-        </a>
-        . I'd love to hear your feedback and stay connected. Also if you like to
-        see this side project's repo on github, you can click&nbsp;
-        <a
-          href="https://github.com/joowoonk/Side-Project-A-Drop-A-Day"
-          target="_blank"
-        >
-          here.
-        </a>
       </p>
