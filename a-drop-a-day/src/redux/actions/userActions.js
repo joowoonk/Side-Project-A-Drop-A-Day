@@ -1,4 +1,5 @@
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { history } from "../../index";
 
 export const FETCH_USER_START = "FETCH_USER_START";
 export const FETCH_USER_SUCCESS = "FETCH_USER_SUCCESS";
@@ -59,8 +60,9 @@ export const registerUserAction = (username, password) => {
       .post(`/auth/register`, { username, password })
       .then((res) => {
         alert(`Dear ${username}, your account's just got created`);
-        window.open("https://side-project-a-drop-a-day.vercel.app/signin");
-        window.close();
+        // window.open("https://side-project-a-drop-a-day.vercel.app/signin");
+        // window.close();
+        history.push("signin");
         dispatch({
           type: REGISTER_USER_SUCCESS,
           payload: res.data,
