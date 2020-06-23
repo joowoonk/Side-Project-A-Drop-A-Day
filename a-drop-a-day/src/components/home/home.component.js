@@ -117,7 +117,7 @@ const Home = () => {
         regarding this technique, I'd recommend you to try watch this video. In
         this video, Barbara Oakley who is a professor of Engineering at Oakland
         University and gave a great speech at TEDx about how we can learn to
-        learn:
+        learn, talks about this technique:
         <center>
           {" "}
           <iframe
