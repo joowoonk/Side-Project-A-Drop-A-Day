@@ -70,7 +70,7 @@ const Home = () => {
           src="todo-list-with-tomatoes.png"
           alt="Todo-list-with-tomatoes"
           width="90%"
-          height="1000vh"
+          height="auto"
           className="image"
         ></img>
         You can create your account for free anytime, click{" "}
@@ -96,7 +96,7 @@ const Home = () => {
         . I'd love to hear your feedback and stay connected. Also if you like to
         see this side project's repo on GitHub, you can click&nbsp;
         <a
-          href="https://github.com/joowoonk/Side-Project-A-Drop-A-Day"
+          href="https://github.com/joowoonk/Side-Project-A-Drop-A-Day/tree/master/a-drop-a-day"
           target="blank"
         >
           here.
