@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import "./sign-up.styles.scss";
 import { useDispatch } from "react-redux";
 import { registerUserAction } from "../../redux/actions/userActions";
-
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import {
+  REGISTER_USER_SUCCESS,
+  REGISTER_USER_FAILURE,
+} from "../../redux/actions/userActions";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -19,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
-
+  const { push } = useHistory();
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -33,6 +37,24 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // axiosWithAuth()
+    //   .post(`/auth/register`, { userName, userPassword })
+    //   .then((res) => {
+    //     alert(`created`);
+    //     push("signin");
+    //     dispatch({
+    //       type: REGISTER_USER_SUCCESS,
+    //       payload: res.data,
+    //     });
+    //     push("signin");
+    //   })
+    //   .catch((err) => {
+    //     alert("This username is unavailable");
+    //     dispatch({
+    //       type: REGISTER_USER_FAILURE,
+    //       payload: err,
+    //     });
+    //   });
     dispatch(registerUserAction(userName, userPassword));
     //dipatch for posting username goes here
   };

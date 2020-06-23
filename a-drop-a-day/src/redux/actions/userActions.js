@@ -59,6 +59,8 @@ export const registerUserAction = (username, password) => {
       .post(`/auth/register`, { username, password })
       .then((res) => {
         alert(`Dear ${username}, your account's just got created`);
+        window.open("https://side-project-a-drop-a-day.vercel.app/signin");
+        window.close();
         dispatch({
           type: REGISTER_USER_SUCCESS,
           payload: res.data,
