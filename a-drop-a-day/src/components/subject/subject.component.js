@@ -38,7 +38,7 @@ const MyButton = withStyles(styles)(MyButtonRaw);
 const example = [
   {
     id: "c",
-    project: "Eg. Solving code problems on leetcode",
+    project: "Example. your project can be added above on tomatoes tab",
     finished: 5,
     tomatoes: 8,
   },

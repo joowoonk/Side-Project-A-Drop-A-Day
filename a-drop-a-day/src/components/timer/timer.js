@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
@@ -43,6 +43,8 @@ export default function Timer({
 }) {
   const classes = useStyles();
   const projects = useSelector((state) => state.tomatoesReducers.projects);
+  const [volume, setVolume] = useState(true);
+  const [sound, setSound] = useState(true);
 
   let accumulatedFinished = projects.map((res) => res.finished);
   let finishedCounts = accumulatedFinished.reduce(
@@ -68,13 +70,52 @@ export default function Timer({
         <Grid container spacing={2}>
           <Grid item xs={12} className="container">
             <Paper className={classes.paper}>
-              {" "}
+              {volume ? (
+                <i
+                  style={{ color: "blue", textAlign: "right" }}
+                  className="fas fa-volume-up fa-3x"
+                  onClick={() => {
+                    setVolume(false);
+                    setSound(false);
+                  }}
+                />
+              ) : (
+                <i
+                  style={{ color: "blue", textAlign: "right" }}
+                  className="fas fa-volume-off fa-3x"
+                  onClick={() => {
+                    setVolume(true);
+                    setSound(true);
+                  }}
+                />
+              )}
+              <br />
+              <br />
               {breakTime ? (
                 <div className="icon">
                   <i style={coffee} className="fas fa-coffee fa-10x" />
                   {breakTime ? (
                     <>
-                      <br />
+                      {sound ? (
+                        <center>
+                          <iframe
+                            width="0"
+                            height="0"
+                            display="hidden"
+                            src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1"
+                            frameborder="10"
+                            // autoplay="1"
+                            allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                          ></iframe>
+                        </center>
+                      ) : (
+                        <>
+                          <br />
+                          <br />
+                        </>
+                      )}
+
                       <h5>Coffee Time Is On...</h5>
                       {breakTime && <Helmet title={`break..`}></Helmet>}
                     </>
@@ -90,6 +131,26 @@ export default function Timer({
                   <i style={styles} className="fas fa-book fa-10x" />
                   {!isStopping ? (
                     <>
+                      {sound ? (
+                        <center>
+                          <iframe
+                            width="0"
+                            height="0"
+                            display="hidden"
+                            src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1"
+                            frameborder="10"
+                            // autoplay="1"
+                            allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                          ></iframe>
+                        </center>
+                      ) : (
+                        <>
+                          <br />
+                          <br />
+                        </>
+                      )}
+
                       <br />
                       <h5>
                         {" "}
