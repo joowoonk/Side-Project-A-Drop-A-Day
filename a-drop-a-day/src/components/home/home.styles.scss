@@ -1,19 +1,21 @@
+// .container {
+// margin: 3% auto;
 .introduction {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 1% 10%;
+  margin: 1% 4%;
   border: 2px solid green;
   background-color: floralwhite;
   border-radius: 20px;
   h1 {
     font-size: 6vh;
-    margin: 3%;
+    margin: 3% 2%;
   }
   p {
     font-size: 2vh;
-    margin: auto 3% 2% 3%;
+    margin: 3% 4%;
   }
   .image {
     display: flex;
@@ -25,3 +27,5 @@
     margin: 3% auto;
   }
 }
+// }
+//
