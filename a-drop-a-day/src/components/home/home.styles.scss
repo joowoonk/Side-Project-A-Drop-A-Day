@@ -18,14 +18,15 @@
     p {
       font-size: 2vh;
       margin: 3% auto;
-      padding-right: 2%;
-      padding-left: 2%;
+      padding-right: 3%;
+      padding-left: 3%;
     }
     .image {
       display: flex;
-      margin: 3% auto;
-      padding-right: 2%;
-      padding-left: 2%;
+      margin: 0 auto;
+      width: 80vw;
+      // padding-right: 2%;
+      // padding-left: 2%;
       border-radius: 30px;
     }
     .video {
