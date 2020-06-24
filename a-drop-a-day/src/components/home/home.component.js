@@ -3,7 +3,7 @@ import "./home.styles.scss";
 
 const Home = () => {
   return (
-    <div className="containter">
+    <div className="home">
       <div className="introduction">
         <h1>Why I built this website:</h1>
         <p>
@@ -75,7 +75,7 @@ const Home = () => {
           <img
             src="todo-list-with-tomatoes.png"
             alt="Todo-list-with-tomatoes"
-            width="90%"
+            width="auto"
             height="auto"
             className="image"
           ></img>
