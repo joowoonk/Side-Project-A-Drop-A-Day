@@ -1,5 +1,5 @@
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
-
+import { history } from "../../index";
 export const FETCH_TOMATOES_START = "FETCH_TOMATOES_START";
 export const FETCH_TOMATOES_SUCCESS = "FETCH_TOMATOES_SUCCESS";
 export const FETCH_TOMATOES_FAILURE = "FETCH_TOMATOES_FAILURE";
@@ -49,6 +49,7 @@ export const addProject = (project, tomatoes, user_id) => {
       .then((res) => {
         alert("Your project's added!");
         dispatch({ type: ADD_PROJECT_SUCCESS, payload: res.data });
+        history.push("tomatoes");
       })
       .catch((err) =>
         dispatch({

@@ -53,7 +53,7 @@ const example = [
 const Subject = (props) => {
   const dispatch = useDispatch();
   const projects = useSelector((state) => state.tomatoesReducers.projects);
-
+  console.log({ projects });
   const classes = useStyles();
 
   const isFetching = useSelector((state) => state.tomatoesReducers.isFetching);
