@@ -42,7 +42,7 @@ export const userInformation = () => {
     axiosWithAuth()
       .get(`/auth/user`)
       .then((res) => {
-        console.log("LOGIN INFO", res);
+        // console.log("LOGIN INFO", res);
         dispatch({ type: FETCH_USER_SUCCESS, payload: res.data });
       })
       .catch((err) => {

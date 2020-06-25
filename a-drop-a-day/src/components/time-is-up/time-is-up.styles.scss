@@ -1,0 +1,14 @@
+.finished {
+  text-align: center;
+  margin: 3% auto;
+  display: flex;
+  //   justify-content: center;
+  flex-direction: column;
+  width: 40%;
+  padding: 5%;
+  background-color: papayawhip;
+  border-radius: 20px;
+  h1 {
+    margin-bottom: 10%;
+  }
+}

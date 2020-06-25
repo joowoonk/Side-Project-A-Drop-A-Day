@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-import { styles } from "../subject/subject.styles";
+import { styles } from "./time-is-up.styles";
 
 function MyButtonRaw(props) {
   const { classes, color, ...other } = props;
@@ -24,12 +24,13 @@ const MyButton = withStyles(styles)(MyButtonRaw);
 const TimeIsUp = () => {
   const { push } = useHistory();
   return (
-    <div className="introduction">
-      <h1>Time is UP!</h1>
+    <div className="finished">
+      <h1>TIME IS UP!</h1>
       <MyButton
         color="red"
         onClick={() => {
           push("tomatoes");
+          // window.close("http://localhost:3000/timeisup");
         }}
       >
         Return to page
