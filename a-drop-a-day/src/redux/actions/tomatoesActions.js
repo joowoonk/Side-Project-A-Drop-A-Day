@@ -20,6 +20,7 @@ const finished = 0;
 export const fetchTomatoes = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_TOMATOES_START });
+    const user = localStorage.getItem("user_id");
 
     axiosWithAuth()
       .get(`/tomatoes/${user}`)
