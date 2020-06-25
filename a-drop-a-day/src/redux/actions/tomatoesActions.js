@@ -37,6 +37,8 @@ export const fetchTomatoes = () => {
 };
 
 export const addProject = (project, tomatoes, user_id) => {
+  const user = localStorage.getItem("user_id");
+
   return (dispatch) => {
     dispatch({ type: ADD_PROJECT_START });
 
@@ -63,6 +65,7 @@ export const addProject = (project, tomatoes, user_id) => {
 
 export const finishingOneTomatoes = (id) => {
   return (dispatch) => {
+    const user = localStorage.getItem("user_id");
     dispatch({ type: FINISHED_TOMATOES_START });
     axiosWithAuth()
       .put(`/tomatoes/project/${id}`)
@@ -88,6 +91,7 @@ export const finishingOneTomatoes = (id) => {
 
 export const deleteProject = (id) => {
   return (dispatch) => {
+    const user = localStorage.getItem("user_id");
     dispatch({ type: DELETE_PROJECT_START });
     axiosWithAuth()
       .delete(`/tomatoes/project/${id}`)
@@ -113,6 +117,7 @@ export const deleteProject = (id) => {
 
 export const resetFinishingTomatoes = (id) => {
   return (dispatch) => {
+    const user = localStorage.getItem("user_id");
     dispatch({ type: FINISHED_TOMATOES_START });
     axiosWithAuth()
       .put(`/tomatoes/reset/${id}`)
