@@ -14,10 +14,9 @@ const SubjectForm = () => {
   const [tomatoesNumber, setTomatoesNumber] = useState(0);
   const dispatch = useDispatch();
   const useinfo = useSelector((state) => state.userReducer);
-  const [userId, setUserId] = useState(user);
+
   const user = localStorage.getItem("user_id");
   console.log({ user });
-  console.log({ userId });
 
   const onInputSubject = (e) => {
     setSubject(e.target.value);
@@ -36,7 +35,7 @@ const SubjectForm = () => {
     ) {
       e.preventDefault();
 
-      dispatch(addProject(subject, tomatoesNumber, userId));
+      dispatch(addProject(subject, tomatoesNumber, user));
     } else if (subject.length < 4) {
       alert(
         "Please provide project name that has more than at least four characters"
