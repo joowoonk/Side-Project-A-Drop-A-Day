@@ -17,6 +17,7 @@ const SubjectForm = () => {
   const useinfo = useSelector((state) => state.userReducer);
   const [userId, setUserId] = useState(user);
 
+  console.log({ user });
   console.log({ userId });
 
   const onInputSubject = (e) => {
