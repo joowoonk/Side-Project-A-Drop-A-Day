@@ -49,10 +49,11 @@ const example = [
     tomatoes: 4,
   },
 ];
-
+// const user = localStorage.getItem("user_id");
 const Subject = (props) => {
   const dispatch = useDispatch();
   const projects = useSelector((state) => state.tomatoesReducers.projects);
+  // const [userId, setUserId] = useState(user);
   console.log({ projects });
   const classes = useStyles();
 

@@ -13,7 +13,7 @@ export const RESET_TOMATOES_SUCESS = "RESET_TOMATOES_SUCESS";
 export const DELETE_PROJECT_START = "DELETE_PROJECT_START";
 export const DELETE_PROJECT_SUCCESS = "DELETE_PROJECT_SUCCESS";
 export const DELETE_PROJECT_FAILURE = "DELETE_PROJECTFAILURE";
-
+const user = localStorage.getItem("user_id");
 const finished = 0;
 
 //function to grab all the users data
@@ -22,7 +22,7 @@ export const fetchTomatoes = () => {
     dispatch({ type: FETCH_TOMATOES_START });
 
     axiosWithAuth()
-      .get(`/tomatoes`)
+      .get(`/tomatoes/${user}`)
       .then((res) => {
         dispatch({ type: FETCH_TOMATOES_SUCCESS, payload: res.data });
       })
@@ -68,7 +68,7 @@ export const finishingOneTomatoes = (id) => {
       .then((res) => {
         dispatch({ type: FINISHED_TOMATOES_SUCESS, payload: res });
         axiosWithAuth()
-          .get(`/tomatoes`)
+          .get(`/tomatoes/${user}`)
           .then((res) => {
             dispatch({ type: FETCH_TOMATOES_SUCCESS, payload: res.data });
           })
@@ -93,7 +93,7 @@ export const deleteProject = (id) => {
       .then((res) => {
         dispatch({ type: DELETE_PROJECT_SUCCESS, payload: res });
         axiosWithAuth()
-          .get(`/tomatoes`)
+          .get(`/tomatoes/${user}`)
           .then((res) => {
             dispatch({ type: FETCH_TOMATOES_SUCCESS, payload: res.data });
           })
@@ -118,7 +118,7 @@ export const resetFinishingTomatoes = (id) => {
       .then((res) => {
         dispatch({ type: RESET_TOMATOES_SUCESS, payload: res });
         axiosWithAuth()
-          .get(`/tomatoes`)
+          .get(`/tomatoes/${user}`)
           .then((res) => {
             dispatch({ type: FETCH_TOMATOES_SUCCESS, payload: res.data });
           })

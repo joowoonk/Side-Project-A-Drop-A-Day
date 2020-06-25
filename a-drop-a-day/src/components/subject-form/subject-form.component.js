@@ -8,12 +8,16 @@ import "./subject-form.styles.scss";
 import TextField from "@material-ui/core/TextField";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import Button from "@material-ui/core/Button";
+const user = localStorage.getItem("user_id");
 
 const SubjectForm = () => {
   const [subject, setSubject] = useState("");
   const [tomatoesNumber, setTomatoesNumber] = useState(0);
   const dispatch = useDispatch();
-  const useinfo = useSelector((state) => state.userReducer.user);
+  const useinfo = useSelector((state) => state.userReducer);
+  const [userId, setUserId] = useState(user);
+
+  console.log({ userId });
 
   const onInputSubject = (e) => {
     setSubject(e.target.value);
@@ -32,7 +36,7 @@ const SubjectForm = () => {
     ) {
       e.preventDefault();
 
-      dispatch(addProject(subject, tomatoesNumber, useinfo.id));
+      dispatch(addProject(subject, tomatoesNumber, userId));
     } else if (subject.length < 4) {
       alert(
         "Please provide project name that has more than at least four characters"

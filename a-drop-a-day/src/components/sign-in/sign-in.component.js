@@ -39,7 +39,9 @@ const SignIn = () => {
     axiosWithAuth()
       .post(`/auth/login`, { username, password })
       .then((res) => {
+        localStorage.setItem("user_id", res.data.id);
         localStorage.setItem("token", res.data.token);
+        console.log("LOGIN INFO", res);
         alert(`Welcome ${username}, hope you have a great day!`);
         push("/tomatoes");
         dispatch({
