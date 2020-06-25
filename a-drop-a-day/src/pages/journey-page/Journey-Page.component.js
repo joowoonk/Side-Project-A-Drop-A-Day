@@ -27,7 +27,7 @@ const JourneyPage = () => {
     if (!isStopping) {
       const id = window.setInterval(() => {
         setMinutes((min) => min - 1);
-      }, 500);
+      }, 60000);
 
       return () => window.clearInterval(id);
     } else {
