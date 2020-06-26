@@ -35,7 +35,7 @@ const Nav = (props) => {
         // className="logo"
       />
       <div className="menuNav">
-        <Link to="">HOME</Link>
+        <Link onClick={() => push("/")}>HOME</Link>
         <a
           href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
           target="blank"
@@ -46,8 +46,8 @@ const Nav = (props) => {
         {/* LEARN HOW TO LOG OUT SHOWS WITHOUT HAVING DRY CODE ON APP */}
         {loggedIn || localStorage.token ? (
           <>
-            <Link to="form">ADD</Link>
-            <Link to="tomatoes">TOMATOES</Link>
+            <Link onClick={() => push("/form")}>ADD</Link>
+            <Link onClick={() => push("/tomatoes")}>TOMATOES</Link>
             <Link
               onClick={() => {
                 handleLogOut();
@@ -59,7 +59,7 @@ const Nav = (props) => {
           </>
         ) : (
           <>
-            <Link to="Signin">SIGN IN</Link>
+            <Link onClick={() => push("/Signin")}>SIGN IN</Link>
           </>
         )}
       </div>

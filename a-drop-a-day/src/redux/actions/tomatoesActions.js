@@ -43,7 +43,7 @@ export const addProject = (project, tomatoes, user_id) => {
     dispatch({ type: ADD_PROJECT_START });
 
     axiosWithAuth()
-      .post(`/tomatoes/project/${user_id}`, {
+      .post(`/tomatoes/project/`, {
         project,
         tomatoes,
         user_id,
