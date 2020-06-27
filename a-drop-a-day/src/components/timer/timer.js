@@ -62,24 +62,8 @@ export default function Timer({
     var rminutes = Math.round(minutes);
     var seconds = (hours - rhours) * 60 * 60;
     var rseconds = Math.round(seconds);
-    if (num > 3600) {
-      return (
-        "You focused about " +
-        rhours +
-        " hour(s) " +
-        rminutes +
-        " minutes" +
-        " so far today"
-      );
-    } else if (num > 60) {
-      return (
-        "You focused about " +
-        rminutes +
-        " minute(s)" +
-        rseconds +
-        " seconds" +
-        " so far today"
-      );
+    if (num > 1) {
+      return "You focused about " + rminutes + " minute(s)";
     } else if (num == 0) {
       return "You haven't eaten any tomato yet!";
     }
@@ -129,6 +113,7 @@ export default function Timer({
               {breakTime ? (
                 <div className="icon">
                   <i style={coffee} className="fas fa-coffee fa-10x" />
+
                   {breakTime ? (
                     <>
                       {sound ? (
@@ -152,6 +137,7 @@ export default function Timer({
                       )}
 
                       <h5>Coffee Time Is On...</h5>
+                      <br />
                       {breakTime && <Helmet title={`break..`}></Helmet>}
                     </>
                   ) : (
@@ -168,11 +154,11 @@ export default function Timer({
                     <>
                       {!isStopping ? (
                         <div>
-                          <br />
                           <h5>
                             {" "}
                             FOCUSING TIME... <br />
-                            (all the menus <br /> are disabled meanwhile)
+                            (all the menus are
+                            <br /> disabled meanwhile)
                           </h5>
                         </div>
                       ) : (
@@ -181,8 +167,11 @@ export default function Timer({
                     </>
                   ) : (
                     <>
-                      <br />
+                      {/* <br /> */}
                       <h5>PAUSED</h5>
+
+                      <br />
+                      <br />
                     </>
                   )}
                 </div>
