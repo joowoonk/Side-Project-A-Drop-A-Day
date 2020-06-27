@@ -58,27 +58,23 @@ export default function Timer({
     var num = n;
     var hours = num / 60;
     var rhours = Math.floor(hours);
+    var realMinutes = Math.floor(num % 60);
     var minutes = (hours - rhours) * 60;
     var rminutes = Math.round(minutes);
     var seconds = (hours - rhours) * 60 * 60;
     var rseconds = Math.round(seconds);
-    if (num > 1) {
+    if (num > 60) {
+      return (
+        "You focused about " +
+        rhours +
+        " hour(s) " +
+        realMinutes +
+        " minutes(s)"
+      );
+    } else if (num > 1) {
       return "You focused about " + rminutes + " minute(s)";
     } else if (num == 0) {
       return "You haven't eaten any tomato yet!";
-    }
-  }
-  function timeConvertForTimer(n) {
-    var minutes = n;
-
-    var seconds = minutes * 60;
-    var rseconds = Math.round(seconds);
-    if (minutes > 1) {
-      return (
-        "You focused about " + minutes + " minutes" + rseconds + " seconds"
-      );
-    } else if (minutes <= 1) {
-      return rseconds + " seconds";
     }
   }
 
