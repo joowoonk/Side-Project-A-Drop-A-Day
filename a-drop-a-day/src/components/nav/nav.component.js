@@ -10,7 +10,7 @@ import { logOut } from "../../redux/actions/userActions";
 
 import { ReactComponent as Logo } from "../../assets/logo2.svg";
 // import { useHistory } from "react-router";
-const Nav = (props) => {
+const Nav = ({ isStopping, setIsStopping }) => {
   const [darkMode, setDarkMode] = useDarkMode(false);
   const loggedIn = useSelector((state) => state.userReducer.login);
   const { push } = useHistory();
@@ -35,23 +35,53 @@ const Nav = (props) => {
         // className="logo"
       />
       <div className="menuNav">
-        <Link onClick={() => push("/")}>HOME</Link>
-        <a
-          href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
-          target="blank"
+        <Link
+          onClick={() => {
+            if (isStopping) {
+              push("/");
+            }
+          }}
+        >
+          HOME
+        </Link>
+        <Link
+          onClick={() => {
+            if (isStopping) {
+              window.open(
+                "https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
+              );
+            }
+          }}
         >
           CONTACT
-        </a>
+        </Link>
 
         {/* LEARN HOW TO LOG OUT SHOWS WITHOUT HAVING DRY CODE ON APP */}
         {loggedIn || localStorage.token ? (
           <>
-            <Link onClick={() => push("/form")}>ADD</Link>
-            <Link onClick={() => push("/tomatoes")}>TOMATOES</Link>
+            {/* //isStopping needs to be false when this onClick is disabled. */}
             <Link
               onClick={() => {
-                handleLogOut();
-                push("/signin");
+                if (isStopping) {
+                  push("/form");
+                }
+              }}
+            >
+              ADD
+            </Link>
+            <Link
+              onClick={() => {
+                push("/tomatoes");
+              }}
+            >
+              TOMATOES
+            </Link>
+            <Link
+              onClick={() => {
+                if (isStopping) {
+                  handleLogOut();
+                  push("/signin");
+                }
               }}
             >
               SIGN OUT

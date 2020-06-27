@@ -5,7 +5,7 @@ import Subject from "../../components/subject/subject.component";
 import "./journey-page.styles.scss";
 import Helmet from "react-helmet";
 
-const JourneyPage = () => {
+const JourneyPage = ({ isStopping, setIsStopping }) => {
   //make sure to create a form where a user can add their subject with a tomato
 
   //as tomato ripes a selected subject in a limited of amount tomatoes per subject has.
@@ -16,7 +16,7 @@ const JourneyPage = () => {
   // probably need to find a way to disabled play button in timer component so it wont trigger to start without start from the subject.
 
   const [Minutes, setMinutes] = useState(25);
-  const [isStopping, setIsStopping] = useState(true);
+
   const [breakTime, setBreakTime] = useState(false);
 
   const [timeOn, setTimeOn] = useState(false);

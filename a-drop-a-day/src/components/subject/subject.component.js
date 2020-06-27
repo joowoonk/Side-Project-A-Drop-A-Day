@@ -219,8 +219,12 @@ const Subject = (props) => {
                   <Paper className={classes.paper}>
                     <h4>Something went wrong with the server</h4>
                     <a href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/">
-                      Contact the developer if this issue keeps occurs
+                      Contact the developer if this issue keeps occurs.
                     </a>
+                    <h4>
+                      Or this could have happened due to token expiration,
+                      please log out first then log back in.
+                    </h4>
                   </Paper>
                 </Grid>
               </Grid>

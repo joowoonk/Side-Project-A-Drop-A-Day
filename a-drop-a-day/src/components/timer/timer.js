@@ -60,7 +60,42 @@ export default function Timer({
     var rhours = Math.floor(hours);
     var minutes = (hours - rhours) * 60;
     var rminutes = Math.round(minutes);
-    return rhours + " hour(s) " + rminutes + " minutes";
+    var seconds = (hours - rhours) * 60 * 60;
+    var rseconds = Math.round(seconds);
+    if (num > 3600) {
+      return (
+        "You focused about " +
+        rhours +
+        " hour(s) " +
+        rminutes +
+        " minutes" +
+        " so far today"
+      );
+    } else if (num > 60) {
+      return (
+        "You focused about " +
+        rminutes +
+        " minute(s)" +
+        rseconds +
+        " seconds" +
+        " so far today"
+      );
+    } else if (num == 0) {
+      return "You haven't eaten any tomato yet!";
+    }
+  }
+  function timeConvertForTimer(n) {
+    var minutes = n;
+
+    var seconds = minutes * 60;
+    var rseconds = Math.round(seconds);
+    if (minutes > 1) {
+      return (
+        "You focused about " + minutes + " minutes" + rseconds + " seconds"
+      );
+    } else if (minutes <= 1) {
+      return rseconds + " seconds";
+    }
   }
 
   return (
@@ -131,58 +166,14 @@ export default function Timer({
                   <i style={styles} className="fas fa-book fa-10x" />
                   {!isStopping ? (
                     <>
-                      {sound ? (
-                        <center>
-                          <iframe
-                            width="0"
-                            height="0"
-                            display="hidden"
-                            src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1"
-                            frameborder="10"
-                            // autoplay="1"
-                            allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                          ></iframe>
-                        </center>
-                      ) : (
-                        <>
-                          <br />
-                          <br />
-                        </>
-                      )}
-
-                      <br />
-                      <h5>
-                        {" "}
-                        FOCUSING TIME... <br />
-                        (Making sure to stay on this page, otherwise timer will
-                        reset)
-                      </h5>
                       {!isStopping ? (
                         <div>
-                          <Button
-                            variant="contained"
-                            color="primary"
-                            // className="controller"
-                            // className="play-pause"
-                            onClick={() => {
-                              setIsStopping(!isStopping);
-                              setFocusTime(false);
-                            }}
-                          >
-                            <i className="fa fa-pause fa-2x" />
-                          </Button>
-                          {30 > Minutes && (
-                            <Button
-                              variant="contained"
-                              color="primary"
-                              // disabled={limit}
-                              // className="controller"
-                              onClick={() => setMinutes(Minutes + 1)}
-                            >
-                              <i className="fa fa-plus fa-2x" />
-                            </Button>
-                          )}
+                          <br />
+                          <h5>
+                            {" "}
+                            FOCUSING TIME... <br />
+                            (all the menus <br /> are disabled meanwhile)
+                          </h5>
                         </div>
                       ) : (
                         <></>
@@ -196,7 +187,10 @@ export default function Timer({
                   )}
                 </div>
               )}
-              <h5 className="time">{formattedNumber} Minutes</h5>
+              <h3 className="time">
+                {" "}
+                {formattedNumber} <span className="minutes">Minutes</span>{" "}
+              </h3>
               <Button
                 variant="contained"
                 color="primary"
@@ -236,11 +230,57 @@ export default function Timer({
               >
                 Focus Time
               </Button>
-              {isFetching && (
-                <p>
-                  You focused about&nbsp;
-                  {timeConvert(finishedCounts * 25)} so far today
-                </p>
+              {!isStopping && !breakTime ? (
+                <>
+                  {" "}
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    // className="controller"
+                    // className="play-pause"
+                    onClick={() => {
+                      setIsStopping(!isStopping);
+                      setFocusTime(false);
+                    }}
+                  >
+                    <i className="fa fa-pause fa-2x" />
+                  </Button>
+                  {30 > Minutes && (
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      // disabled={limit}
+                      // className="controller"
+                      onClick={() => setMinutes(Minutes + 1)}
+                    >
+                      <i className="fa fa-plus fa-2x" />
+                    </Button>
+                  )}
+                </>
+              ) : (
+                <>
+                  <br />
+                  <br />
+                </>
+              )}
+              {isFetching && <p>{timeConvert(finishedCounts * 25)}</p>}
+              {sound && !breakTime && !isStopping ? (
+                <center>
+                  <iframe
+                    width="0"
+                    height="0"
+                    display="hidden"
+                    src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1"
+                    frameborder="10"
+                    // autoplay="1"
+                    allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </center>
+              ) : (
+                <>
+                  <br />
+                </>
               )}
             </Paper>
           </Grid>

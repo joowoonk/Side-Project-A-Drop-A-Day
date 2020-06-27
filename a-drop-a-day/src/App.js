@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router";
 
 // import { GlobalStyles } from "./components/globalStyles";
@@ -16,13 +16,15 @@ import SubjectForm from "./components/subject-form/subject-form.component";
 import Home from "./components/home/home.component";
 import TimeIsUp from "./components/time-is-up/time-is-up";
 function App() {
+  const [isStopping, setIsStopping] = useState(true);
+
   return (
     // <ThemeProvider theme={theme === "light" ? darkTheme : lightTheme}>
     <>
       {/* <GlobalStyles /> */}
 
       <div>
-        <Nav />
+        <Nav isStopping={isStopping} setIsStopping={setIsStopping} />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -37,7 +39,12 @@ function App() {
           <Route exact path="/SignUp">
             <SignUp />
           </Route>
-          <PrivateRoute path="/tomatoes" component={JourneyPage} />
+          <PrivateRoute path="/tomatoes">
+            <JourneyPage
+              isStopping={isStopping}
+              setIsStopping={setIsStopping}
+            />
+          </PrivateRoute>
           <PrivateRoute path="/form" component={SubjectForm} />
         </Switch>
       </div>

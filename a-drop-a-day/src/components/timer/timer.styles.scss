@@ -12,9 +12,12 @@
     margin: 3% auto;
   }
   .time {
-    font-size: 5vh;
+    font-size: 6vh;
     width: 200px;
     text-align: center;
     margin: 0 auto;
+    .minutes {
+      font-size: 2vh;
+    }
   }
 }

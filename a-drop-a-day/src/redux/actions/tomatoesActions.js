@@ -13,7 +13,6 @@ export const RESET_TOMATOES_SUCESS = "RESET_TOMATOES_SUCESS";
 export const DELETE_PROJECT_START = "DELETE_PROJECT_START";
 export const DELETE_PROJECT_SUCCESS = "DELETE_PROJECT_SUCCESS";
 export const DELETE_PROJECT_FAILURE = "DELETE_PROJECTFAILURE";
-const user = localStorage.getItem("user_id");
 const finished = 0;
 
 //function to grab all the users data
@@ -51,8 +50,8 @@ export const addProject = (project, tomatoes, user_id) => {
       })
       .then((res) => {
         alert("Your project's added!");
-        dispatch({ type: ADD_PROJECT_SUCCESS, payload: res.data });
         history.push("tomatoes");
+        dispatch({ type: ADD_PROJECT_SUCCESS, payload: res.data });
       })
       .catch((err) =>
         dispatch({
