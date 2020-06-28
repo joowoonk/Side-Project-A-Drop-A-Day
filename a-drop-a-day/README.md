@@ -1,38 +1,3 @@
-<h1>Ideas for this app:<h1>
-
-MVP:
-
-<ul>
-    <li>navbar (checked)</li> 
-    <li>log in/out page(checked)</li>
-    <li>sign up page (checked)</li>
-    <li>Quotes to fetch a random quote that is inspiraing for programmer (checked)</li>
-    <li>Inputs: (checked)</li>
-        <ul>
-            <li>For adding a subject or project name</li>
-            <li>Adding numbers of block that determines how many pomoodoro you want to make</li>
-        </ul>
-    <li>Outputs: (checked)</li>
-        <ul>
-            <li>TIMERS WILL DISPLAY</li>
-            <li>subjects/project names will be displayed</li>
-            <li>numbers of tomatoes and finished will be displayed</li>
-        </ul>
-</ul>
-
-Stretch:
-
-<ul>
-    <li>admin mode</li>
-    <li>darkmode/color customized (checked)</li>
-    <li>forgot username/password</li>
-    <li>Color chooser (theme)</li>
-    <li>Calendar to save log a day</li>
-    <li>announcement (highlight/pin)</li>
-    <li>changing password/username</li>
-    <li>two step security log</li>
-</ul>
-
 <h1>        <a
           href="https://side-project-a-drop-a-day.vercel.app/"
           target="blank"
@@ -144,3 +109,36 @@ Wait, what's does it mean by tomatoes? Here's the answer, each tomato
         time using this website. Oh, try to click tomato logo on top menu if you
         want dark-mode on this website.
       </p>
+
+<h1>Ideas for this app:<h1>
+
+<h2>MVP:<h2>
+<ul>
+    <li>navbar (checked)</li> 
+    <li>log in/out page(checked)</li>
+    <li>sign up page (checked)</li>
+    <li>Quotes to fetch a random quote that is inspiraing for programmer (checked)</li>
+    <li>Inputs: (checked)</li>
+        <ul>
+            <li>For adding a subject or project name</li>
+            <li>Adding numbers of block that determines how many pomoodoro you want to make</li>
+        </ul>
+    <li>Outputs: (checked)</li>
+        <ul>
+            <li>TIMERS WILL DISPLAY</li>
+            <li>subjects/project names will be displayed</li>
+            <li>numbers of tomatoes and finished will be displayed</li>
+        </ul>
+</ul>
+
+<h2>Stretch:</h2>
+<ul>
+    <li>admin mode</li>
+    <li>darkmode/color customized (checked)</li>
+    <li>forgot username/password</li>
+    <li>Color chooser (theme)</li>
+    <li>Calendar to save log a day</li>
+    <li>announcement (highlight/pin)</li>
+    <li>changing password/username</li>
+    <li>two step security log</li>
+</ul>

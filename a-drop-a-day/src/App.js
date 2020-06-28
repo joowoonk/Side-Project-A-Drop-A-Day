@@ -14,6 +14,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import JourneyPage from "./pages/journey-page/Journey-Page.component";
 import SubjectForm from "./components/subject-form/subject-form.component";
 import Home from "./components/home/home.component";
+import About from "./components/about/about";
 import TimeIsUp from "./components/time-is-up/time-is-up";
 function App() {
   const [isStopping, setIsStopping] = useState(true);
@@ -28,6 +29,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/contact">
+            <About />
           </Route>
           <Route exact path="/timeisup">
             <TimeIsUp />

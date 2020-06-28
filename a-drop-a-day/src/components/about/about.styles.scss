@@ -1,0 +1,14 @@
+.twitter {
+  display: flex;
+  flex-direction: column;
+  margin: 3% 5%;
+  padding: 3%;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid green;
+  border-radius: 20px;
+  background-color: floralwhite;
+  h1 {
+    align-items: flex-start;
+  }
+}
