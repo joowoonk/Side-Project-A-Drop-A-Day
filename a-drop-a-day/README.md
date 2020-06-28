@@ -119,17 +119,13 @@ Wait, what's does it mean by tomatoes? Here's the answer, each tomato
     <li>sign up page (checked)</li>
     <li>Quotes to fetch a random quote that is inspiraing for programmer (checked)</li>
     <li>Inputs: (checked)</li>
-        <ul>
-            <li>For adding a subject or project name</li>
-            <li>Adding numbers of block that determines how many pomoodoro you want to make</li>
-        </ul>
+    <li>-For adding a subject or project name</li>
+    <li>-Adding numbers of block that determines how many pomoodoro you want to make</li>
     <li>Outputs: (checked)</li>
-        <ul>
-            <li>TIMERS WILL DISPLAY</li>
-            <li>subjects/project names will be displayed</li>
-            <li>numbers of tomatoes and finished will be displayed</li>
-        </ul>
-</ul>
+    <li>-TIMERS WILL DISPLAY</li>
+    <li>-subjects/project names will be displayed</li>
+    <li>-numbers of tomatoes and finished will be displayed</li>
+    </ul>
 
 <h2>Stretch:</h2>
 <ul>
