@@ -125,7 +125,7 @@ Wait, what's does it mean by tomatoes? Here's the answer, each tomato
     <li>-TIMERS WILL DISPLAY</li>
     <li>-subjects/project names will be displayed</li>
     <li>-numbers of tomatoes and finished will be displayed</li>
-    </ul>
+</ul>
 
 <h2>Stretch:</h2>
 <ul>

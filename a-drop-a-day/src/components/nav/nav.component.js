@@ -26,16 +26,20 @@ const Nav = ({ isStopping, setIsStopping }) => {
   };
 
   return (
-    <nav className="topNav">
-      <Logo
+    <header className="header">
+      <img
+        src={require("./tomato.png")}
+        className="logo"
+        alt="logo"
         onClick={(e) => {
           toggleMode(e);
         }}
         className={darkMode ? " logo toggle toggled" : "toggle logo"}
         // className="logo"
       />
-      <div className="menuNav">
-        <Link
+
+      <nav className="Nav">
+        <a
           onClick={() => {
             if (isStopping) {
               push("/");
@@ -43,8 +47,8 @@ const Nav = ({ isStopping, setIsStopping }) => {
           }}
         >
           HOME
-        </Link>
-        <Link
+        </a>
+        <a
           onClick={() => {
             if (isStopping) {
               window.open(
@@ -54,13 +58,13 @@ const Nav = ({ isStopping, setIsStopping }) => {
           }}
         >
           CONTACT
-        </Link>
+        </a>
 
         {/* LEARN HOW TO LOG OUT SHOWS WITHOUT HAVING DRY CODE ON APP */}
         {loggedIn || localStorage.token ? (
           <>
             {/* //isStopping needs to be false when this onClick is disabled. */}
-            <Link
+            <a
               onClick={() => {
                 if (isStopping) {
                   push("/form");
@@ -68,15 +72,15 @@ const Nav = ({ isStopping, setIsStopping }) => {
               }}
             >
               ADD
-            </Link>
-            <Link
+            </a>
+            <a
               onClick={() => {
                 push("/tomatoes");
               }}
             >
               TOMATOES
-            </Link>
-            <Link
+            </a>
+            <a
               onClick={() => {
                 if (isStopping) {
                   handleLogOut();
@@ -85,16 +89,79 @@ const Nav = ({ isStopping, setIsStopping }) => {
               }}
             >
               SIGN OUT
-            </Link>
+            </a>
           </>
         ) : (
           <>
-            <Link onClick={() => push("/Signin")}>SIGN IN</Link>
+            <a onClick={() => push("/Signin")}>SIGN IN</a>
           </>
         )}
-      </div>
-      {/* <button type="button" onClick={() => history.goBack()} /> */}
-    </nav>
+        <div class="dropdown">
+          <div class="dropbtn">
+            <i className="fa fa-bars fa-2x" />
+          </div>
+          <div class="dropdown-content">
+            <a
+              onClick={() => {
+                if (isStopping) {
+                  push("/");
+                }
+              }}
+            >
+              HOME
+            </a>
+            <a
+              onClick={() => {
+                if (isStopping) {
+                  window.open(
+                    "https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
+                  );
+                }
+              }}
+            >
+              CONTACT
+            </a>
+
+            {/* LEARN HOW TO LOG OUT SHOWS WITHOUT HAVING DRY CODE ON APP */}
+            {loggedIn || localStorage.token ? (
+              <>
+                {/* //isStopping needs to be false when this onClick is disabled. */}
+                <a
+                  onClick={() => {
+                    if (isStopping) {
+                      push("/form");
+                    }
+                  }}
+                >
+                  ADD
+                </a>
+                <a
+                  onClick={() => {
+                    push("/tomatoes");
+                  }}
+                >
+                  TOMATOES
+                </a>
+                <a
+                  onClick={() => {
+                    if (isStopping) {
+                      handleLogOut();
+                      push("/signin");
+                    }
+                  }}
+                >
+                  SIGN OUT
+                </a>
+              </>
+            ) : (
+              <>
+                <a onClick={() => push("/Signin")}>SIGN IN</a>
+              </>
+            )}
+          </div>
+        </div>
+      </nav>
+    </header>
   );
 };
 

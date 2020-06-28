@@ -1,6 +1,8 @@
 .proejctboard {
-  display: flex;
   //   flex-wrap: wrap;
   //   width: 100%;
   //   margin: 1% auto;
+  @media (min-width: 900px) {
+    display: flex;
+  }
 }
