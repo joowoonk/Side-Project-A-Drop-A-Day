@@ -40,19 +40,7 @@ const SubjectDetail = (props) => {
   };
 
   return (
-    <Paper
-      className={classes.paper}
-      style={
-        {
-          // marginTop: 10,
-          // width: 400,
-          // color: "red",
-          // marginLeft: "5%",
-          // marginRight: "5%",
-          // paddingRight: "80%",
-        }
-      }
-    >
+    <Paper className={classes.paper}>
       <p>Project Name: </p>
       <h1>{props.sub.project.toUpperCase()}</h1>
       You finished

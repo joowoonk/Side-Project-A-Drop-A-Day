@@ -85,7 +85,7 @@ const Subject = (props) => {
             {projects.length === 0 ? (
               <>
                 <div className={classes.root}>
-                  <Grid container spacing={2} className="projects">
+                  <Grid container spacing={1} className="projects">
                     {example.map((sub) => {
                       return (
                         <Grid item xs={12}>
@@ -142,30 +142,18 @@ const Subject = (props) => {
               <>
                 <div className={classes.root}>
                   {projects.length === 1 && (
-                    <Grid container spacing={3} className="projects smaller">
+                    <Grid container spacing={4} className="projects smaller">
                       {projects.map((sub) => {
                         return (
                           <Grid item xs={12}>
-                            {sub.project.length < 25 && (
-                              <SubjectDetail
-                                sub={sub}
-                                isStopping={props.isStopping}
-                                setUserId={props.setUserId}
-                                setFocusTime={props.setFocusTime}
-                                setIsStopping={props.setIsStopping}
-                                setMinutes={props.setMinutes}
-                              />
-                            )}
-                            {sub.project.length >= 25 && (
-                              <SubjectDetail
-                                sub={sub}
-                                isStopping={props.isStopping}
-                                setUserId={props.setUserId}
-                                setFocusTime={props.setFocusTime}
-                                setIsStopping={props.setIsStopping}
-                                setMinutes={props.setMinutes}
-                              />
-                            )}
+                            <SubjectDetail
+                              sub={sub}
+                              isStopping={props.isStopping}
+                              setUserId={props.setUserId}
+                              setFocusTime={props.setFocusTime}
+                              setIsStopping={props.setIsStopping}
+                              setMinutes={props.setMinutes}
+                            />
                           </Grid>
                         );
                       })}

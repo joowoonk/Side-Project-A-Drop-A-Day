@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme) => ({
     // flexGrow: 1,
     // borderRadius: 10,
     // marginTop: 15,
-    width: "80%",
+    width: "100%",
   },
   paper: {
     padding: theme.spacing(2),
