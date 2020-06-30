@@ -7,16 +7,16 @@ export const useStyles = makeStyles((theme) => ({
     // marginTop: 25,
     // marginRight: 20,
     // padding: 10,
-    width: "100%",
-    margin: "2% 2%",
+    width: "95%",
+    margin: "2% 0",
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(0),
     // textAlign: "center",
     background: "floralwhite",
     boxShadow: "0 1px 3px 1px black",
     color: theme.palette.text.secondary,
-    margin: "2% 2%",
+    margin: "2% 0",
   },
 }));
 export const styles = {
