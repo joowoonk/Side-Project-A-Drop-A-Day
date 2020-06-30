@@ -6,9 +6,9 @@ export const useStyles = makeStyles((theme) => ({
     // marginLeft: 10,
     // marginTop: 25,
     // marginRight: 20,
-    // padding: 10,
+
     width: "95%",
-    margin: "2% 0",
+    margin: "2% auto",
   },
   paper: {
     padding: theme.spacing(0),
@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme) => ({
     background: "floralwhite",
     boxShadow: "0 1px 3px 1px black",
     color: theme.palette.text.secondary,
-    margin: "2% 0",
+    margin: "0 auto",
   },
 }));
 export const styles = {
