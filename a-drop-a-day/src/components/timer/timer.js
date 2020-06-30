@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0 1px 3px 1px black",
     background: "floralwhite",
     padding: "10% 10%",
-    // marginLeft: ,
+
     // marginRight: -250,
     // color: theme.palette.text.secondary,
   },

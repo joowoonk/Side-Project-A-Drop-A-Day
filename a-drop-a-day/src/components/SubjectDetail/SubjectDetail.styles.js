@@ -28,6 +28,7 @@ export const styles = {
       props.color === "red"
         ? "0 3px 5px 2px rgba(255, 105, 135, .3)"
         : "0 3px 5px 2px rgba(33, 203, 243, .3)",
+    margin: "0 4% 0 0",
     // color: "red",
     // height: 48,
     // padding: "0 30px",

@@ -1,9 +1,7 @@
 .container {
   // text-align: center;
   // margin: au
-  .icon {
-    // background-color: red;
-  }
+
   .controller {
     display: flex;
     flex-direction: column;
@@ -13,7 +11,7 @@
   }
   .time {
     font-size: 6rem;
-    width: 200px;
+    // width: 200px;
     text-align: center;
     margin: 0 auto;
     .minutes {
@@ -22,7 +20,7 @@
   }
   h5 {
     font-size: 2rem;
-    padding: 0;
+    // padding: 0;
   }
   h3 {
     font-size: 5rem;
