@@ -1,21 +1,22 @@
 .sign-in-form {
   text-align: center;
-  width: 40%;
+  width: 75%;
   background-color: floralwhite;
-  margin: 0 auto;
-  padding: 3%;
+  margin: 3% auto;
+  padding: 10%;
   border: 2px solid green;
   border-radius: 20px;
-  h1 {
-    margin: 7% 0;
-    font-size: 7rem;
+  h5 {
+    // margin: 7% 0;
+    font-weight: bold;
+    font-size: 3rem;
   }
   form {
     text-align: left;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     align-self: center;
 

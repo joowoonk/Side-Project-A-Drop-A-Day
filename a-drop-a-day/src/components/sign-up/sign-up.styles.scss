@@ -1,21 +1,23 @@
 .sign-up-form {
   text-align: center;
-  width: 40%;
+  width: 65%;
   background-color: floralwhite;
   margin: 5% auto;
   padding: 3%;
   border: 2px solid green;
   border-radius: 20px;
-  h1 {
-    margin: 7% 0;
-    font-size: 7rem;
+
+  h5 {
+    // margin: 7% 0;
+    font-weight: bold;
+    font-size: 3rem;
   }
   form {
     text-align: left;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
     align-self: center;
 

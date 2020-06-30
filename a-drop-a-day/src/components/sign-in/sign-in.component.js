@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
       margin: theme.spacing(1),
-      width: "auto",
+      width: "100%",
     },
   },
 }));
@@ -60,6 +60,7 @@ const SignIn = () => {
         <div className="sign-in-form">
           <form className={classes.root} noValidate autoComplete="off">
             <div className="userName">
+              <h5>Where're my tomatoes?</h5>
               <label htmlFor="userName">
                 {/* <h3>Username</h3> */}
                 <TextField
