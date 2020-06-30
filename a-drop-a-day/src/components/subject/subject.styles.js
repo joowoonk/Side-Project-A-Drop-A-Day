@@ -3,10 +3,12 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     // borderRadius: 10,
-    marginLeft: 10,
-    marginTop: 25,
-    marginRight: 20,
+    // marginLeft: 10,
+    // marginTop: 25,
+    // marginRight: 20,
     // padding: 10,
+    width: "100%",
+    margin: "2% 2%",
   },
   paper: {
     padding: theme.spacing(2),
@@ -14,6 +16,7 @@ export const useStyles = makeStyles((theme) => ({
     background: "floralwhite",
     boxShadow: "0 1px 3px 1px black",
     color: theme.palette.text.secondary,
+    margin: "0 2%",
   },
 }));
 export const styles = {
@@ -31,7 +34,7 @@ export const styles = {
     // color: "blue",
     // height: 48,
 
-    marginRight: 50,
-    marginBottom: 10,
+    // marginRight: 50,
+    // marginBottom: 10,
   },
 };

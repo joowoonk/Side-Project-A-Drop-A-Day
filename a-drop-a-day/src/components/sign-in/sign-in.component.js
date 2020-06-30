@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
       margin: theme.spacing(1),
-      width: "25ch",
+      width: "auto",
     },
   },
 }));
@@ -69,7 +69,7 @@ const SignIn = () => {
                   name="userName"
                   value={username}
                   onChange={onInputUserName}
-                  style={{ width: 225 }}
+                  style={{ width: "100%" }}
                 />
               </label>
             </div>
@@ -83,7 +83,7 @@ const SignIn = () => {
                   value={password}
                   type="password"
                   onChange={onInputPassword}
-                  style={{ width: 225 }}
+                  style={{ width: "100%" }}
                   name="password"
                 />
               </div>

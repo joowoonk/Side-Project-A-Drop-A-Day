@@ -4,6 +4,7 @@ export const useStyles = makeStyles((theme) => ({
     // flexGrow: 1,
     // borderRadius: 10,
     // marginTop: 15,
+    width: "80%",
   },
   paper: {
     padding: theme.spacing(2),
@@ -11,7 +12,7 @@ export const useStyles = makeStyles((theme) => ({
     background: "floralwhite",
     boxShadow: "0 1px 3px 1px black",
     color: theme.palette.text.secondary,
-    // color: "blue",
+    color: "black",
     // paddingRight: "120%",
   },
 }));
@@ -31,7 +32,7 @@ export const styles = {
     // height: 48,
     // padding: "0 30px",
 
-    marginRight: 25,
-    marginBottom: 10,
+    // marginRight: ,
+    // marginBottom: 10,
   },
 };

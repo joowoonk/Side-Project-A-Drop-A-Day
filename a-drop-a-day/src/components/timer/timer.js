@@ -12,11 +12,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     // flexGrow: 1,
     margin: theme.spacing(3),
-    // width: "50ch",
-    // margin: "4% auto",
+    width: "100%",
+    margin: "5% 2%",
+    // padding: "120%",
   },
   paper: {
-    padding: 110,
+    padding: "auto",
     textAlign: "center",
     boxShadow: "0 1px 3px 1px black",
     background: "floralwhite",
@@ -173,8 +174,7 @@ export default function Timer({
                 </div>
               )}
               <h3 className="time">
-                {" "}
-                {formattedNumber} <span className="minutes">Minutes</span>{" "}
+                {formattedNumber} <span className="minutes">Minutes</span>
               </h3>
               <Button
                 variant="contained"
@@ -217,7 +217,6 @@ export default function Timer({
               </Button>
               {!isStopping && !breakTime ? (
                 <>
-                  {" "}
                   <Button
                     variant="contained"
                     color="primary"
