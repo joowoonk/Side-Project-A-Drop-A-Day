@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3),
     width: "100%",
     margin: "5% 2%",
+    // height: "auto",
     // padding: "120%",
   },
   paper: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     boxShadow: "0 1px 3px 1px black",
     background: "floralwhite",
+    padding: "10% 10%",
     // marginLeft: ,
     // marginRight: -250,
     // color: theme.palette.text.secondary,
@@ -109,7 +111,7 @@ export default function Timer({
               <br />
               {breakTime ? (
                 <div className="icon">
-                  <i style={coffee} className="fas fa-coffee fa-10x" />
+                  <i style={coffee} className="fas fa-coffee fa-8x" />
 
                   {breakTime ? (
                     <>
@@ -146,7 +148,7 @@ export default function Timer({
                 </div>
               ) : (
                 <div>
-                  <i style={styles} className="fas fa-book fa-10x" />
+                  <i style={styles} className="fas fa-book fa-8x" />
                   {!isStopping ? (
                     <>
                       {!isStopping ? (

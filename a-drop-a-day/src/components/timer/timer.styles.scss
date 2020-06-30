@@ -12,12 +12,37 @@
     margin: 3% auto;
   }
   .time {
-    font-size: 6vh;
+    font-size: 6rem;
     width: 200px;
     text-align: center;
     margin: 0 auto;
     .minutes {
       font-size: 2vh;
+    }
+  }
+  h5 {
+    font-size: 2rem;
+    padding: 0;
+  }
+  h3 {
+    font-size: 5rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    iframe {
+      width: 50%;
+      height: 10%;
+    }
+    h5 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 2rem;
     }
   }
 }

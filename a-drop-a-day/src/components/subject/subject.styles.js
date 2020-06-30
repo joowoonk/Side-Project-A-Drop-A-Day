@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme) => ({
     background: "floralwhite",
     boxShadow: "0 1px 3px 1px black",
     color: theme.palette.text.secondary,
-    margin: "0 2%",
+    margin: "2% 2%",
   },
 }));
 export const styles = {
