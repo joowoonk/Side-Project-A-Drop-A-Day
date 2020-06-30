@@ -100,6 +100,7 @@ const Subject = (props) => {
                               <MyButton
                                 disabled={true}
                                 color="red"
+                                // className="example"
                                 onClick={() => {
                                   props.setUserId(sub.id);
 
@@ -112,6 +113,7 @@ const Subject = (props) => {
                               <MyButton
                                 disabled={true}
                                 color="red"
+                                // className="example"
                                 onClick={() => {
                                   props.setMinutes(25);
                                   props.setUserId(sub.id);
@@ -122,6 +124,7 @@ const Subject = (props) => {
                               </MyButton>
 
                               <MyButton
+                                // className="example"
                                 disabled={true}
                                 color="red"
                                 onClick={() => {

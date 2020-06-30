@@ -33,7 +33,7 @@ export const styles = {
         : "0 3px 5px 2px rgba(33, 203, 243, .3)",
     // color: "blue",
     // height: 48,
-
+    margin: "0 2% 0 0",
     // marginRight: 50,
     // marginBottom: 10,
   },
