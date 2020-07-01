@@ -124,7 +124,7 @@ export default function Timer({
                             src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1"
                             frameborder="10"
                             // autoplay="1"
-                            allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
                           ></iframe>
                         </center>
@@ -259,7 +259,7 @@ export default function Timer({
                     src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1"
                     frameborder="10"
                     // autoplay="1"
-                    allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                   ></iframe>
                 </center>
