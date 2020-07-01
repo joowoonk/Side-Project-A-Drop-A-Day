@@ -1,22 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
 export const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
     // borderRadius: 10,
-    // marginLeft: 10,
-    // marginTop: 25,
-    // marginRight: 20,
-
-    width: "95%",
-    margin: "2% auto",
+    marginTop: 15,
+    width: "100%",
   },
   paper: {
-    padding: theme.spacing(0),
+    padding: theme.spacing(2),
     // textAlign: "center",
     background: "floralwhite",
     boxShadow: "0 1px 3px 1px black",
     color: theme.palette.text.secondary,
-    margin: "0 auto",
+    color: "black",
+    // paddingRight: "120%",
   },
 }));
 export const styles = {
@@ -31,10 +28,12 @@ export const styles = {
       props.color === "red"
         ? "0 3px 5px 2px rgba(255, 105, 135, .3)"
         : "0 3px 5px 2px rgba(33, 203, 243, .3)",
-    // color: "blue",
+    margin: "0 4% 0 0",
+    // color: "red",
     // height: 48,
-    margin: "0 2% 0 0",
-    // marginRight: 50,
+    // padding: "0 30px",
+
+    // marginRight: ,
     // marginBottom: 10,
   },
 };

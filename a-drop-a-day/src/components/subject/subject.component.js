@@ -85,7 +85,7 @@ const Subject = (props) => {
             {projects.length === 0 ? (
               <>
                 <div className={classes.root}>
-                  <Grid container spacing={1} className="projects">
+                  <Grid container spacing={4} className="projects">
                     {example.map((sub) => {
                       return (
                         <Grid item xs={12}>
