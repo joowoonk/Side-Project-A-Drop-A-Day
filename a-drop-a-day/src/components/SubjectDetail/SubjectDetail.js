@@ -54,7 +54,7 @@ const SubjectDetail = (props) => {
           onClick={() => {
             props.setUserId(props.sub.id);
             props.setFocusTime(true);
-
+            props.scrollToTop();
             return finishedOneTask();
           }}
         >

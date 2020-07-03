@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link, animateScroll as scroll } from "react-scroll";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import "./timer.styles.scss";
@@ -84,6 +84,7 @@ export default function Timer({
   return (
     <div>
       {!focusTime && <Helmet title={`A Drop A Day`}></Helmet>}
+      <Link to="section1" />
       <div className={classes.root}>
         <Grid container spacing={2}>
           <Grid item xs={12} className="container">

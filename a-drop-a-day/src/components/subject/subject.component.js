@@ -103,7 +103,7 @@ const Subject = (props) => {
                                 // className="example"
                                 onClick={() => {
                                   props.setUserId(sub.id);
-
+                                  props.scrollToTop();
                                   return finishedOneTask();
                                 }}
                               >
@@ -151,6 +151,7 @@ const Subject = (props) => {
                           <Grid item xs={12}>
                             <SubjectDetail
                               sub={sub}
+                              scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
                               setUserId={props.setUserId}
                               setFocusTime={props.setFocusTime}
@@ -169,6 +170,7 @@ const Subject = (props) => {
                           <Grid item xs={12}>
                             <SubjectDetail
                               sub={sub}
+                              scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
                               setUserId={props.setUserId}
                               setFocusTime={props.setFocusTime}
@@ -187,6 +189,7 @@ const Subject = (props) => {
                           <Grid item xs={12} sm={6}>
                             <SubjectDetail
                               sub={sub}
+                              scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
                               setUserId={props.setUserId}
                               setFocusTime={props.setFocusTime}

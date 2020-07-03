@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Timer from "../../components/timer/timer";
+import {
+  Link,
+  DirectLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 import Subject from "../../components/subject/subject.component";
 import "./journey-page.styles.scss";
@@ -42,7 +51,9 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
   const coffee = {
     color: "brown",
   };
-
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
   return (
     <div className="proejctboard">
       {focusTime && <Helmet title={`ripenning..`}></Helmet>}
@@ -63,6 +74,7 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
       />
       <Subject
         minutes={Minutes}
+        scrollToTop={scrollToTop}
         setBreakTime={setBreakTime}
         breakTime={breakTime}
         setMinutes={setMinutes}
