@@ -51,7 +51,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
         <a
           onClick={() => {
             if (isStopping) {
-              push("/Updates");
+              push("/updates");
             }
           }}
         >
