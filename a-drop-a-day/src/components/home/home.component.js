@@ -1,7 +1,9 @@
 import React from "react";
 import "./home.styles.scss";
+// import { useHistory } from "react-router-dom";
 
 const Home = () => {
+  // const {push} = useHistory()
   return (
     <div className="home">
       <div className="introduction">

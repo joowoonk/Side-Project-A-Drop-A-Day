@@ -51,13 +51,11 @@ const Nav = ({ isStopping, setIsStopping }) => {
         <a
           onClick={() => {
             if (isStopping) {
-              window.open(
-                "https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
-              );
+              push("/Updates");
             }
           }}
         >
-          CONTACT
+          UPDATES
         </a>
 
         {/* LEARN HOW TO LOG OUT SHOWS WITHOUT HAVING DRY CODE ON APP */}

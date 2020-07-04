@@ -16,6 +16,7 @@ import SubjectForm from "./components/subject-form/subject-form.component";
 import Home from "./components/home/home.component";
 import About from "./components/about/about";
 import TimeIsUp from "./components/time-is-up/time-is-up";
+import Update from "./components/Update/Update";
 function App() {
   const [isStopping, setIsStopping] = useState(true);
 
@@ -29,6 +30,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/updates">
+            <Update />
           </Route>
           <Route exact path="/contact">
             <About />
