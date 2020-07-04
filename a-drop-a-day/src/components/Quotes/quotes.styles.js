@@ -13,6 +13,6 @@ export const QuoteBox = styled.div`
   border-radius: 20px;
 
   p {
-    margin: 0 -80% 0 0;
+    /* margin: 0 -80% 0 0; */
   }
 `;
