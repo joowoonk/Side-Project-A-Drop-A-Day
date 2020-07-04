@@ -67,7 +67,7 @@ const Home = () => {
         <p>
           {" "}
           <span style={{ color: "tomato" }}>
-            Wait, what's does it mean by tomatoes?
+            Wait, what's does tomatoes mean?
           </span>{" "}
           Here's the answer, each tomato will be a time tracker. One tomato will
           be 25 minutes. Taking a short 5-minute break time after a tomato would
