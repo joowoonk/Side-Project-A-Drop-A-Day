@@ -1,24 +1,36 @@
 .home {
   margin: 3% 3%;
+
   .introduction {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 1% auto;
+    padding: 3%;
     border: 2px solid green;
     background-color: floralwhite;
     border-radius: 20px;
-    h1 {
+    h2 {
       font-size: 6vh;
-      margin: 3% auto;
+      margin: 0 auto;
       // width: 80vw;
       padding-right: 2%;
       padding-left: 2%;
     }
+    h3 {
+      font-size: 2.5vh;
+      // margin: 1% auto;
+      // width: 80vw;
+      // display: block;
+      font-weight: bold;
+
+      padding-right: 3%;
+      padding-left: 3%;
+    }
     p {
       font-size: 2vh;
-      margin: 3% auto;
+      margin: 1% auto;
       padding-right: 3%;
       padding-left: 3%;
     }

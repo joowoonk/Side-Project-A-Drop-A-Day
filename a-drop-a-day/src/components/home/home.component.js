@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="introduction">
-        <h1>Why I built this website:</h1>
+        <h2>Why I built this website:</h2>
         <p>
           {" "}
           As you know there are tasks to finish in a limited amount of time and
@@ -28,50 +28,56 @@ const Home = () => {
           procrastinating, I haven't found a website where I can break down on
           things I was working on.
         </p>
-        <p>
+        <h3>
           For an example, let's say I have some tasks to do on different things.
           Such as:
-          <ul>
-            <li>
-              Continue writing an essay for my Philosophy of Science class
-            </li>
-            <li>
-              Solving algorithm problems on Leetcode, two easy problems and one
-              medium level problem
-            </li>
-            <li>
-              Read <span style={{ fontStyle: "italic" }}>the Republic</span> by
-              Plato
-            </li>
-          </ul>
+        </h3>
+        <ul>
+          <li>Continue writing an essay for my Philosophy of Science class</li>
+          <li>
+            Solving algorithm problems on Leetcode, two easy problems and one
+            medium level problem
+          </li>
+          <li>
+            Read <span style={{ fontStyle: "italic" }}>the Republic</span> by
+            Plato
+          </li>
+        </ul>
+        <h3>
+          {" "}
           As the to-do list shows above, I implemented a feature where I can set
           how much time I will spend a day for each task. So, the list would
           look like this.
-          <ul>
-            <li>
-              Continue writing an essay for my Philosophy of Science class -->{" "}
-              <span style={{ color: "tomato" }}>4 tomatoes </span>a day
-            </li>
-            <li>
-              Solving algorithm problems on Leetcode, two easy problems and one
-              medium level problem -->
-              <span style={{ color: "tomato" }}> 4 tomatoes </span> a day
-            </li>
-            <li>
-              Read <span style={{ fontStyle: "italic" }}>the Republic</span> by
-              Plato --> <span style={{ color: "tomato" }}> 2 tomatoes </span>a
-              day
-            </li>
-          </ul>
-          Wait, what's does it mean by tomatoes? Here's the answer, each tomato
-          will be a time tracker. One tomato will be 25 minutes. Taking a short
-          5-minute break time after a tomato would be recommended for our
-          brains. Taking a break time can be helpful for us to think more
-          creative way. After a first four tomatoes, taking a long 15 minutes
-          break time is also recommended. Once you logged in this website, you
-          will be able to make a to-do list with numbers of tomatoes you wish to
-          work on.
+        </h3>
+        <ul>
+          <li>
+            Continue writing an essay for my Philosophy of Science class -->{" "}
+            <span style={{ color: "tomato" }}>4 tomatoes </span>a day
+          </li>
+          <li>
+            Solving algorithm problems on Leetcode, two easy problems and one
+            medium level problem -->
+            <span style={{ color: "tomato" }}> 4 tomatoes </span> a day
+          </li>
+          <li>
+            Read <span style={{ fontStyle: "italic" }}>the Republic</span> by
+            Plato --> <span style={{ color: "tomato" }}> 2 tomatoes </span>a day
+          </li>
+        </ul>
+        <p>
+          {" "}
+          <span style={{ color: "tomato" }}>
+            Wait, what's does it mean by tomatoes?
+          </span>{" "}
+          Here's the answer, each tomato will be a time tracker. One tomato will
+          be 25 minutes. Taking a short 5-minute break time after a tomato would
+          be recommended for our brains. Taking a break time can be helpful for
+          us to think more creative way. After a first four tomatoes, taking a
+          long 15 minutes break time is also recommended. Once you logged in
+          this website, you will be able to make a to-do list with numbers of
+          tomatoes you wish to work on.
         </p>
+
         <h2> See this image as below:</h2>
         <p>
           <img
@@ -110,8 +116,7 @@ const Home = () => {
             here.
           </a>
         </p>
-
-        <h1>What's the Pomodoro Technique about?</h1>
+        <h2>What's the Pomodoro Technique about?</h2>
         <p>
           It's one of the time management methods out there that's widely used.
           You can click &nbsp;

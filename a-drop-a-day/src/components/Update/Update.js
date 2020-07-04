@@ -57,6 +57,7 @@ const Update = () => {
             will be lots of features things to be added, but so pleasant to show
             my first side project!{" "}
           </li>
+          <li>If you are dark mode lover, click the Tomatoe logo on top!</li>
         </ul>
       </div>
     </div>
