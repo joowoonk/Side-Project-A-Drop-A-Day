@@ -37,7 +37,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
     <header className="header">
       <img
         src={require("./tomato.png")}
-        className="logo"
+        className="logoicon"
         alt="logo"
         onClick={(e) => {
           toggleMode(e);
@@ -159,15 +159,15 @@ const Nav = ({ isStopping, setIsStopping }) => {
                 </a>
                 {darkMode ? (
                   <a onClick={(e) => toggleMode(e)} className={darkmode}>
-                    <i class="fa fa-toggle-on" aria-hidden="true"></i>
+                    <i class="fa fa-toggle-on light" aria-hidden="true"></i>
                   </a>
                 ) : (
                   <a onClick={(e) => toggleMode(e)} className={darkmode}>
-                    <i class="fa fa-toggle-off" aria-hidden="true"></i>
+                    <i class="fa fa-toggle-off light" aria-hidden="true"></i>
                   </a>
                 )}
 
-                {/* <img
+                {/* <i style={{textAlign:"center"}}mg
                   src={require("./tomato.png")}
 
                   // className="logo"
@@ -178,11 +178,11 @@ const Nav = ({ isStopping, setIsStopping }) => {
                 <a onClick={() => push("/Signin")}>SIGN IN</a>
                 {darkMode ? (
                   <a onClick={(e) => toggleMode(e)} className={darkmode}>
-                    <i class="fa fa-toggle-on" aria-hidden="true"></i>
+                    <i class="fa fa-toggle-on light" aria-hidden="true"></i>
                   </a>
                 ) : (
                   <a onClick={(e) => toggleMode(e)} className={darkmode}>
-                    <i class="fa fa-toggle-off" aria-hidden="true"></i>
+                    <i class="fa fa-toggle-off light" aria-hidden="true"></i>
                   </a>
                 )}
               </>

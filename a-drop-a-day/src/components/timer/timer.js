@@ -86,7 +86,7 @@ export default function Timer({
       {!focusTime && <Helmet title={`A Drop A Day`}></Helmet>}
       <Link to="section1" />
       <div className={classes.root}>
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
           <Grid item xs={12} className="container">
             <Paper className={classes.paper}>
               {volume ? (

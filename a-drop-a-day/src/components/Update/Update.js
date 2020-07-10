@@ -11,6 +11,7 @@ const Update = () => {
             Logo is no longer being shown on mobile screen and dark mode is
             available under the top tab menu.
           </li>
+          <li>Way more responsive :)</li>
         </ul>
         <h2>V.1.0.5, July 4st, 2020</h2>
         <ul>

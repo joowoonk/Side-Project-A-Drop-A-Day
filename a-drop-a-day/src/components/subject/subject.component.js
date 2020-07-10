@@ -164,7 +164,7 @@ const Subject = (props) => {
                     </Grid>
                   )}
                   {projects.length === 2 && (
-                    <Grid container spacing={3} className="projects">
+                    <Grid container spacing={4} className="projects">
                       {projects.map((sub) => {
                         return (
                           <Grid item xs={12}>
@@ -183,7 +183,7 @@ const Subject = (props) => {
                     </Grid>
                   )}
                   {projects.length > 2 && (
-                    <Grid container spacing={1} className="projects">
+                    <Grid container spacing={4} className="projects">
                       {projects.map((sub) => {
                         return (
                           <Grid item xs={12} sm={6}>
@@ -208,7 +208,7 @@ const Subject = (props) => {
         ) : (
           <>
             <div className={classes.root}>
-              <Grid container spacing={1} className="server-down">
+              <Grid container spacing={4} className="server-down">
                 <Grid item xs={12}>
                   <Paper className={classes.paper}>
                     <h4>Something went wrong with the server</h4>

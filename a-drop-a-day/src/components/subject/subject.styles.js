@@ -3,8 +3,9 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     // flexGrow: 1,
     // borderRadius: 10,
-    marginTop: 15,
-    width: "100%",
+    marginRight: "3%",
+    marginLeft: "3%",
+    width: "95%",
   },
   paper: {
     padding: theme.spacing(2),
