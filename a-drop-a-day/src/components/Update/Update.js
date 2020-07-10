@@ -5,6 +5,13 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
+        <h2>V.1.0.6 July 9th, 2020</h2>
+        <ul>
+          <li>
+            Logo is no longer being shown on mobile screen and dark mode is
+            available under the top tab menu.
+          </li>
+        </ul>
         <h2>V.1.0.5, July 4st, 2020</h2>
         <ul>
           <li>

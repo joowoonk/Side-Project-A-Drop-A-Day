@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./nav.styles.scss";
 import { useHistory } from "react-router-dom";
@@ -24,7 +25,14 @@ const Nav = ({ isStopping, setIsStopping }) => {
   const handleLogOut = () => {
     dispatch(logOut());
   };
-
+  const darkmode = () => {
+    if (darkMode) {
+      return "logo toggle toggled";
+    } else {
+      return "toggle logo";
+    }
+    // darkMode ? " logo toggle toggled" : "toggle logo";
+  };
   return (
     <header className="header">
       <img
@@ -108,16 +116,15 @@ const Nav = ({ isStopping, setIsStopping }) => {
             >
               HOME
             </a>
+
             <a
               onClick={() => {
                 if (isStopping) {
-                  window.open(
-                    "https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
-                  );
+                  push("/updates");
                 }
               }}
             >
-              CONTACT
+              UPDATES
             </a>
 
             {/* LEARN HOW TO LOG OUT SHOWS WITHOUT HAVING DRY CODE ON APP */}
@@ -150,10 +157,34 @@ const Nav = ({ isStopping, setIsStopping }) => {
                 >
                   SIGN OUT
                 </a>
+                {darkMode ? (
+                  <a onClick={(e) => toggleMode(e)} className={darkmode}>
+                    <i class="fa fa-toggle-on" aria-hidden="true"></i>
+                  </a>
+                ) : (
+                  <a onClick={(e) => toggleMode(e)} className={darkmode}>
+                    <i class="fa fa-toggle-off" aria-hidden="true"></i>
+                  </a>
+                )}
+
+                {/* <img
+                  src={require("./tomato.png")}
+
+                  // className="logo"
+                /> */}
               </>
             ) : (
               <>
                 <a onClick={() => push("/Signin")}>SIGN IN</a>
+                {darkMode ? (
+                  <a onClick={(e) => toggleMode(e)} className={darkmode}>
+                    <i class="fa fa-toggle-on" aria-hidden="true"></i>
+                  </a>
+                ) : (
+                  <a onClick={(e) => toggleMode(e)} className={darkmode}>
+                    <i class="fa fa-toggle-off" aria-hidden="true"></i>
+                  </a>
+                )}
               </>
             )}
           </div>

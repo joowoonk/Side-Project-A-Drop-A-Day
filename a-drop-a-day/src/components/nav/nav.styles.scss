@@ -74,8 +74,12 @@
     display: none;
     position: absolute;
     background-color: green;
-    border-radius: 20px;
-    min-width: 160px;
+    // width: ;
+    margin-left: -25%;
+    border-bottom-left-radius: 10px;
+
+    border-bottom-right-radius: 10px;
+    min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
@@ -90,7 +94,7 @@
 
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {
-    background-color: tomato;
+    background-color: green;
     border-radius: 20px;
   }
 
