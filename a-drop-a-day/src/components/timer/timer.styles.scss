@@ -29,10 +29,6 @@
     font-size: 2rem;
   }
   @media (max-width: 900px) {
-    iframe {
-      width: 50%;
-      height: 10%;
-    }
     h5 {
       font-size: 1rem;
     }
@@ -42,5 +38,12 @@
     p {
       font-size: 1.3rem;
     }
+  }
+}
+@media (max-width: 400px) {
+  //only for mobile
+  iframe {
+    width: 50%;
+    height: 10%;
   }
 }

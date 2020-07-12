@@ -8,21 +8,27 @@ import Helmet from "react-helmet";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
+//styling for timer component
 const useStyles = makeStyles((theme) => ({
   root: {
     // flexGrow: 1,
-    margin: "5% 3%",
-    width: "95%",
+    marginRight: "1%",
+    marginLeft: "1%",
+    width: "97%",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
     // margin: "5% 2%",
     // height: "auto",
     // padding: "120%",
+    marginTop: 10,
   },
   paper: {
     padding: "auto",
     textAlign: "center",
     boxShadow: "0 1px 3px 1px black",
     background: "floralwhite",
-    padding: "10% 10%",
+    padding: "10% 0",
 
     // marginRight: -250,
     // color: theme.palette.text.secondary,
@@ -44,19 +50,27 @@ export default function Timer({
   setFocusTime,
   limit,
 }) {
+  //classes that will stlye the component
   const classes = useStyles();
+
+  //grabs project from global state.
   const projects = useSelector((state) => state.tomatoesReducers.projects);
+
+  //controlling backgroun music
   const [volume, setVolume] = useState(true);
   const [sound, setSound] = useState(true);
 
+  //total number of finished counts for each 25 minute focusing time.
   let accumulatedFinished = projects.map((res) => res.finished);
   let finishedCounts = accumulatedFinished.reduce(
     (total, acc) => total + acc,
     0
   );
 
+  //will wait until it turns true
   const isFetching = useSelector((state) => state.tomatoesReducers.isFetching);
 
+  //will use to convert the time unit
   function timeConvert(n) {
     var num = n;
     var hours = num / 60;
@@ -83,12 +97,16 @@ export default function Timer({
 
   return (
     <div>
+      {/* While not fucusing time, changes title to A Drop A Day */}
       {!focusTime && <Helmet title={`A Drop A Day`}></Helmet>}
+
+      {/* scrolling works with this */}
       <Link to="section1" />
       <div className={classes.root}>
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
           <Grid item xs={12} className="container">
             <Paper className={classes.paper}>
+              {/* controlls music either mute/unmute */}
               {volume ? (
                 <i
                   style={{ color: "blue", textAlign: "right" }}
@@ -110,6 +128,7 @@ export default function Timer({
               )}
               <br />
               <br />
+              {/* occurs when the breaktime occurs */}
               {breakTime ? (
                 <div className="icon">
                   <i style={coffee} className="fas fa-coffee fa-8x" />
@@ -149,6 +168,7 @@ export default function Timer({
                 </div>
               ) : (
                 <div>
+                  {/* when focusing time occurs */}
                   <i style={styles} className="fas fa-book fa-8x" />
                   {!isStopping ? (
                     <>
@@ -177,6 +197,7 @@ export default function Timer({
                 </div>
               )}
               <h3 className="time">
+                {/* shows how much time left and controllers*/}
                 {formattedNumber} <span className="minutes">Minutes</span>
               </h3>
               <Button
@@ -220,6 +241,7 @@ export default function Timer({
               </Button>
               {!isStopping && !breakTime ? (
                 <>
+                  {/* when music (focusing/break time) starts */}
                   <Button
                     variant="contained"
                     color="primary"

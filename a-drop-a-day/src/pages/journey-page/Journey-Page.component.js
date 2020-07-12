@@ -25,37 +25,45 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
   // probably need to find a way to disabled play button in timer component so it wont trigger to start without start from the subject.
 
   const [Minutes, setMinutes] = useState(25);
-
+  //Minutes will start by 25 mins
   const [breakTime, setBreakTime] = useState(false);
-
+  //breaktime starts as false
   const [timeOn, setTimeOn] = useState(false);
+  // when focus time starts this will turn true
   const [userId, setUserId] = useState(0);
+  //will grab from localstorage
   const [focusTime, setFocusTime] = useState(false);
-
+  // will disable navbar when focus time starts (true)
   useEffect(() => {
+    //this will let the timer goes by a minute a time
     if (!isStopping) {
       const id = window.setInterval(() => {
         setMinutes((min) => min - 1);
       }, 60000);
-
+      //60 seconds
       return () => window.clearInterval(id);
     } else {
     }
   }, [isStopping]);
 
   var formattedNumber = ("0" + Minutes).slice(-2);
+  //when minutues is one digit number, it will force to have 0"#"
 
+  //coloring font awesome
   const styles = {
     color: "tomato",
   };
   const coffee = {
     color: "brown",
   };
+
+  //npm where it scroll up when timer starts
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
   return (
     <div className="proejctboard">
+      {/* title of the tab will chage because of npm package, helmet */}
       {focusTime && <Helmet title={`ripenning..`}></Helmet>}
       {!focusTime && <Helmet title={`A Drop A Day`}></Helmet>}
       <Timer

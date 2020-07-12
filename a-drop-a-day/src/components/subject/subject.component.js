@@ -49,23 +49,30 @@ const example = [
     tomatoes: 4,
   },
 ];
-// const user = localStorage.getItem("user_id");
 const Subject = (props) => {
+  //redux hook for dispatch
   const dispatch = useDispatch();
+
+  //grabing from global state
   const projects = useSelector((state) => state.tomatoesReducers.projects);
-  // const [userId, setUserId] = useState(user);
-  console.log({ projects });
+
+  // styling material ui
   const classes = useStyles();
 
+  //checking for fetching
   const isFetching = useSelector((state) => state.tomatoesReducers.isFetching);
 
+  //fetching all the tomatoes
   useEffect(() => {
     dispatch(fetchTomatoes());
   }, []);
 
+  //Timer will start
   const finishedOneTask = () => {
     props.setIsStopping(false);
   };
+
+  //when minutues hits 0
   if (props.minutes <= 0) {
     dispatch(finishingOneTomatoes(props.userId));
     props.setMinutes(25);
@@ -73,8 +80,6 @@ const Subject = (props) => {
     props.setFocusTime(false);
     props.setIsStopping(true);
     window.open("https://side-project-a-drop-a-day.vercel.app/timeisup");
-    // window.close("https://side-project-a-drop-a-day.vercel.app/tomatoes");
-    //add dipatch here to add a block with color
   }
 
   return (
@@ -82,10 +87,11 @@ const Subject = (props) => {
       <div className="projects">
         {isFetching ? (
           <>
+            {/* example will be shown if a user doesnt add any project */}
             {projects.length === 0 ? (
               <>
                 <div className={classes.root}>
-                  <Grid container spacing={4} className="projects">
+                  <Grid container spacing={2} className="projects">
                     {example.map((sub) => {
                       return (
                         <Grid item xs={12}>
@@ -145,7 +151,7 @@ const Subject = (props) => {
               <>
                 <div className={classes.root}>
                   {projects.length === 1 && (
-                    <Grid container spacing={4} className="projects smaller">
+                    <Grid container spacing={2} className="projects smaller">
                       {projects.map((sub) => {
                         return (
                           <Grid item xs={12}>
@@ -164,7 +170,7 @@ const Subject = (props) => {
                     </Grid>
                   )}
                   {projects.length === 2 && (
-                    <Grid container spacing={4} className="projects">
+                    <Grid container spacing={2} className="projects">
                       {projects.map((sub) => {
                         return (
                           <Grid item xs={12}>
@@ -183,7 +189,7 @@ const Subject = (props) => {
                     </Grid>
                   )}
                   {projects.length > 2 && (
-                    <Grid container spacing={4} className="projects">
+                    <Grid container spacing={2} className="projects">
                       {projects.map((sub) => {
                         return (
                           <Grid item xs={12} sm={6}>
@@ -208,7 +214,7 @@ const Subject = (props) => {
         ) : (
           <>
             <div className={classes.root}>
-              <Grid container spacing={4} className="server-down">
+              <Grid container spacing={2} className="server-down">
                 <Grid item xs={12}>
                   <Paper className={classes.paper}>
                     <h4>Something went wrong with the server</h4>
