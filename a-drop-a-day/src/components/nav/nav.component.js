@@ -35,6 +35,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
   };
   return (
     <header className="header">
+      {/* this will let logo be a switch for darkmode */}
       <img
         src={require("./tomato.png")}
         className="logoicon"
@@ -49,6 +50,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
       <nav className="Nav">
         <a
           onClick={() => {
+            //Timer is disabled while timer is on
             if (isStopping) {
               push("/");
             }
@@ -58,6 +60,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
         </a>
         <a
           onClick={() => {
+            //Timer is disabled while timer is on
             if (isStopping) {
               push("/updates");
             }
@@ -72,6 +75,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
             {/* //isStopping needs to be false when this onClick is disabled. */}
             <a
               onClick={() => {
+                //Timer is disabled while timer is on
                 if (isStopping) {
                   push("/form");
                 }
@@ -88,6 +92,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
             </a>
             <a
               onClick={() => {
+                //Timer is disabled while timer is on
                 if (isStopping) {
                   handleLogOut();
                   push("/signin");
@@ -109,6 +114,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
           <div class="dropdown-content">
             <a
               onClick={() => {
+                //Timer is disabled while timer is on
                 if (isStopping) {
                   push("/");
                 }
@@ -133,6 +139,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
                 {/* //isStopping needs to be false when this onClick is disabled. */}
                 <a
                   onClick={() => {
+                    //Timer is disabled while timer is on
                     if (isStopping) {
                       push("/form");
                     }
@@ -142,6 +149,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
                 </a>
                 <a
                   onClick={() => {
+                    //Timer is disabled while timer is on
                     push("/tomatoes");
                   }}
                 >
@@ -149,6 +157,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
                 </a>
                 <a
                   onClick={() => {
+                    //Timer is disabled while timer is on
                     if (isStopping) {
                       handleLogOut();
                       push("/signin");
