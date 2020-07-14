@@ -5,7 +5,7 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
-        <h2>V.1.0.</h2>
+        <h2>V.1.0.7 July 11th, 2020</h2>
         <ul>
           <li>
             Made some comments and tiles are now not that far to each other
