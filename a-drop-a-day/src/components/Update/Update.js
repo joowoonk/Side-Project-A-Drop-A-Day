@@ -5,6 +5,10 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
+        <h2>V.1.0.9 July 15th, 2020</h2>
+        <ul>
+          <li>Added about me page on tab above</li>
+        </ul>
         <h2>V.1.0.8 July 14th, 2020</h2>
         <ul>
           <li>Added Loading Spinner while fetching your projects</li>

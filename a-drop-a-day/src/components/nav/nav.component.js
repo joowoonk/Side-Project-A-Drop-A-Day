@@ -100,10 +100,10 @@ const Nav = ({ isStopping, setIsStopping }) => {
             <a
               className="navMenu"
               onClick={() => {
-                push("/tomatoes");
+                push("/projects");
               }}
             >
-              TOMATOES
+              PROJECTS
             </a>
             <a
               className="navMenu"
@@ -177,10 +177,10 @@ const Nav = ({ isStopping, setIsStopping }) => {
                 <a
                   onClick={() => {
                     //Timer is disabled while timer is on
-                    push("/tomatoes");
+                    push("/projects");
                   }}
                 >
-                  TOMATOES
+                  PROJECTS
                 </a>
                 <a
                   onClick={() => {

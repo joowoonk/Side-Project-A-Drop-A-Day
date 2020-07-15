@@ -54,7 +54,7 @@ function App() {
           <Route exact path="/SignUp">
             <SignUp />
           </Route>
-          <PrivateRoute path="/tomatoes">
+          <PrivateRoute path="/projects">
             <JourneyPage
               isStopping={isStopping}
               setIsStopping={setIsStopping}
