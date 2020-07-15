@@ -11,6 +11,7 @@
     border: 2px solid green;
     background-color: floralwhite;
     border-radius: 20px;
+
     h2 {
       font-size: 6vh;
       margin: 0 auto;
@@ -39,10 +40,15 @@
       padding-right: 3%;
       padding-left: 3%;
     }
+    .example {
+      border-radius: 2px solid red;
+    }
     .image {
       display: flex;
       margin: 0 auto;
       width: 80vw;
+      border: 10px solid brown;
+
       // padding-right: 2%;
       // padding-left: 2%;
       border-radius: 15px;
@@ -52,6 +58,12 @@
       // padding-right: 2%;
       // padding-left: 2%;
       margin: 3% auto;
+    }
+    @media (max-width: 500px) {
+      iframe {
+        width: auto;
+        height: auto;
+      }
     }
   }
 }

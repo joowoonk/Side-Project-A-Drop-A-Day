@@ -20,7 +20,8 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { styles, useStyles } from "./subject.styles";
 import SubjectDetail from "../SubjectDetail/SubjectDetail";
-
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 function MyButtonRaw(props) {
   const { classes, color, ...other } = props;
   return <Button className={classes.root} {...other} />;
@@ -38,7 +39,7 @@ const MyButton = withStyles(styles)(MyButtonRaw);
 const example = [
   {
     id: "c",
-    project: "Example. your project can be added above on tomatoes tab",
+    project: "Your project can be added from add tab",
     finished: 5,
     tomatoes: 8,
   },
@@ -47,6 +48,12 @@ const example = [
     project: "Eg. Practing ukulele for a day",
     finished: 1,
     tomatoes: 4,
+  },
+  {
+    id: "e",
+    project: "Eg. Working on my side project",
+    finished: 6,
+    tomatoes: 8,
   },
 ];
 const Subject = (props) => {
@@ -169,7 +176,7 @@ const Subject = (props) => {
                       })}
                     </Grid>
                   )}
-                  {projects.length === 2 && (
+                  {projects.length == 2 && (
                     <Grid container spacing={2} className="projects">
                       {projects.map((sub) => {
                         return (
@@ -188,7 +195,26 @@ const Subject = (props) => {
                       })}
                     </Grid>
                   )}
-                  {projects.length > 2 && (
+                  {projects.length == 3 && (
+                    <Grid container spacing={2} className="projects">
+                      {projects.map((sub) => {
+                        return (
+                          <Grid item xs={12}>
+                            <SubjectDetail
+                              sub={sub}
+                              scrollToTop={props.scrollToTop}
+                              isStopping={props.isStopping}
+                              setUserId={props.setUserId}
+                              setFocusTime={props.setFocusTime}
+                              setIsStopping={props.setIsStopping}
+                              setMinutes={props.setMinutes}
+                            />
+                          </Grid>
+                        );
+                      })}
+                    </Grid>
+                  )}
+                  {projects.length > 3 && (
                     <Grid container spacing={2} className="projects">
                       {projects.map((sub) => {
                         return (
@@ -216,15 +242,16 @@ const Subject = (props) => {
             <div className={classes.root}>
               <Grid container spacing={2} className="server-down">
                 <Grid item xs={12}>
-                  <Paper className={classes.paper}>
-                    <h4>Something went wrong with the server</h4>
-                    <a href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/">
-                      Contact the developer if this issue keeps occurs.
-                    </a>
-                    <h4>
-                      Or this could have happened due to token expiration,
-                      please log out first then log back in.
-                    </h4>
+                  <Paper className={classes.loading}>
+                    <Loader
+                      className="loading"
+                      type="ThreeDots"
+                      color="#00BFFF"
+                      height={250}
+                      width={250}
+                      // timeout={3000} //3 secs
+                    />
+                    <h1 className="loading">It's Loading...</h1>
                   </Paper>
                 </Grid>
               </Grid>

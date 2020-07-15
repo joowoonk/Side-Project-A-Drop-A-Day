@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 import Helmet from "react-helmet";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 //styling for timer component
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,9 +29,10 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0 1px 3px 1px black",
     background: "floralwhite",
     padding: "10% 0",
-
-    // marginRight: -250,
-    // color: theme.palette.text.secondary,
+    ["@media (Max-width:900px)"]: {
+      // eslint-disable-line no-useless-computed-key
+      padding: "2% 0",
+    },
   },
 }));
 

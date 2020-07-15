@@ -5,6 +5,14 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
+        <h2>V.1.0.8 July 14th, 2020</h2>
+        <ul>
+          <li>Added Loading Spinner while fetching your projects</li>
+          <li>
+            Restored reset features per project, users can have freedom to
+            restart their counts anytime.
+          </li>
+        </ul>
         <h2>V.1.0.7 July 11th, 2020</h2>
         <ul>
           <li>

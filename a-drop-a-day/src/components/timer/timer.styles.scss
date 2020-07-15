@@ -7,7 +7,7 @@
     flex-direction: column;
     // margin: 30%;
     // margin: 3%;
-    margin: 3% auto;
+    margin: 2% auto;
   }
   .time {
     font-size: 6rem;
@@ -29,6 +29,15 @@
     font-size: 2rem;
   }
   @media (max-width: 900px) {
+    .time {
+      font-size: 4rem;
+      // width: 200px;
+      // text-align: center;
+      margin: 0 auto;
+      .minutes {
+        font-size: 2rem;
+      }
+    }
     h5 {
       font-size: 1rem;
     }
@@ -37,6 +46,16 @@
     }
     p {
       font-size: 1.3rem;
+    }
+    Paper {
+      padding: "100% 0";
+    }
+    .controller {
+      display: flex;
+      flex-direction: column;
+      // margin: 30%;
+      // margin: 3%;
+      margin: 2% auto;
     }
   }
 }

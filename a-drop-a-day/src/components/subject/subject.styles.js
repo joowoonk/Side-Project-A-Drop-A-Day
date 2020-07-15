@@ -18,8 +18,23 @@ export const useStyles = makeStyles((theme) => ({
     background: "floralwhite",
     boxShadow: "0 1px 3px 1px black",
     color: theme.palette.text.secondary,
-    color: "black",
+    color: "grey",
 
+    // paddingRight: "120%",
+  },
+  loading: {
+    padding: theme.spacing(2),
+    // textAlign: "center",
+    background: "floralwhite",
+    boxShadow: "0 1px 3px 1px black",
+    color: theme.palette.text.secondary,
+    color: "black",
+    display: "flex",
+
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center",
+    margin: "0 auto",
     // paddingRight: "120%",
   },
 }));

@@ -81,7 +81,8 @@ const Home = () => {
         <h2> See this image as below:</h2>
         <p>
           <img
-            src="todo-list-with-tomatoes.png"
+            src="example.png"
+            className="example"
             alt="Todo-list-with-tomatoes"
             width="auto"
             height="auto"
@@ -116,6 +117,8 @@ const Home = () => {
             here.
           </a>
         </p>
+      </div>
+      <div className="introduction">
         <h2>What's the Pomodoro Technique about?</h2>
         <p>
           It's one of the time management methods out there that's widely used.
@@ -130,26 +133,29 @@ const Home = () => {
           regarding this technique, I'd recommend you to try watch this video.
           In this video, Barbara Oakley who is a professor of Engineering at
           Oakland University and gave a great speech at TEDx about how we can
-          learn to learn, talks about this technique:
-          <center>
-            {" "}
-            <iframe
-              width="auto"
-              height="auto"
-              className="video"
-              src="https://www.youtube.com/embed/O96fE1E-rf8"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </center>
-          <h2>Lastly...</h2>
+          learn to learn, talks about this technique:{" "}
+        </p>
+        <center>
+          {" "}
+          <iframe
+            width="500px"
+            height="300px"
+            className="video"
+            src="https://www.youtube.com/embed/O96fE1E-rf8"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </center>
+      </div>
+      <div className="introduction">
+        <h2>Lastly...</h2>
+        <p>
           As we work on things daily basis, I believe there is nothing we cannot
           master. I'm a stronger believer in compound interest where doing one
           small thing a day will grow us exponentially. I hope you don’t give up
           on whatever you are passionate about. Thank you again for taking your
-          time using this website. Oh, try to click tomato logo on top menu if
-          you want dark-mode on this website.
+          time using this website.
         </p>
       </div>
     </div>

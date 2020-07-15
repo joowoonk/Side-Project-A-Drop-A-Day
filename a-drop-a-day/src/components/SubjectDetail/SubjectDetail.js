@@ -82,12 +82,12 @@ const SubjectDetail = (props) => {
               disabled={!props.isStopping}
               color="red"
               onClick={() => {
-                // props.setMinutes(25);
-                // props.setUserId(props.sub.id);
-                // dispatch(resetFinishingTomatoes(props.sub.id));
-                alert(
-                  "Reset is no longer to be used. Your progress will be reset every midnight on America Pacific Time standard"
-                );
+                props.setMinutes(25);
+                props.setUserId(props.sub.id);
+                dispatch(resetFinishingTomatoes(props.sub.id));
+                // alert(
+                //   "Reset is no longer to be used. Your progress will be reset every midnight on America Pacific Time standard"
+                // );
               }}
             >
               RESET PROGRESS

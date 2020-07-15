@@ -30,7 +30,7 @@
     // grid-template-columns: repeat(4 auto);
     justify-content: flex-end;
     align-items: center;
-    font-size: 3vh;
+    font-size: 1.7rem;
     width: 90%;
     a {
       margin: 2%;
@@ -46,8 +46,9 @@
   }
 }
 @media (max-width: 900px) {
-  a {
+  .navMenu {
     // background-color: green;
+    // font-size: 1rem;
     display: none;
   }
 }

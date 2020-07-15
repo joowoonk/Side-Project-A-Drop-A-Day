@@ -17,6 +17,7 @@ import Home from "./components/home/home.component";
 import About from "./components/about/about";
 import TimeIsUp from "./components/time-is-up/time-is-up";
 import Update from "./components/Update/Update";
+
 // import Twitter from "./components/twitter/twitter";
 function App() {
   const [isStopping, setIsStopping] = useState(true);
@@ -28,17 +29,19 @@ function App() {
 
       <div>
         <Nav isStopping={isStopping} setIsStopping={setIsStopping} />
+
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
+
           <Route exact path="/twitter">
             {/* <Twitter /> */}
           </Route>
           <Route exact path="/updates">
             <Update />
           </Route>
-          <Route exact path="/contact">
+          <Route exact path="/about">
             <About />
           </Route>
           <Route exact path="/timeisup">

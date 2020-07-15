@@ -49,6 +49,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
 
       <nav className="Nav">
         <a
+          className="navMenu"
           onClick={() => {
             //Timer is disabled while timer is on
             if (isStopping) {
@@ -59,6 +60,18 @@ const Nav = ({ isStopping, setIsStopping }) => {
           HOME
         </a>
         <a
+          className="navMenu"
+          onClick={() => {
+            //Timer is disabled while timer is on
+            if (isStopping) {
+              push("/about");
+            }
+          }}
+        >
+          ABOUT
+        </a>
+        <a
+          className="navMenu"
           onClick={() => {
             //Timer is disabled while timer is on
             if (isStopping) {
@@ -74,6 +87,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
           <>
             {/* //isStopping needs to be false when this onClick is disabled. */}
             <a
+              className="navMenu"
               onClick={() => {
                 //Timer is disabled while timer is on
                 if (isStopping) {
@@ -84,6 +98,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
               ADD
             </a>
             <a
+              className="navMenu"
               onClick={() => {
                 push("/tomatoes");
               }}
@@ -91,6 +106,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
               TOMATOES
             </a>
             <a
+              className="navMenu"
               onClick={() => {
                 //Timer is disabled while timer is on
                 if (isStopping) {
@@ -104,7 +120,9 @@ const Nav = ({ isStopping, setIsStopping }) => {
           </>
         ) : (
           <>
-            <a onClick={() => push("/Signin")}>SIGN IN</a>
+            <a className="navMenu" onClick={() => push("/Signin")}>
+              SIGN IN
+            </a>
           </>
         )}
         <div class="dropdown">
@@ -122,7 +140,16 @@ const Nav = ({ isStopping, setIsStopping }) => {
             >
               HOME
             </a>
-
+            <a
+              onClick={() => {
+                //Timer is disabled while timer is on
+                if (isStopping) {
+                  push("/about");
+                }
+              }}
+            >
+              ABOUT
+            </a>
             <a
               onClick={() => {
                 if (isStopping) {
