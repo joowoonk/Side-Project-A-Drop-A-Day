@@ -47,7 +47,7 @@ function App() {
           <Route exact path="/timeisup">
             <TimeIsUp />
           </Route>
-          <Route exact path="/SignIn">
+          <Route exact path="/signIn">
             <Quotes />
             <SignIn />
           </Route>

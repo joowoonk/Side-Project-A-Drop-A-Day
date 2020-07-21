@@ -29,7 +29,7 @@ const TimeIsUp = () => {
       <MyButton
         color="red"
         onClick={() => {
-          push("tomatoes");
+          push("projects");
           // window.close("http://localhost:3000/timeisup");
         }}
       >
