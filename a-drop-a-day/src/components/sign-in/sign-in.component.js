@@ -43,7 +43,7 @@ const SignIn = () => {
         localStorage.setItem("token", res.data.token);
         // console.log("LOGIN INFO", res);
         alert(`Welcome ${username}, hope you have a great day!`);
-        push("/tomatoes");
+        push("/projects");
         dispatch({
           type: LOGIN_USER_SUCCESS,
           payload: res.data,

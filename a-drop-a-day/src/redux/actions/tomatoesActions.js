@@ -50,7 +50,7 @@ export const addProject = (project, tomatoes, user_id) => {
       })
       .then((res) => {
         alert("Your project's added!");
-        history.push("tomatoes");
+        history.push("projects");
         dispatch({ type: ADD_PROJECT_SUCCESS, payload: res.data });
       })
       .catch((err) =>
