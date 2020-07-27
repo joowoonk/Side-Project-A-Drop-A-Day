@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//fetching random programming quote via a public api
 export const fetchQuote = () => {
   return (dispatch) => {
     dispatch({ type: "FETCH_QUOTE_START" });

@@ -11,6 +11,7 @@ export const REGISTER_USER_FAILURE = "REGISTER_USER_FAILURE";
 
 export const LOGOUT = "LOGOUT";
 
+//For login endpoint
 export const loginUserAction = (username, password) => {
   return (dispatch) => {
     dispatch({ type: FETCH_USER_START });
@@ -34,6 +35,7 @@ export const loginUserAction = (username, password) => {
   };
 };
 
+//fetching all user info
 export const userInformation = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_USER_START });
@@ -54,6 +56,7 @@ export const userInformation = () => {
   };
 };
 
+//sign up endpoint
 export const registerUserAction = (username, password) => {
   return (dispatch) => {
     dispatch({ type: FETCH_USER_START });

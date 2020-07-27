@@ -35,6 +35,7 @@ export const fetchTomatoes = () => {
   };
 };
 
+// adding a project
 export const addProject = (project, tomatoes, user_id) => {
   const user = localStorage.getItem("user_id");
 
@@ -62,6 +63,7 @@ export const addProject = (project, tomatoes, user_id) => {
   };
 };
 
+//adding a finished count by one
 export const finishingOneTomatoes = (id) => {
   return (dispatch) => {
     const user = localStorage.getItem("user_id");
@@ -88,6 +90,7 @@ export const finishingOneTomatoes = (id) => {
   };
 };
 
+//delete a selected project
 export const deleteProject = (id) => {
   return (dispatch) => {
     const user = localStorage.getItem("user_id");
@@ -114,6 +117,7 @@ export const deleteProject = (id) => {
   };
 };
 
+//resetting a selected project
 export const resetFinishingTomatoes = (id) => {
   return (dispatch) => {
     const user = localStorage.getItem("user_id");
