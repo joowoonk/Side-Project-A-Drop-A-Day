@@ -13,7 +13,6 @@
         However, it's also true that we tend to procrastinate even if we have
         tasks in front of us. Recently, I've been using a technique called&nbsp;
         <a
-          style={{ color: "tomato" }}
           href="https://francescocirillo.com/pages/pomodoro-technique"
           target="blank"
         >
@@ -35,8 +34,7 @@
             medium level problem
           </li>
           <li>
-            Read <span style={{ fontStyle: "italic" }}>the Republic</span> by
-            Plato
+            Read the Republic by Plato
           </li>
         </ul>
   As the to-do list shows above, I implemented a feature where I can set
@@ -45,16 +43,16 @@
         <ul>
           <li>
             Continue writing an essay for my Philosophy of Science class -->&nbsp;
-            <span style={{ color: "tomato" }}>4 tomatoes </span>a day
+            4 tomatoes a day
           </li>
           <li>
             Solving algorithm problems on Leetcode, two easy problems and one
             medium level problem -->
-            <span style={{ color: "tomato" }}> 4 tomatoes </span> a day
+           4 tomatoes a day
           </li>
           <li>
-            Read <span style={{ fontStyle: "italic" }}>the Republic</span> by
-            Plato --> <span style={{ color: "tomato" }}> 2 tomatoes </span>a day
+            Read the Republic by
+            Plato --> 2 tomatoes a day
           </li>
         </ul>
 Wait, what's does it mean by tomatoes? Here's the answer, each tomato
