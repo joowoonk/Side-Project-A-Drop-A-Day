@@ -1,9 +1,10 @@
-<h1>        <a
+   
+<a
           href="https://side-project-a-drop-a-day.vercel.app/"
           target="blank"
-        >
+        ><h1>     
        Why I built this website:
-        </a>&nbsp;</h1>
+        </h1></a>&nbsp;
       <p>
     &nbsp;
                As you know there are tasks to finish in a limited amount of time and
@@ -26,7 +27,7 @@
       <p>
        For an example, let's say I have some tasks to do on different things.
         Such as:
-        <ul>
+       </p>
         <ul>
           <li>Continue writing an essay for my Philosophy of Science class</li>
           <li>
@@ -106,36 +107,17 @@ Wait, what's does it mean by tomatoes? Here's the answer, each tomato
         master. I'm a stronger believer in compound interest where doing one
         small thing a day will grow us exponentially. I hope you don’t give up
         on whatever you are passionate about. Thank you again for taking your
-        time using this website. Oh, try to click tomato logo on top menu if you
-        want dark-mode on this website.
+        time using this website.
       </p>
 
-<h1>Ideas for this app:<h1>
-
-<h2>MVP:<h2>
+<h2>Features(Most Viable Product):</h2>
 <ul>
-    <li>navbar (checked)</li> 
-    <li>log in/out page(checked)</li>
-    <li>sign up page (checked)</li>
-    <li>Quotes to fetch a random quote that is inspiraing for programmer (checked)</li>
-    <li>Inputs: (checked)</li>
-    <li>-For adding a subject or project name(checked)</li>
-    <li>-Adding numbers of block that determines how many pomoodoro you want to make(checked)</li>
-    <li>Outputs: (checked)</li>
-    <li>-TIMERS WILL DISPLAY</li>
-    <li>-subjects/project names will be displayed(checked)</li>
-    <li>-numbers of tomatoes and finished will be displayed(checked)</li>
-</ul>
-
-<h2>Stretch:</h2>
-
-<ul>
-    <li>admin mode</li>
-    <li>darkmode/color customized (checked)</li>
-    <li>forgot username/password</li>
-    <li>Color chooser (theme)</li>
-    <li>Calendar to save log a day</li>
-    <li>announcement (highlight/pin)</li>
-    <li>changing password/username</li>
-    <li>two step security log</li>
+    <li>Navigations (checked)</li> 
+    <li>Authentication(checked)</li>
+    <li>Quotes to fetch a random quote that is inspiraing for programmer(checked)</li>
+    <li>Adding a project(checked)</li>
+    <li>Adding numbers of block that determines how many pomoodoro you want to make(checked)</li>
+    <li>TIMERS WILL DISPLAY(checked)</li>
+    <li>subjects/project names will be displayed(checked)</li>
+    <li>numbers of tomatoes and finished will be displayed(checked)</li>
 </ul>

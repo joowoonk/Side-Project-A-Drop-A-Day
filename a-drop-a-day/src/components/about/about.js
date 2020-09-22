@@ -12,7 +12,7 @@ const About = () => {
         >
           <img
             className="profile"
-            src={require("./profile.png")}
+            src={require("../../assets/profile.png")}
             alt="my-personal-profile-picture"
             // className="logo"
           />
