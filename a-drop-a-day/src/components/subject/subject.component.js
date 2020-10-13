@@ -77,6 +77,10 @@ const Subject = (props) => {
   //Timer will start
   const finishedOneTask = () => {
     props.setIsStopping(false);
+    window.addEventListener("beforeunload", (ev) => {
+      ev.preventDefault();
+      return (ev.returnValue = "Are you sure you want to close?");
+    });
   };
 
   //when minutues hits 0
