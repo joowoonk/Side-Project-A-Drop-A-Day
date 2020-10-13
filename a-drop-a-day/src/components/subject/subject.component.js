@@ -77,6 +77,19 @@ const Subject = (props) => {
   //Timer will start
   const finishedOneTask = () => {
     props.setIsStopping(false);
+    while (!props.isStopping) {
+      window.onbeforeunload = function (e) {
+        e = e || window.event;
+
+        // For IE and Firefox prior to version 4
+        if (e) {
+          e.returnValue = "Sure?";
+        }
+
+        // For Safari
+        return "Sure?";
+      };
+    }
   };
 
   //when minutues hits 0
