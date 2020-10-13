@@ -77,21 +77,13 @@ const Subject = (props) => {
   //Timer will start
   const finishedOneTask = () => {
     props.setIsStopping(false);
-    while (!props.isStopping) {
-      window.onbeforeunload = function (e) {
-        e = e || window.event;
-
-        // For IE and Firefox prior to version 4
-        if (e) {
-          e.returnValue = "Sure?";
-        }
-
-        // For Safari
-        return "Sure?";
-      };
-    }
   };
-
+  while (!props.isStopping) {
+    window.addEventListener("beforeunload", (ev) => {
+      ev.preventDefault();
+      return (ev.returnValue = "Are you sure you want to close?");
+    });
+  }
   //when minutues hits 0
   if (props.minutes <= 0) {
     dispatch(finishingOneTomatoes(props.userId));
