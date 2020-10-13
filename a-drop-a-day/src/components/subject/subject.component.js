@@ -78,12 +78,7 @@ const Subject = (props) => {
   const finishedOneTask = () => {
     props.setIsStopping(false);
   };
-  while (!props.isStopping) {
-    window.addEventListener("beforeunload", (ev) => {
-      ev.preventDefault();
-      return (ev.returnValue = "Are you sure you want to close?");
-    });
-  }
+
   //when minutues hits 0
   if (props.minutes <= 0) {
     dispatch(finishingOneTomatoes(props.userId));
