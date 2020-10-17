@@ -2,6 +2,7 @@
 <a
           href="https://side-project-a-drop-a-day.vercel.app/"
           target="blank"
+          alt="app link"
         ><h1>     
        Why I built this website:
         </h1></a>&nbsp;
@@ -15,6 +16,7 @@
         <a
           href="https://francescocirillo.com/pages/pomodoro-technique"
           target="blank"
+          alt="details about pomodoro technique"
         >
           the Pomodoro Technique
         </a>
@@ -68,6 +70,7 @@ Wait, what's does it mean by tomatoes? Here's the answer, each tomato
         <a
           href="https://side-project-a-drop-a-day.vercel.app/signup"
           target="blank"
+          alt="sign up"
         >
           here
         </a>
@@ -80,6 +83,7 @@ Wait, what's does it mean by tomatoes? Here's the answer, each tomato
         via LinkedIn, you can click <a
           href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
           target="blank"
+          alt="linked in"
         >
           here.
         </a>
@@ -92,6 +96,7 @@ Wait, what's does it mean by tomatoes? Here's the answer, each tomato
         <a
           href="https://francescocirillo.com/pages/pomodoro-technique"
           target="blank"
+          alt="pomodoro technique website"
         >
           here
         </a>

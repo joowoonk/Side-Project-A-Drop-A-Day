@@ -9,12 +9,13 @@ const About = () => {
           href="https://www.joowoonk.ga"
           target="_blank"
           className="card"
+          alt="portfolio"
         >
           <img
             className="profile"
             src={require("../../assets/profile.png")}
             alt="my-personal-profile-picture"
-            // className="logo"
+
           />
         </a>
         <hr />
@@ -30,6 +31,7 @@ const About = () => {
             style={{ textDecoration: "none" }}
             target="_blank"
             href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
+            alt="linkedIn link"
           >
             www.linkedin.com/in/joo-woon
           </a>
@@ -38,10 +40,11 @@ const About = () => {
           <i class="fa fa-envelope text-warning"></i>&nbsp;
           <a
             style={{ textDecoration: "none" }}
-            href="mailto:engineerforlifejohn@gmail.com"
+            href="mailto:joowoonk@gmail.com"
             target="_blank"
+            alt="email address joowoonk@gmail.com"
           >
-            engineerforlifejohn@gmail.com
+            joowoonk@gmail.com
           </a>
         </div>
         <div className="contact">
@@ -50,6 +53,7 @@ const About = () => {
             style={{ textDecoration: "none" }}
             target="_blank"
             href="https://twitter.com/johnwhoprograms"
+            alt="twitter"
           >
             @johnwhoprograms
           </a>
@@ -60,6 +64,7 @@ const About = () => {
             style={{ textDecoration: "none" }}
             target="_blank"
             href="https://github.com/joowoonk"
+            alt='github'
           >
             github.com/joowoonk
           </a>

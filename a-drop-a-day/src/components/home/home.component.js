@@ -20,6 +20,7 @@ const Home = () => {
             style={{ color: "tomato" }}
             href="https://francescocirillo.com/pages/pomodoro-technique"
             target="blank"
+            alt="pomodoro technique"
           >
             the Pomodoro Technique
           </a>
@@ -92,6 +93,7 @@ const Home = () => {
           <a
             href="https://side-project-a-drop-a-day.vercel.app/signup"
             target="blank"
+            alt="sign up"
           >
             here
           </a>{" "}
@@ -105,6 +107,7 @@ const Home = () => {
           <a
             href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
             target="blank"
+            alt="linkedin link"
           >
             here
           </a>
@@ -113,6 +116,7 @@ const Home = () => {
           <a
             href="https://github.com/joowoonk/Side-Project-A-Drop-A-Day/tree/master/a-drop-a-day"
             target="blank"
+            alt="github of this app"
           >
             here.
           </a>
@@ -126,6 +130,7 @@ const Home = () => {
           <a
             href="https://francescocirillo.com/pages/pomodoro-technique"
             target="blank"
+            alt="pomodoro technique"
           >
             here
           </a>
