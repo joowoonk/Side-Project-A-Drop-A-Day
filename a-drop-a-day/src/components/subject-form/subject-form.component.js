@@ -16,7 +16,7 @@ const SubjectForm = () => {
   const useinfo = useSelector((state) => state.userReducer);
 
   const user = localStorage.getItem("user_id");
-  console.log({ user });
+  // console.log({ user });
 
   const onInputSubject = (e) => {
     setSubject(e.target.value);
