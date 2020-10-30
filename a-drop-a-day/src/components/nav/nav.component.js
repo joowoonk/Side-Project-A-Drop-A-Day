@@ -105,7 +105,10 @@ const Nav = ({ isStopping, setIsStopping }) => {
               className="navMenu"
               alt="projects"
               onClick={() => {
-                push("/projects");
+                if (isStopping) {
+                  push("/projects");
+                }
+               
               }}
             >
               PROJECTS
