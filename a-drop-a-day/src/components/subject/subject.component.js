@@ -22,6 +22,7 @@ import { styles, useStyles } from "./subject.styles";
 import SubjectDetail from "../SubjectDetail/SubjectDetail";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+
 function MyButtonRaw(props) {
   const { classes, color, ...other } = props;
   return <Button className={classes.root} {...other} />;
@@ -33,6 +34,7 @@ MyButtonRaw.propTypes = {
   classes: PropTypes.object.isRequired,
   color: PropTypes.oneOf(["blue", "red"]).isRequired,
 };
+
 
 const MyButton = withStyles(styles)(MyButtonRaw);
 
@@ -62,7 +64,7 @@ const Subject = (props) => {
 
   //grabing from global state
   const projects = useSelector((state) => state.tomatoesReducers.projects);
-
+  
   // styling material ui
   const classes = useStyles();
 
@@ -86,6 +88,7 @@ const Subject = (props) => {
     props.setBreakTime(false);
     props.setFocusTime(false);
     props.setIsStopping(true);
+
     window.open("https://side-project-a-drop-a-day.vercel.app/timeisup");
   }
 
@@ -163,6 +166,7 @@ const Subject = (props) => {
                         return (
                           <Grid item xs={12}>
                             <SubjectDetail
+                            setIsFocusing={props.setIsFocusing}
                               sub={sub}
                               scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
@@ -182,6 +186,7 @@ const Subject = (props) => {
                         return (
                           <Grid item xs={12}>
                             <SubjectDetail
+                            setIsFocusing={props.setIsFocusing}
                               sub={sub}
                               scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
@@ -201,6 +206,7 @@ const Subject = (props) => {
                         return (
                           <Grid item xs={12}>
                             <SubjectDetail
+                            setIsFocusing={props.setIsFocusing}
                               sub={sub}
                               scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
@@ -220,6 +226,7 @@ const Subject = (props) => {
                         return (
                           <Grid item xs={12} sm={6}>
                             <SubjectDetail
+                            setIsFocusing={props.setIsFocusing}
                               sub={sub}
                               scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}

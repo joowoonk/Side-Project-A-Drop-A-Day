@@ -13,7 +13,7 @@ import {
 import Subject from "../../components/subject/subject.component";
 import "./journey-page.styles.scss";
 import Helmet from "react-helmet";
-
+import useWarningClosingWhileTimeOn from "../../hooks/useWarningClosingWhileTimeOn"
 const JourneyPage = ({ isStopping, setIsStopping }) => {
   //make sure to create a form where a user can add their subject with a tomato
 
@@ -24,6 +24,7 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
   //might need to use passing down the state and if subject.id met then it will fill.
   // probably need to find a way to disabled play button in timer component so it wont trigger to start without start from the subject.
 
+  const [Prompt, setIsFocusing, setPrinstine ] = useWarningClosingWhileTimeOn()
   const [Minutes, setMinutes] = useState(25);
   //Minutes will start by 25 mins
   const [breakTime, setBreakTime] = useState(false);
@@ -67,6 +68,8 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
       {focusTime && <Helmet title={`ripenning..`}></Helmet>}
       {!focusTime && <Helmet title={`A Drop A Day`}></Helmet>}
       <Timer
+      setPrinstine={setPrinstine}
+      setIsFocusing={setIsFocusing}
         setBreakTime={setBreakTime}
         setMinutes={setMinutes}
         setIsStopping={setIsStopping}
@@ -81,6 +84,7 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
         setFocusTime={setFocusTime}
       />
       <Subject
+        setIsFocusing={setIsFocusing}
         minutes={Minutes}
         scrollToTop={scrollToTop}
         setBreakTime={setBreakTime}
@@ -96,6 +100,7 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
         setFocusTime={setFocusTime}
         // user_id={userState}
       />
+      {Prompt}
     </div>
   );
 };

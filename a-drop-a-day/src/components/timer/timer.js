@@ -8,6 +8,8 @@ import Helmet from "react-helmet";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+
+
 //styling for timer component
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,11 +52,12 @@ export default function Timer({
   focusTime,
   setFocusTime,
   limit,
+  setPrinstine,
+  setIsFocusing
 }) {
   //classes that will stlye the component
   const classes = useStyles();
-
-  //grabs project from global state.
+   //grabs project from global state.
   const projects = useSelector((state) => state.tomatoesReducers.projects);
 
   //controlling backgroun music
@@ -210,6 +213,7 @@ export default function Timer({
                   setMinutes(5);
                   setIsStopping(false);
                   setUserId();
+                  setIsFocusing()
                 }}
               >
                 Short Break
@@ -223,6 +227,7 @@ export default function Timer({
                   setMinutes(15);
                   setIsStopping(false);
                   setUserId();
+                  setIsFocusing()
                 }}
               >
                 Long Break
@@ -235,6 +240,7 @@ export default function Timer({
                   setBreakTime(false);
                   setFocusTime(false);
                   setIsStopping(true);
+                  
                   setMinutes(25);
                 }}
               >
@@ -251,6 +257,8 @@ export default function Timer({
                     onClick={() => {
                       setIsStopping(!isStopping);
                       setFocusTime(false);
+                      setPrinstine()
+                  
                     }}
                   >
                     <i className="fa fa-pause fa-2x" />

@@ -13,10 +13,13 @@ import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 
 import { styles, useStyles } from "./SubjectDetail.styles";
+
+
 function MyButtonRaw(props) {
   const { classes, color, ...other } = props;
   return <Button className={classes.root} {...other} />;
 }
+
 MyButtonRaw.propTypes = {
   /**
    * Override or extend the styles applied to the component.
@@ -41,6 +44,7 @@ const SubjectDetail = (props) => {
 
   return (
     <Paper className={classes.paper}>
+
       <p>Project Name: </p>
       <h1>{props.sub.project.toUpperCase()}</h1>
       You finished
@@ -55,6 +59,8 @@ const SubjectDetail = (props) => {
             props.setUserId(props.sub.id);
             props.setFocusTime(true);
             props.scrollToTop();
+            props.setIsFocusing()
+        
             return finishedOneTask();
           }}
         >
@@ -69,6 +75,8 @@ const SubjectDetail = (props) => {
               props.setUserId(props.sub.id);
               setOption(true);
               setHidden(true);
+              
+         
               // dispatch(resetFinishingTomatoes(sub.id));
             }}
           >

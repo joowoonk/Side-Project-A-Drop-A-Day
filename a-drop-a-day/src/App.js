@@ -18,15 +18,14 @@ import About from "./components/about/about";
 import TimeIsUp from "./components/time-is-up/time-is-up";
 import Update from "./components/Update/Update";
 
-// import Twitter from "./components/twitter/twitter";
 function App() {
   const [isStopping, setIsStopping] = useState(true);
+
+
 
   return (
     // <ThemeProvider theme={theme === "light" ? darkTheme : lightTheme}>
     <>
-      {/* <GlobalStyles /> */}
-
       <div>
         <Nav isStopping={isStopping} setIsStopping={setIsStopping} />
 
@@ -56,6 +55,7 @@ function App() {
           </Route>
           <PrivateRoute path="/projects">
             <JourneyPage
+
               isStopping={isStopping}
               setIsStopping={setIsStopping}
             />
