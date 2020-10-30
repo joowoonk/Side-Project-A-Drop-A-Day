@@ -4,6 +4,11 @@ const Update = () => {
   return (
     <div className="update">
       <div className="list">
+      <h1>UPDATES:</h1>
+        <h2>V.1.1.0 October 30th, 2020</h2>
+        <ul>
+          <li>While focusing and resting time is on, users won't be able to close their tabs without having a warning pop up on top.</li>
+        </ul>
         <h1>UPDATES:</h1>
         <h2>V.1.0.9 July 15th, 2020</h2>
         <ul>
