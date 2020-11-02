@@ -84,6 +84,7 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
         setFocusTime={setFocusTime}
       />
       <Subject
+      setPrinstine={setPrinstine}
         setIsFocusing={setIsFocusing}
         minutes={Minutes}
         scrollToTop={scrollToTop}
