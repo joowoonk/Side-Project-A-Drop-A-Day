@@ -89,7 +89,7 @@ const Subject = (props) => {
     props.setFocusTime(false);
     props.setIsStopping(true);
        props.setPrinstine()
-    // window.open("https://side-project-a-drop-a-day.vercel.app/timeisup");
+    window.open("https://side-project-a-drop-a-day.vercel.app/timeisup");
   }
 
   return (
