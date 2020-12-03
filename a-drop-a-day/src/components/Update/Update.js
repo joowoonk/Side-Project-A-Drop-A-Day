@@ -9,7 +9,6 @@ const Update = () => {
         <ul>
           <li>While focusing and resting time is on, users won't be able to close their tabs without having a warning pop up on top.</li>
         </ul>
-        <h1>UPDATES:</h1>
         <h2>V.1.0.9 July 15th, 2020</h2>
         <ul>
           <li>Added about me page on tab above</li>
