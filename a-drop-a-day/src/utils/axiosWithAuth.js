@@ -5,7 +5,7 @@ export const axiosWithAuth = () => {
     headers: {
       authorization: token,
     },
-    baseURL: "https://tomatoestimer.herokuapp.com/api/",
+    baseURL: "https://a-drop-a-day.herokuapp.com/api/",
     // baseURL: "http://localhost:3300/api/",
   });
 };
