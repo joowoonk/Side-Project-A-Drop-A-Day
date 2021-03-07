@@ -112,30 +112,50 @@ export default function Timer({
             <Paper className={classes.paper}>
               {/* controlls music either mute/unmute */}
               {volume ? (
-                <i
-                  style={{ color: "blue", textAlign: "right" }}
-                  className="fas fa-volume-up fa-3x"
-                  onClick={() => {
+                <img 
+                src="audio on.png"
+                            width="50px"
+                  
+                                             onClick={() => {
                     setVolume(false);
                     setSound(false);
                   }}
                 />
+                // <i
+                //   style={{ color: "blue", textAlign: "right" }}
+                //   className="fas fa-volume-up fa-3x"
+                //   onClick={() => {
+                //     setVolume(false);
+                //     setSound(false);
+                //   }}
+                // />
               ) : (
-                <i
-                  style={{ color: "blue", textAlign: "right" }}
-                  className="fas fa-volume-off fa-3x"
-                  onClick={() => {
-                    setVolume(true);
+                              <img 
+                src="audio off.png"
+                            width="50px"
+                  
+                                             onClick={() => {
+                   setVolume(true);
                     setSound(true);
                   }}
                 />
+                // <i
+                //   style={{ color: "blue", textAlign: "right" }}
+                //   className="fas fa-volume-off fa-3x"
+                //   onClick={() => {
+             
+                //   }}
+                // />
               )}
               <br />
               <br />
               {/* occurs when the breaktime occurs */}
               {breakTime ? (
                 <div className="icon">
-                  <i style={coffee} className="fas fa-coffee fa-8x" />
+                    <img 
+                src="coffee.png"
+                            width="120px"/>
+                  {/* <i style={coffee} className="fas fa-coffee fa-8x" /> */}
 
                   {breakTime ? (
                     <>
@@ -172,8 +192,10 @@ export default function Timer({
                 </div>
               ) : (
                 <div>
-                  {/* when focusing time occurs */}
-                  <i style={styles} className="fas fa-book fa-8x" />
+                  {/* when focusing time occurs */}  <img 
+                src="flex.png"
+                            width="140px"></img>
+                  {/* <i style={styles} className="fas fa-book fa-8x" /> */}
                   {!isStopping ? (
                     <>
                       {!isStopping ? (
