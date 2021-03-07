@@ -47,7 +47,7 @@ function App() {
             <TimeIsUp />
           </Route>
           <Route exact path="/signIn">
-            <Quotes />
+
             <SignIn />
           </Route>
           <Route exact path="/SignUp">

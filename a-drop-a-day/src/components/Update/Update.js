@@ -5,9 +5,14 @@ const Update = () => {
     <div className="update">
       <div className="list">
       <h1>UPDATES:</h1>
+             <h2>V.1.1.1 March 6th, 2021</h2>
+        <ul>
+          <li>Font Awesome stopped working on certain icons, found out they made some of icons I use to be paid. So, I switched to other icons just today</li>
+        <li>Programmer Quote Public API isn't working anymore so decided to remove</li>
+        </ul>
         <h2>V.1.1.0 October 30th, 2020</h2>
         <ul>
-          <li>While focusing and resting time is on, users won't be able to close their tabs without having a warning pop up on top.</li>
+          <li>While focusing and resting time is on, users won't be able to close their tabs without having a warning pop up on top</li>
         </ul>
         <h2>V.1.0.9 July 15th, 2020</h2>
         <ul>
@@ -18,7 +23,7 @@ const Update = () => {
           <li>Added Loading Spinner while fetching your projects</li>
           <li>
             Restored reset features per project, users can have freedom to
-            restart their counts anytime.
+            restart their counts anytime
           </li>
         </ul>
         <h2>V.1.0.7 July 11th, 2020</h2>
@@ -31,7 +36,7 @@ const Update = () => {
         <ul>
           <li>
             Logo is no longer being shown on mobile screen and dark mode is
-            available under the top tab menu.
+            available under the top tab menu
           </li>
           <li>Way more responsive :)</li>
         </ul>
@@ -51,7 +56,7 @@ const Update = () => {
           <li>
             Made everything more responsive, tested on Iphone X screen, and it's
             working pretty fine, except the Youtube wont auto play the music
-            while focusing and break time are on.
+            while focusing and break time are on
           </li>
         </ul>
         <h2>V.1.0.3, June 28th, 2020</h2>
