@@ -154,7 +154,7 @@ export default function Timer({
                 <div className="icon">
                     <img 
                 src="coffee.png"
-                            width="120px"/>
+                            width="140px"/>
                   {/* <i style={coffee} className="fas fa-coffee fa-8x" /> */}
 
                   {breakTime ? (
