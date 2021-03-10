@@ -90,7 +90,7 @@ export default function Timer({
         rhours +
         " hour(s) " +
         realMinutes +
-        " minutes(s)"
+        " minutes"
       );
     } else if (num > 1) {
       return "You focused about " + rminutes + " minute(s)";
