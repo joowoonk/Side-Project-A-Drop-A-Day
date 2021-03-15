@@ -264,6 +264,7 @@ export default function Timer({
                   setIsStopping(true);
                   
                   setMinutes(25);
+                  localStorage.setItem("minutes", 25)
                 }}
               >
                 Focus Time
@@ -280,6 +281,7 @@ export default function Timer({
                       setIsStopping(!isStopping);
                       setFocusTime(false);
                       setPrinstine()
+                      localStorage.setItem("minutes", Minutes)
                   
                     }}
                   >
@@ -291,7 +293,7 @@ export default function Timer({
                       color="primary"
                       // disabled={limit}
                       // className="controller"
-                      onClick={() => setMinutes(Minutes + 1)}
+                      onClick={() => setMinutes(parseInt(Minutes) + 1)}
                     >
                       <i className="fa fa-plus fa-2x" />
                     </Button>

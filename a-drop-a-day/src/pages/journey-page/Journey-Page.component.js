@@ -25,7 +25,8 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
   // probably need to find a way to disabled play button in timer component so it wont trigger to start without start from the subject.
 
   const [Prompt, setIsFocusing, setPrinstine ] = useWarningClosingWhileTimeOn()
-  const [Minutes, setMinutes] = useState(25);
+  const [Minutes, setMinutes] = useState(localStorage.getItem("minutes"));
+  //  const [Minutes, setMinutes] = localStorage.getItem("minutes")
   //Minutes will start by 25 mins
   const [breakTime, setBreakTime] = useState(false);
   //breaktime starts as false
@@ -36,11 +37,15 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
   const [focusTime, setFocusTime] = useState(false);
   // will disable navbar when focus time starts (true)
   useEffect(() => {
+    
+    // y = 
+    // console.log(localStorage.getItem("minutes"))
     //this will let the timer goes by a minute a time
     if (!isStopping) {
       const id = window.setInterval(() => {
         setMinutes((min) => min - 1);
-      }, 60000);
+        localStorage.setItem("minutes", Minutes)
+      }, 1000);
       //60 seconds
       return () => window.clearInterval(id);
     } else {

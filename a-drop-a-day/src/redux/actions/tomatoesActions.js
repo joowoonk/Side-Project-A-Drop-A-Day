@@ -76,6 +76,7 @@ export const finishingOneTomatoes = (id) => {
           .get(`/tomatoes/${user}`)
           .then((res) => {
             dispatch({ type: FETCH_TOMATOES_SUCCESS, payload: res.data });
+            localStorage.setItem("minutes",25)
           })
           .catch((err) =>
             dispatch({
