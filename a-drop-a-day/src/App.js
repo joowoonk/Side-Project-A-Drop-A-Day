@@ -20,7 +20,10 @@ import Update from "./components/Update/Update";
 
 function App() {
   const [isStopping, setIsStopping] = useState(true);
-
+//  console.log(  )
+  if(localStorage.getItem("minutes") === undefined || localStorage.getItem("minutes") === null){
+    localStorage.setItem("minutes",25)
+  }
 
 
   return (

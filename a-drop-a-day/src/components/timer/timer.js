@@ -232,6 +232,7 @@ export default function Timer({
                 className="controller"
                 onClick={() => {
                   setBreakTime(true);
+                  
                   setMinutes(5);
                   setIsStopping(false);
                   setUserId();
