@@ -5,7 +5,11 @@ const Update = () => {
     <div className="update">
       <div className="list">
       <h1>UPDATES:</h1>
-             <h2>V.1.1.1 March 6th, 2021</h2>
+      <h2>V.1.1.2 March 15th, 2021</h2>
+        <ul>
+          <li>Now your minutes will be saved. In order to reset your timer, just simply press FOCUS TIME</li>
+        </ul>
+        <h2>V.1.1.1 March 6th, 2021</h2>
         <ul>
           <li>Font Awesome stopped working on certain icons, found out they made some of icons I use to be paid. So, I switched to other icons just today</li>
         <li>Programmer Quote Public API isn't working anymore so decided to remove</li>
