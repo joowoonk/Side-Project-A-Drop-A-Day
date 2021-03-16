@@ -7,7 +7,7 @@ const Update = () => {
       <h1>UPDATES:</h1>
       <h2>V.1.1.2 March 15th, 2021</h2>
         <ul>
-          <li>Now your minutes will be saved. In order to reset your timer, just simply press FOCUS TIME</li>
+          <li>Now your minutes will be saved once you hit pause icon. In order to reset your timer, just simply press FOCUS TIME</li>
         </ul>
         <h2>V.1.1.1 March 6th, 2021</h2>
         <ul>
