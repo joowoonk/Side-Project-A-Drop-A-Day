@@ -64,7 +64,7 @@ const Subject = (props) => {
 
   //grabing from global state
   const projects = useSelector((state) => state.tomatoesReducers.projects);
-  
+
   // styling material ui
   const classes = useStyles();
 
@@ -80,15 +80,21 @@ const Subject = (props) => {
   const finishedOneTask = () => {
     props.setIsStopping(false);
   };
-
+  function play() {
+    var audio = new Audio("bell.wav");
+    audio.play();
+  }
+  // var sound = new Audio("bell.wave");
+  // console.log(sound);
   //when minutues hits 0
   if (props.minutes <= 0) {
     dispatch(finishingOneTomatoes(props.userId));
     props.setMinutes(25);
+    play();
     props.setBreakTime(false);
     props.setFocusTime(false);
     props.setIsStopping(true);
-       props.setPrinstine()
+    props.setPrinstine();
     window.open("https://side-project-a-drop-a-day.vercel.app/timeisup");
   }
 
@@ -166,7 +172,7 @@ const Subject = (props) => {
                         return (
                           <Grid item xs={12}>
                             <SubjectDetail
-                            setIsFocusing={props.setIsFocusing}
+                              setIsFocusing={props.setIsFocusing}
                               sub={sub}
                               scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
@@ -186,7 +192,7 @@ const Subject = (props) => {
                         return (
                           <Grid item xs={12}>
                             <SubjectDetail
-                            setIsFocusing={props.setIsFocusing}
+                              setIsFocusing={props.setIsFocusing}
                               sub={sub}
                               scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
@@ -206,7 +212,7 @@ const Subject = (props) => {
                         return (
                           <Grid item xs={12}>
                             <SubjectDetail
-                            setIsFocusing={props.setIsFocusing}
+                              setIsFocusing={props.setIsFocusing}
                               sub={sub}
                               scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
@@ -226,7 +232,7 @@ const Subject = (props) => {
                         return (
                           <Grid item xs={12} sm={6}>
                             <SubjectDetail
-                            setIsFocusing={props.setIsFocusing}
+                              setIsFocusing={props.setIsFocusing}
                               sub={sub}
                               scrollToTop={props.scrollToTop}
                               isStopping={props.isStopping}
@@ -268,6 +274,6 @@ const Subject = (props) => {
       </div>
     </>
   );
-};
+};;
 
 export default Subject;

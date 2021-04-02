@@ -44,7 +44,6 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
     if (!isStopping) {
       const id = window.setInterval(() => {
         setMinutes((min) => min - 1);
-        
       }, 60000);
       //60 seconds
       return () => window.clearInterval(id);

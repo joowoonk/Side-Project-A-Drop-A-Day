@@ -169,7 +169,6 @@ export default function Timer({
                             frameborder="10"
                             // autoplay="1"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
                           ></iframe>
                         </center>
                       ) : (
@@ -317,7 +316,6 @@ export default function Timer({
                     frameborder="10"
                     // autoplay="1"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
                   ></iframe>
                 </center>
               ) : (

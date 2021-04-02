@@ -4,19 +4,41 @@ const Update = () => {
   return (
     <div className="update">
       <div className="list">
-      <h1>UPDATES:</h1>
-      <h2>V.1.1.2 March 15th, 2021</h2>
+        <h1>UPDATES:</h1>
+        <h2>V.1.1.2 March 15th, 2021</h2>
         <ul>
-          <li>Now your minutes will be saved once you hit pause icon. In order to reset your timer, just simply press FOCUS TIME</li>
+          <li>
+            Now your minutes will be saved once you hit pause icon. In order to
+            reset your timer, just simply press FOCUS TIME
+          </li>
+        </ul>
+        <h2>V.1.1.2 April 2nd, 2021</h2>
+        <ul>
+          <li>
+            Version two for A-Drop-A-Day is in process! 
+          </li>
+          <li>
+            Added bell sound when a timer finishes, it will play. 
+          </li>
         </ul>
         <h2>V.1.1.1 March 6th, 2021</h2>
         <ul>
-          <li>Font Awesome stopped working on certain icons, found out they made some of icons I use to be paid. So, I switched to other icons just today</li>
-        <li>Programmer Quote Public API isn't working anymore so decided to remove</li>
+          <li>
+            Font Awesome stopped working on certain icons, found out they made
+            some of icons I use to be paid. So, I switched to other icons just
+            today
+          </li>
+          <li>
+            Programmer Quote Public API isn't working anymore so decided to
+            remove
+          </li>
         </ul>
         <h2>V.1.1.0 October 30th, 2020</h2>
         <ul>
-          <li>While focusing and resting time is on, users won't be able to close their tabs without having a warning pop up on top</li>
+          <li>
+            While focusing and resting time is on, users won't be able to close
+            their tabs without having a warning pop up on top
+          </li>
         </ul>
         <h2>V.1.0.9 July 15th, 2020</h2>
         <ul>

@@ -14,7 +14,7 @@ export const DELETE_PROJECT_START = "DELETE_PROJECT_START";
 export const DELETE_PROJECT_SUCCESS = "DELETE_PROJECT_SUCCESS";
 export const DELETE_PROJECT_FAILURE = "DELETE_PROJECTFAILURE";
 const finished = 0;
-
+var sound = new Audio("bell.wave");
 //function to grab all the users data
 export const fetchTomatoes = () => {
   return (dispatch) => {
@@ -38,7 +38,7 @@ export const fetchTomatoes = () => {
 // adding a project
 export const addProject = (project, tomatoes, user_id) => {
   const user = localStorage.getItem("user_id");
-
+ 
   return (dispatch) => {
     dispatch({ type: ADD_PROJECT_START });
 
@@ -76,6 +76,7 @@ export const finishingOneTomatoes = (id) => {
           .get(`/tomatoes/${user}`)
           .then((res) => {
             dispatch({ type: FETCH_TOMATOES_SUCCESS, payload: res.data });
+            sound.play();
             localStorage.setItem("minutes",25)
           })
           .catch((err) =>
