@@ -95,7 +95,15 @@ const Subject = (props) => {
     props.setFocusTime(false);
     props.setIsStopping(true);
     props.setPrinstine();
-    window.open("https://side-project-a-drop-a-day.vercel.app/timeisup");
+    setTimeout(() => {
+      if (props.breakTime === true) {
+        window.alert("Break is over! Let's focus! You got this!");
+      } else {
+        window.alert("Good job! Break time!");
+      }
+    }, 500);
+ 
+    
   }
 
   return (

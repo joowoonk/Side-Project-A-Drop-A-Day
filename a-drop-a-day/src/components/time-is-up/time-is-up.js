@@ -29,11 +29,12 @@ const TimeIsUp = () => {
       <MyButton
         color="red"
         onClick={() => {
-          push("projects");
+          var customWindow = window.open("", "_blank", "");
+          customWindow.close();
           // window.close("http://localhost:3000/timeisup");
         }}
       >
-        Return to page
+        Close
       </MyButton>
     </div>
   );

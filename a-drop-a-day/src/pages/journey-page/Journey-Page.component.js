@@ -72,8 +72,9 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
       {focusTime && <Helmet title={`ripenning..`}></Helmet>}
       {!focusTime && <Helmet title={`A Drop A Day`}></Helmet>}
       <Timer
-      setPrinstine={setPrinstine}
-      setIsFocusing={setIsFocusing}
+        setPrinstine={setPrinstine}
+        setIsFocusing={setIsFocusing}
+        breakTime={breakTime}
         setBreakTime={setBreakTime}
         setMinutes={setMinutes}
         setIsStopping={setIsStopping}
@@ -88,7 +89,8 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
         setFocusTime={setFocusTime}
       />
       <Subject
-      setPrinstine={setPrinstine}
+      
+        setPrinstine={setPrinstine}
         setIsFocusing={setIsFocusing}
         minutes={Minutes}
         scrollToTop={scrollToTop}

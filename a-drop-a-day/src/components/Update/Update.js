@@ -5,6 +5,17 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
+        <h2>V.1.1.3 April 2nd, 2021</h2>
+        <ul>
+          <li>
+            Alert will pop up instead of having another tab opened because to keep users' tabs clean and some users do not know how to enable pop ups according to a feedback I got. 
+          </li>
+        </ul>
+        <h2>V.1.1.3 April 1st, 2021</h2>
+        <ul>
+          <li>Version two for A-Drop-A-Day is in process!</li>
+          <li>Added bell sound when a timer finishes, it will play.</li>
+        </ul>
         <h2>V.1.1.2 March 15th, 2021</h2>
         <ul>
           <li>
@@ -12,15 +23,7 @@ const Update = () => {
             reset your timer, just simply press FOCUS TIME
           </li>
         </ul>
-        <h2>V.1.1.2 April 2nd, 2021</h2>
-        <ul>
-          <li>
-            Version two for A-Drop-A-Day is in process! 
-          </li>
-          <li>
-            Added bell sound when a timer finishes, it will play. 
-          </li>
-        </ul>
+
         <h2>V.1.1.1 March 6th, 2021</h2>
         <ul>
           <li>
