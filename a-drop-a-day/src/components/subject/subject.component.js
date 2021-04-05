@@ -90,20 +90,20 @@ const Subject = (props) => {
   if (props.minutes <= 0) {
     dispatch(finishingOneTomatoes(props.userId));
     props.setMinutes(25);
-    play();
+
     props.setBreakTime(false);
     props.setFocusTime(false);
     props.setIsStopping(true);
     props.setPrinstine();
     setTimeout(() => {
       if (props.breakTime === true) {
+        play();
         window.alert("Break is over! Let's focus! You got this!");
       } else {
+        play();
         window.alert("Good job! Break time!");
       }
     }, 500);
- 
-    
   }
 
   return (
