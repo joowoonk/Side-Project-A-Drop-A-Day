@@ -95,15 +95,16 @@ const Subject = (props) => {
     props.setFocusTime(false);
     props.setIsStopping(true);
     props.setPrinstine();
+    play();
     setTimeout(() => {
       if (props.breakTime === true) {
-        play();
+    
         window.alert("Break is over! Let's focus! You got this!");
       } else {
-        play();
+       
         window.alert("Good job! Break time!");
       }
-    }, 500);
+    }, 900);
   }
 
   return (
