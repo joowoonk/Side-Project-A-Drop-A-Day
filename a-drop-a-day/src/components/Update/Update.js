@@ -8,12 +8,13 @@ const Update = () => {
         <h2>V.1.1.3 April 8th, 2021</h2>
         <ul>
           <li>
-      found a potential bug on setting up minutes through application tabs on
-        inspect by users who might know how to modify some of the inputs.
-        Minutes shall not exceed 30 minutes nor NaN nor "string" type. If this
-        happens, timner will go back to 25 minutes which is the initial time
-        setting
+            found a potential bug on setting up minutes through application tabs
+            on inspect by users who might know how to modify some of the inputs.
+            Minutes shall not exceed 30 minutes nor NaN nor "string" type. If
+            this happens, timner will go back to 25 minutes which is the initial
+            time setting
           </li>
+        </ul>
 
         <h2>V.1.1.3 April 2nd, 2021</h2>
         <ul>
