@@ -5,10 +5,22 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
+        <h2>V.1.1.3 April 8th, 2021</h2>
+        <ul>
+          <li>
+      found a potential bug on setting up minutes through application tabs on
+        inspect by users who might know how to modify some of the inputs.
+        Minutes shall not exceed 30 minutes nor NaN nor "string" type. If this
+        happens, timner will go back to 25 minutes which is the initial time
+        setting
+          </li>
+
         <h2>V.1.1.3 April 2nd, 2021</h2>
         <ul>
           <li>
-            Alert will pop up instead of having another tab opened because to keep users' tabs clean and some users do not know how to enable pop ups according to a feedback I got. 
+            Alert will pop up instead of having another tab opened because to
+            keep users' tabs clean and some users do not know how to enable pop
+            ups according to a feedback I got
           </li>
         </ul>
         <h2>V.1.1.3 April 1st, 2021</h2>
@@ -23,7 +35,6 @@ const Update = () => {
             reset your timer, just simply press FOCUS TIME
           </li>
         </ul>
-
         <h2>V.1.1.1 March 6th, 2021</h2>
         <ul>
           <li>
