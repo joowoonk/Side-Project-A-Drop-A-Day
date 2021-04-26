@@ -5,7 +5,17 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
-        <h2>V.1.1.3 April 8th, 2021</h2>
+        <h2>V.1.1.6 April 25th, 2021</h2>
+        <ul>
+          <li>
+                        Add another option to take break. So there will be 5,10, and 15
+     
+                  minutes break you can choose to take one after you are done one
+           
+            pomodoro. Enjoy being productive!
+          </li>
+        </ul>
+        <h2>V.1.1.5 April 8th, 2021</h2>
         <ul>
           <li>
             found a potential bug on setting up minutes through application tabs
@@ -16,7 +26,7 @@ const Update = () => {
           </li>
         </ul>
 
-        <h2>V.1.1.3 April 2nd, 2021</h2>
+        <h2>V.1.1.4 April 2nd, 2021</h2>
         <ul>
           <li>
             Alert will pop up instead of having another tab opened because to

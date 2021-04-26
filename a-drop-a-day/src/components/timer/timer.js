@@ -112,15 +112,15 @@ export default function Timer({
             <Paper className={classes.paper}>
               {/* controlls music either mute/unmute */}
               {volume ? (
-                <img 
-                src="audio on.png"
-                            width="50px"
-                  
-                                             onClick={() => {
+                <img
+                  src="audio on.png"
+                  width="50px"
+                  onClick={() => {
                     setVolume(false);
                     setSound(false);
                   }}
                 />
+              ) : (
                 // <i
                 //   style={{ color: "blue", textAlign: "right" }}
                 //   className="fas fa-volume-up fa-3x"
@@ -129,13 +129,11 @@ export default function Timer({
                 //     setSound(false);
                 //   }}
                 // />
-              ) : (
-                              <img 
-                src="audio off.png"
-                            width="50px"
-                  
-                                             onClick={() => {
-                   setVolume(true);
+                <img
+                  src="audio off.png"
+                  width="50px"
+                  onClick={() => {
+                    setVolume(true);
                     setSound(true);
                   }}
                 />
@@ -143,7 +141,7 @@ export default function Timer({
                 //   style={{ color: "blue", textAlign: "right" }}
                 //   className="fas fa-volume-off fa-3x"
                 //   onClick={() => {
-             
+
                 //   }}
                 // />
               )}
@@ -152,9 +150,7 @@ export default function Timer({
               {/* occurs when the breaktime occurs */}
               {breakTime ? (
                 <div className="icon">
-                    <img 
-                src="coffee.png"
-                            width="140px"/>
+                  <img src="coffee.png" width="140px" />
                   {/* <i style={coffee} className="fas fa-coffee fa-8x" /> */}
 
                   {breakTime ? (
@@ -191,9 +187,8 @@ export default function Timer({
                 </div>
               ) : (
                 <div>
-                  {/* when focusing time occurs */}  <img 
-                src="flex.png"
-                            width="140px"></img>
+                  {/* when focusing time occurs */}{" "}
+                  <img src="flex.png" width="140px"></img>
                   {/* <i style={styles} className="fas fa-book fa-8x" /> */}
                   {!isStopping ? (
                     <>
@@ -231,14 +226,29 @@ export default function Timer({
                 className="controller"
                 onClick={() => {
                   setBreakTime(true);
-                  
+
                   setMinutes(5);
                   setIsStopping(false);
                   setUserId();
-                  setIsFocusing()
+                  setIsFocusing();
                 }}
               >
-                Short Break
+                5 Minutes Break
+              </Button>{" "}
+              <Button
+                variant="contained"
+                color="primary"
+                className="controller"
+                onClick={() => {
+                  setBreakTime(true);
+
+                  setMinutes(10);
+                  setIsStopping(false);
+                  setUserId();
+                  setIsFocusing();
+                }}
+              >
+                10 Minutes Break
               </Button>
               <Button
                 variant="contained"
@@ -249,10 +259,10 @@ export default function Timer({
                   setMinutes(15);
                   setIsStopping(false);
                   setUserId();
-                  setIsFocusing()
+                  setIsFocusing();
                 }}
               >
-                Long Break
+                15 Minutes Break
               </Button>
               <Button
                 variant="contained"
@@ -262,9 +272,9 @@ export default function Timer({
                   setBreakTime(false);
                   setFocusTime(false);
                   setIsStopping(true);
-                  
+
                   setMinutes(25);
-                  localStorage.setItem("minutes", 25)
+                  localStorage.setItem("minutes", 25);
                 }}
               >
                 Focus Time
@@ -280,9 +290,8 @@ export default function Timer({
                     onClick={() => {
                       setIsStopping(!isStopping);
                       setFocusTime(false);
-                      setPrinstine()
-                      localStorage.setItem("minutes", Minutes)
-                  
+                      setPrinstine();
+                      localStorage.setItem("minutes", Minutes);
                     }}
                   >
                     <i className="fa fa-pause fa-2x" />
