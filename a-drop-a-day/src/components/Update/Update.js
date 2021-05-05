@@ -5,13 +5,17 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
+        <h2>V.1.1.7 May 4th, 2021</h2>
+        <ul>
+          <li>
+            A minor bug of website fixed: the backened server will be stay on periodically so whenever the tomoatoes are eaten, there wont be much delay to update on the screen. 
+          </li>
+        </ul>
         <h2>V.1.1.6 April 25th, 2021</h2>
         <ul>
           <li>
-                        Add another option to take break. So there will be 5,10, and 15
-     
-                  minutes break you can choose to take one after you are done one
-           
+            Add another option to take break. So there will be 5,10, and 15
+            minutes break you can choose to take one after you are done one
             pomodoro. Enjoy being productive!
           </li>
         </ul>
