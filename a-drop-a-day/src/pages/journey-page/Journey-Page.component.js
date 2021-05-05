@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Timer from "../../components/timer/timer";
+import { useDispatch } from "react-redux";
 import {
   Link,
   DirectLink,
@@ -9,6 +10,9 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+
+import { fetchTomatoes } from "../../redux/actions/tomatoesActions";
+
 
 import Subject from "../../components/subject/subject.component";
 import "./journey-page.styles.scss";
@@ -35,6 +39,7 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
   const [userId, setUserId] = useState(0);
   //will grab from localstorage
   const [focusTime, setFocusTime] = useState(false);
+    const dispatch = useDispatch();
   // will disable navbar when focus time starts (true)
   useEffect(() => {
     
@@ -61,7 +66,10 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
   const coffee = {
     color: "brown",
   };
-
+     if (Minutes % 10 === 0) {
+       //  console.log("Page Refreshed!");
+       dispatch(fetchTomatoes());
+     }
   //npm where it scroll up when timer starts
   const scrollToTop = () => {
     scroll.scrollToTop();
