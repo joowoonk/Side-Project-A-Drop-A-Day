@@ -66,7 +66,7 @@ const JourneyPage = ({ isStopping, setIsStopping }) => {
   const coffee = {
     color: "brown",
   };
-     if (Minutes % 10 === 0) {
+     if (Minutes === 1) {
        //  console.log("Page Refreshed!");
        dispatch(fetchTomatoes());
      }
