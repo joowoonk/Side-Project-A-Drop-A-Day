@@ -87,11 +87,7 @@ const Subject = (props) => {
   // var sound = new Audio("bell.wave");
   // console.log(sound);
   //when minutues hits 0
-  if (
-    props.minutes > 30 ||
-    isNaN(props.minutes) ||
-    typeof props.minutes == "string"
-  ) {
+  if (props.minutes > 30 || isNaN(props.minutes)) {
     localStorage.setItem("minutes", 25);
     props.setMinutes(25);
   }
