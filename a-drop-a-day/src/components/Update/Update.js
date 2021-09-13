@@ -5,10 +5,18 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
+        <h2>V.1.1.8 Sept 13th, 2021</h2>
+        <ul>
+          <li>
+            A minor bug of website found. Sign out wouldn't toggle off going back to sign in and shows as if you are still logged in. 
+          </li>
+        </ul>
         <h2>V.1.1.7 May 4th, 2021</h2>
         <ul>
           <li>
-            A minor bug of website fixed: the backened server will be stay on periodically so whenever the tomoatoes are eaten, there wont be much delay to update on the screen. 
+            A minor bug of website fixed: the backened server will be stay on
+            periodically so whenever the tomoatoes are eaten, there wont be much
+            delay to update on the screen.
           </li>
         </ul>
         <h2>V.1.1.6 April 25th, 2021</h2>
