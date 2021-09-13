@@ -122,6 +122,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
                   handleLogOut();
                   push("/signin");
                 }
+                window.location.href = "/"
               }}
             >
               SIGN OUT
@@ -204,6 +205,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
                       handleLogOut();
                       push("/signin");
                     }
+                    window.location.href = "/";
                   }}
                 >
                   SIGN OUT
