@@ -6,7 +6,7 @@ const About = () => {
       <div className="aboutme">
         <a
           style={{ textDecoration: "none" }}
-          href="https://www.joowoonk.ga"
+          href="https://www.linkedin.com/in/joowoonk/"
           target="_blank"
           className="card"
           alt="portfolio"
@@ -15,7 +15,6 @@ const About = () => {
             className="profile"
             src={require("../../assets/profile.png")}
             alt="my-personal-profile-picture"
-
           />
         </a>
         <hr />
@@ -33,11 +32,11 @@ const About = () => {
             href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
             alt="linkedIn link"
           >
-            www.linkedin.com/in/joo-woon
+            https://www.linkedin.com/in/joowoonk/
           </a>
         </div>
         <div className="contact">
-          <i class="fa fa-envelope text-warning"></i>&nbsp;
+          <i class="fa-brands fa-linkedin-in"></i>&nbsp;
           <a
             style={{ textDecoration: "none" }}
             href="mailto:joowoonk@gmail.com"
@@ -48,23 +47,12 @@ const About = () => {
           </a>
         </div>
         <div className="contact">
-          <i class="fab fa-twitter"></i>&nbsp;
-          <a
-            style={{ textDecoration: "none" }}
-            target="_blank"
-            href="https://twitter.com/johnwhoprograms"
-            alt="twitter"
-          >
-            @johnwhoprograms
-          </a>
-        </div>
-        <div className="contact">
-          <i class="fab fa-github text-warning"></i>&nbsp;
+          <i class="fa-brands fa-github"></i>&nbsp;
           <a
             style={{ textDecoration: "none" }}
             target="_blank"
             href="https://github.com/joowoonk"
-            alt='github'
+            alt="github"
           >
             github.com/joowoonk
           </a>
