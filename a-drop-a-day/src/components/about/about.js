@@ -32,7 +32,7 @@ const About = () => {
             href="https://www.linkedin.com/in/joo-woon-kang-2515ab1a2/"
             alt="linkedIn link"
           >
-            https://www.linkedin.com/in/joowoonk/
+            joowoonk
           </a>
         </div>
         <div className="contact">
