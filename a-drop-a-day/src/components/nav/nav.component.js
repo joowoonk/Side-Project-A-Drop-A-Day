@@ -108,7 +108,6 @@ const Nav = ({ isStopping, setIsStopping }) => {
                 if (isStopping) {
                   push("/projects");
                 }
-               
               }}
             >
               PROJECTS
@@ -122,7 +121,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
                   handleLogOut();
                   push("/signin");
                 }
-                window.location.href = "/"
+                window.location.href = "/";
               }}
             >
               SIGN OUT
@@ -130,7 +129,11 @@ const Nav = ({ isStopping, setIsStopping }) => {
           </>
         ) : (
           <>
-            <a className="navMenu" alt="sign in" onClick={() => push("/Signin")}>
+            <a
+              className="navMenu"
+              alt="sign in"
+              onClick={() => push("/Signin")}
+            >
               SIGN IN
             </a>
           </>
@@ -141,7 +144,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
           </div>
           <div class="dropdown-content">
             <a
-            alt="Home"
+              alt="Home"
               onClick={() => {
                 //Timer is disabled while timer is on
                 if (isStopping) {
@@ -152,7 +155,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
               HOME
             </a>
             <a
-            alt="about"
+              alt="about"
               onClick={() => {
                 //Timer is disabled while timer is on
                 if (isStopping) {
@@ -163,7 +166,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
               ABOUT
             </a>
             <a
-            alt="updates"
+              alt="updates"
               onClick={() => {
                 if (isStopping) {
                   push("/updates");
@@ -178,7 +181,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
               <>
                 {/* //isStopping needs to be false when this onClick is disabled. */}
                 <a
-                alt="adding project"
+                  alt="adding project"
                   onClick={() => {
                     //Timer is disabled while timer is on
                     if (isStopping) {
@@ -189,7 +192,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
                   ADD
                 </a>
                 <a
-                alt="projects"
+                  alt="projects"
                   onClick={() => {
                     //Timer is disabled while timer is on
                     push("/projects");
@@ -198,7 +201,7 @@ const Nav = ({ isStopping, setIsStopping }) => {
                   PROJECTS
                 </a>
                 <a
-                alt="sign out"
+                  alt="sign out"
                   onClick={() => {
                     //Timer is disabled while timer is on
                     if (isStopping) {
@@ -211,11 +214,19 @@ const Nav = ({ isStopping, setIsStopping }) => {
                   SIGN OUT
                 </a>
                 {darkMode ? (
-                  <a alt="darkmode on" onClick={(e) => toggleMode(e)} className={darkmode}>
+                  <a
+                    alt="darkmode on"
+                    onClick={(e) => toggleMode(e)}
+                    className={darkmode}
+                  >
                     <i class="fa fa-toggle-on light" aria-hidden="true"></i>
                   </a>
                 ) : (
-                  <a alt="darkmode off" onClick={(e) => toggleMode(e)} className={darkmode}>
+                  <a
+                    alt="darkmode off"
+                    onClick={(e) => toggleMode(e)}
+                    className={darkmode}
+                  >
                     <i class="fa fa-toggle-off light" aria-hidden="true"></i>
                   </a>
                 )}
@@ -228,13 +239,19 @@ const Nav = ({ isStopping, setIsStopping }) => {
               </>
             ) : (
               <>
-                <a alt="darkmode on" onClick={() => push("/Signin")}>SIGN IN</a>
+                <a alt="darkmode on" onClick={() => push("/Signin")}>
+                  SIGN IN
+                </a>
                 {darkMode ? (
                   <a onClick={(e) => toggleMode(e)} className={darkmode}>
                     <i class="fa fa-toggle-on light" aria-hidden="true"></i>
                   </a>
                 ) : (
-                  <a alt="darkmode off" onClick={(e) => toggleMode(e)} className={darkmode}>
+                  <a
+                    alt="darkmode off"
+                    onClick={(e) => toggleMode(e)}
+                    className={darkmode}
+                  >
                     <i class="fa fa-toggle-off light" aria-hidden="true"></i>
                   </a>
                 )}
