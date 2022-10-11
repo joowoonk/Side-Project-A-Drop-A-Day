@@ -36,7 +36,7 @@ const About = () => {
           </a>
         </div>
         <div className="contact">
-          <i class="fa-brands fa-linkedin-in"></i>&nbsp;
+          🖼&nbsp;
           <a
             style={{ textDecoration: "none" }}
             href="mailto:joowoonk@gmail.com"
@@ -47,7 +47,7 @@ const About = () => {
           </a>
         </div>
         <div className="contact">
-          <i class="fa-brands fa-github"></i>&nbsp;
+          💎&nbsp;
           <a
             style={{ textDecoration: "none" }}
             target="_blank"
