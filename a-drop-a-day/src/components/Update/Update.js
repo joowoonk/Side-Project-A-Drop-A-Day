@@ -5,10 +5,18 @@ const Update = () => {
     <div className="update">
       <div className="list">
         <h1>UPDATES:</h1>
+        <h2>V.1.1.9 Dec 30th, 2022</h2>
+        <ul>
+          <li>
+            A drop a day is no longer in service due to Heroku is no longer free
+            in service.
+          </li>
+        </ul>
         <h2>V.1.1.8 Sept 13th, 2021</h2>
         <ul>
           <li>
-            A minor bug of website found. Sign out wouldn't toggle off going back to sign in and shows as if you are still logged in. 
+            A minor bug of website found. Sign out wouldn't toggle off going
+            back to sign in and shows as if you are still logged in.
           </li>
         </ul>
         <h2>V.1.1.7 May 4th, 2021</h2>
